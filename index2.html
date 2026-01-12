@@ -55,12 +55,12 @@
           <div class="collapse" id="navbar-changelog">
             <ul class="nav nav-sm flex-column ms-3 mt-2">
               <!-- Dynamic changelog -->
-              <li class="nav-item">
+              <!-- <li class="nav-item">
                 <a class="nav-link text-white" href="#changeLog101"
                   onclick="scrollToSection('changeLog101', event)">
                   <span>Version 1.0.1</span>
                 </a>
-              </li>
+              </li> -->
               <li class="nav-item">
                 <a class="nav-link text-white" href="#changeLog100"
                   onclick="scrollToSection('changeLog100', event)">
@@ -414,626 +414,217 @@
         </div>
 
         <!-- Changelog Section -->
-        <div>
-          <h2 id="changelog-section" class="pt-4">
-            <i class="fas fa-file-alt"></i> Changelog
+<div>
+  <h2 id="changelog-section" class="pt-4">
+    <i class="fas fa-file-alt"></i> Changelog
+  </h2>
+
+  <!-- ================= VERSION 1.0.0 ================= -->
+  <div id="changeLog100" class="card mb-4 version-card">
+
+    <!-- Header -->
+    <div class="card-header bg-light d-flex justify-content-between align-items-center">
+      <strong class="h5 mb-0 text-primary">v1.0.0</strong>
+      <em class="text-muted">December 1, 2026</em>
+    </div>
+
+    <!-- Body -->
+    <div class="card-body">
+
+      <div class="accordion" id="accordion100">
+
+        <!-- ===== SMS ===== -->
+        <div class="accordion-item">
+          <h2 class="accordion-header" id="heading100sms">
+            <button class="accordion-button collapsed"
+                    type="button"
+                    data-bs-toggle="collapse"
+                    data-bs-target="#collapse100sms"
+                    aria-expanded="false"
+                    aria-controls="collapse100sms">
+              <span class="me-2">💬</span> SMS
+            </button>
           </h2>
 
+          <div id="collapse100sms"
+               class="accordion-collapse collapse show"
+               aria-labelledby="heading100sms"
+               data-bs-parent="#accordion100">
 
-          <!-- Display dynamic changelog entries from API -->
-          <div id="changeLog101" class="card mb-4 version-card">
-            <div class="card-header bg-light d-flex justify-content-between align-items-center">
-              <div>
-                <strong class="h5 mb-0 text-primary">v1.0.1</strong>
-                <span class="badge bg-success ms-2">Latest</span>
+            <div class="accordion-body">
+
+              <!-- 🚀 New Feature -->
+              <div class="category-section mb-4">
+                <h6 class="category-title mb-3">🚀 New Feature</h6>
+                <ul class="list-unstyled ms-3">
+                  <li class="mb-2">
+                    <i class="fas fa-check-circle text-success me-2"></i>
+                    Improved delivery performance
+                  </li>
+                  <li class="mb-2">
+                    <i class="fas fa-check-circle text-success me-2"></i>
+                    Initial release of SMS API
+                  </li>
+                </ul>
               </div>
-              <em class="text-muted">December 31, 2025</em>
-            </div>
 
-            <div class="card-body">
-              <!-- Accordion for modules -->
-              <div class="accordion" id="accordion101">
-                <div class="accordion-item">
-                  <h2 class="accordion-header" id="heading101sms">
-                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
-                      data-bs-target="#collapse101sms" aria-expanded="false" aria-controls="collapse101sms">
-                      <span class="me-2">💬</span>
-                      SMS
-                    </button>
-                  </h2>
-                  <div id="collapse101sms" class="accordion-collapse collapse" aria-labelledby="heading101sms">
-                    <div class="accordion-body">
-                      <div class="category-section mb-4">
-                        <h6 class="category-title mb-3">
-                          🚀 New Feature
-                        </h6>
-                        <ul class="list-unstyled ms-3">
-                          <li class="mb-2">
-                            <i class="fas fa-check-circle text-success me-2"></i>
-                            Improved delivery performance
-                          </li>
-                          <li class="mb-2">
-                            <i class="fas fa-check-circle text-success me-2"></i>
-                            Initial release of SMS API
-                          </li>
-                        </ul>
-                      </div>
+              <hr>
 
-                      <hr class="my-3">
-                      <div class="category-section mb-4">
-                        <h6 class="category-title mb-3">
-                          💅 Enhancement
-                        </h6>
-                        <ul class="list-unstyled ms-3">
-                          <li class="mb-2">
-                            <i class="fas fa-check-circle text-success me-2"></i>
-                            Improved delivery performance
-                          </li>
-                          <li class="mb-2">
-                            <i class="fas fa-check-circle text-success me-2"></i>
-                            Optimized latency for SMS traffic
-                          </li>
-                        </ul>
-                      </div>
-
-                      <hr class="my-3">
-                      <div class="category-section mb-4">
-                        <h6 class="category-title mb-3">
-                          🐛 Bug Fix
-                        </h6>
-                        <ul class="list-unstyled ms-3">
-                          <li class="mb-2">
-                            <i class="fas fa-check-circle text-success me-2"></i>
-                            Fixed retry logic
-                          </li>
-                          <li class="mb-2">
-                            <i class="fas fa-check-circle text-success me-2"></i>
-                            Resolved encoding issues
-                          </li>
-                        </ul>
-                      </div>
-
-                      <hr class="my-3">
-                      <div class="category-section mb-4">
-                        <h6 class="category-title mb-3">
-                          🔥 Hotfix
-                        </h6>
-                        <ul class="list-unstyled ms-3">
-                          <li class="mb-2">
-                            <i class="fas fa-check-circle text-success me-2"></i>
-                            Emergency patch for high-priority delivery bug
-                          </li>
-                        </ul>
-                      </div>
-
-                      <hr class="my-3">
-                      <div class="category-section mb-4">
-                        <h6 class="category-title mb-3">
-                          ⚙️ Chore
-                        </h6>
-                        <ul class="list-unstyled ms-3">
-                          <li class="mb-2">
-                            <i class="fas fa-check-circle text-success me-2"></i>
-                            Codebase cleanup
-                          </li>
-                          <li class="mb-2">
-                            <i class="fas fa-check-circle text-success me-2"></i>
-                            Updated dependencies
-                          </li>
-                        </ul>
-                      </div>
-
-                      <hr class="my-3">
-                      <div class="category-section mb-4">
-                        <h6 class="category-title mb-3">
-                          📚 Documentation Changes
-                        </h6>
-                        <ul class="list-unstyled ms-3">
-                          <li class="mb-2">
-                            <i class="fas fa-check-circle text-success me-2"></i>
-                            Updated API documentation
-                          </li>
-                          <li class="mb-2">
-                            <i class="fas fa-check-circle text-success me-2"></i>
-                            Added migration instructions
-                          </li>
-                        </ul>
-                      </div>
-
-                      <hr class="my-3">
-                      <div class="category-section mb-4">
-                        <h6 class="category-title mb-3">
-                          📚 Update &amp; Migration
-                        </h6>
-                        <ul class="list-unstyled ms-3">
-                          <li class="mb-2">
-                            <i class="fas fa-check-circle text-success me-2"></i>
-                            Step-by-step upgrade guide for v3.0.0
-                          </li>
-                        </ul>
-                      </div>
-
-                      <hr class="my-3">
-                      <div class="category-section mb-4">
-                        <h6 class="category-title mb-3">
-                          🚨 Security
-                        </h6>
-                        <ul class="list-unstyled ms-3">
-                          <li class="mb-2">
-                            <i class="fas fa-check-circle text-success me-2"></i>
-                            Patched CVE-2025-1234
-                          </li>
-                        </ul>
-                      </div>
-
-                      <hr class="my-3">
-                      <div class="category-section mb-4">
-                        <h6 class="category-title mb-3">
-                          💡 Upcoming Features
-                        </h6>
-                        <ul class="list-unstyled ms-3">
-                          <li class="mb-2">
-                            <span class="me-2">🎉</span>
-                            Patched CVE-2025-1234
-                          </li>
-                        </ul>
-                      </div>
-
-                    </div>
-                  </div>
-                </div>
-                <div class="accordion-item">
-                  <h2 class="accordion-header" id="heading101whatsapp">
-                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
-                      data-bs-target="#collapse101whatsapp" aria-expanded="false" aria-controls="collapse101whatsapp">
-                      <span class="me-2">📱</span>
-                      WHATSAPP
-                    </button>
-                  </h2>
-                  <div id="collapse101whatsapp" class="accordion-collapse collapse" aria-labelledby="heading101whatsapp">
-                    <div class="accordion-body">
-                      <div class="category-section mb-4">
-                        <h6 class="category-title mb-3">
-                          🚀 New Feature
-                        </h6>
-                        <ul class="list-unstyled ms-3">
-                          <li class="mb-2">
-                            <i class="fas fa-check-circle text-success me-2"></i>
-                            Initial WhatsApp integration support
-                          </li>
-                          <li class="mb-2">
-                            <i class="fas fa-check-circle text-success me-2"></i>
-                            Support for templates and sessions
-                          </li>
-                        </ul>
-                      </div>
-
-                      <hr class="my-3">
-                      <div class="category-section mb-4">
-                        <h6 class="category-title mb-3">
-                          💅 Enhancement
-                        </h6>
-                        <ul class="list-unstyled ms-3">
-                          <li class="mb-2">
-                            <i class="fas fa-check-circle text-success me-2"></i>
-                            Improved message tracking
-                          </li>
-                          <li class="mb-2">
-                            <i class="fas fa-check-circle text-success me-2"></i>
-                            Faster template approval sync
-                          </li>
-                        </ul>
-                      </div>
-
-                      <hr class="my-3">
-                      <div class="category-section mb-4">
-                        <h6 class="category-title mb-3">
-                          🐛 Bug Fix
-                        </h6>
-                        <ul class="list-unstyled ms-3">
-                          <li class="mb-2">
-                            <i class="fas fa-check-circle text-success me-2"></i>
-                            Fixed template rendering on older clients
-                          </li>
-                        </ul>
-                      </div>
-
-                      <hr class="my-3">
-                      <div class="category-section mb-4">
-                        <h6 class="category-title mb-3">
-                          🔥 Hotfix
-                        </h6>
-                        <ul class="list-unstyled ms-3">
-                          <li class="mb-2">
-                            <i class="fas fa-check-circle text-success me-2"></i>
-                            Temporary fix for API downtime
-                          </li>
-                        </ul>
-                      </div>
-
-                      <hr class="my-3">
-                      <div class="category-section mb-4">
-                        <h6 class="category-title mb-3">
-                          ⚙️ Chore
-                        </h6>
-                        <ul class="list-unstyled ms-3">
-                          <li class="mb-2">
-                            <i class="fas fa-check-circle text-success me-2"></i>
-                            Updated SDKs
-                          </li>
-                          <li class="mb-2">
-                            <i class="fas fa-check-circle text-success me-2"></i>
-                            Improved error logging
-                          </li>
-                        </ul>
-                      </div>
-
-                      <hr class="my-3">
-                      <div class="category-section mb-4">
-                        <h6 class="category-title mb-3">
-                          📚 Documentation Changes
-                        </h6>
-                        <ul class="list-unstyled ms-3">
-                          <li class="mb-2">
-                            <i class="fas fa-check-circle text-success me-2"></i>
-                            Added WhatsApp setup guide
-                          </li>
-                        </ul>
-                      </div>
-
-                      <hr class="my-3">
-                      <div class="category-section mb-4">
-                        <h6 class="category-title mb-3">
-                          📚 Update &amp; Migration
-                        </h6>
-                        <ul class="list-unstyled ms-3">
-                          <li class="mb-2">
-                            <i class="fas fa-check-circle text-success me-2"></i>
-                            Migration from WhatsApp v2.x to v3.x
-                          </li>
-                        </ul>
-                      </div>
-
-                      <hr class="my-3">
-                      <div class="category-section mb-4">
-                        <h6 class="category-title mb-3">
-                          🚨 Security
-                        </h6>
-                        <ul class="list-unstyled ms-3">
-                          <li class="mb-2">
-                            <i class="fas fa-check-circle text-success me-2"></i>
-                            Token expiration handling improved
-                          </li>
-                        </ul>
-                      </div>
-
-                      <hr class="my-3">
-                      <div class="category-section mb-4">
-                        <h6 class="category-title mb-3">
-                          💡 Upcoming Features
-                        </h6>
-                        <ul class="list-unstyled ms-3">
-                          <li class="mb-2">
-                            <span class="me-2">🎉</span>
-                            Patched CVE-2025-1234
-                          </li>
-                        </ul>
-                      </div>
-
-                    </div>
-                  </div>
-                </div>
+              <!-- 💅 Enhancement -->
+              <div class="category-section mb-4">
+                <h6 class="category-title mb-3">💅 Enhancement</h6>
+                <ul class="list-unstyled ms-3">
+                  <li class="mb-2">
+                    <i class="fas fa-check-circle text-success me-2"></i>
+                    Improved delivery performance
+                  </li>
+                  <li class="mb-2">
+                    <i class="fas fa-check-circle text-success me-2"></i>
+                    Optimized latency for SMS traffic
+                  </li>
+                </ul>
               </div>
+
+              <hr>
+
+              <!-- 🐛 Bug Fix -->
+              <div class="category-section mb-4">
+                <h6 class="category-title mb-3">🐛 Bug Fix</h6>
+                <ul class="list-unstyled ms-3">
+                  <li class="mb-2">
+                    <i class="fas fa-check-circle text-success me-2"></i>
+                    Fixed retry logic
+                  </li>
+                  <li class="mb-2">
+                    <i class="fas fa-check-circle text-success me-2"></i>
+                    Resolved encoding issues
+                  </li>
+                </ul>
+              </div>
+
+              <hr>
+
+              <!-- 🔥 Hotfix -->
+              <div class="category-section mb-4">
+                <h6 class="category-title mb-3">🔥 Hotfix</h6>
+                <ul class="list-unstyled ms-3">
+                  <li class="mb-2">
+                    <i class="fas fa-check-circle text-success me-2"></i>
+                    Emergency patch for high-priority delivery bug
+                  </li>
+                </ul>
+              </div>
+
+              <hr>
+
+              <!-- ⚙️ Chore -->
+              <div class="category-section mb-4">
+                <h6 class="category-title mb-3">⚙️ Chore</h6>
+                <ul class="list-unstyled ms-3">
+                  <li class="mb-2">
+                    <i class="fas fa-check-circle text-success me-2"></i>
+                    Codebase cleanup
+                  </li>
+                  <li class="mb-2">
+                    <i class="fas fa-check-circle text-success me-2"></i>
+                    Updated dependencies
+                  </li>
+                </ul>
+              </div>
+
+              <hr>
+
+              <!-- 📚 Documentation -->
+              <div class="category-section mb-4">
+                <h6 class="category-title mb-3">📚 Documentation Changes</h6>
+                <ul class="list-unstyled ms-3">
+                  <li class="mb-2">
+                    <i class="fas fa-check-circle text-success me-2"></i>
+                    Updated API documentation
+                  </li>
+                  <li class="mb-2">
+                    <i class="fas fa-check-circle text-success me-2"></i>
+                    Added migration instructions
+                  </li>
+                </ul>
+              </div>
+
+              <hr>
+
+              <!-- 🚨 Security -->
+              <div class="category-section mb-4">
+                <h6 class="category-title mb-3">🚨 Security</h6>
+                <ul class="list-unstyled ms-3">
+                  <li class="mb-2">
+                    <i class="fas fa-check-circle text-success me-2"></i>
+                    Patched CVE-2025-1234
+                  </li>
+                </ul>
+              </div>
+
             </div>
           </div>
-          <div id="changeLog100" class="card mb-4 version-card">
-            <div class="card-header bg-light d-flex justify-content-between align-items-center">
-              <div>
-                <strong class="h5 mb-0 text-primary">v1.0.0</strong>
-              </div>
-              <em class="text-muted">December 31, 2025</em>
-            </div>
-
-            <div class="card-body">
-              <!-- Accordion for modules -->
-              <div class="accordion" id="accordion100">
-                <div class="accordion-item">
-                  <h2 class="accordion-header" id="heading100sms">
-                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
-                      data-bs-target="#collapse100sms" aria-expanded="false" aria-controls="collapse100sms">
-                      <span class="me-2">💬</span>
-                      SMS
-                    </button>
-                  </h2>
-                  <div id="collapse100sms" class="accordion-collapse collapse show" aria-labelledby="heading100sms">
-                    <div class="accordion-body">
-                      <div class="category-section mb-4">
-                        <h6 class="category-title mb-3">
-                          🚀 New Feature
-                        </h6>
-                        <ul class="list-unstyled ms-3">
-                          <li class="mb-2">
-                            <i class="fas fa-check-circle text-success me-2"></i>
-                            Improved delivery performance
-                          </li>
-                          <li class="mb-2">
-                            <i class="fas fa-check-circle text-success me-2"></i>
-                            Initial release of SMS API
-                          </li>
-                        </ul>
-                      </div>
-
-                      <hr class="my-3">
-                      <div class="category-section mb-4">
-                        <h6 class="category-title mb-3">
-                          💅 Enhancement
-                        </h6>
-                        <ul class="list-unstyled ms-3">
-                          <li class="mb-2">
-                            <i class="fas fa-check-circle text-success me-2"></i>
-                            Improved delivery performance
-                          </li>
-                          <li class="mb-2">
-                            <i class="fas fa-check-circle text-success me-2"></i>
-                            Optimized latency for SMS traffic
-                          </li>
-                        </ul>
-                      </div>
-
-                      <hr class="my-3">
-                      <div class="category-section mb-4">
-                        <h6 class="category-title mb-3">
-                          🐛 Bug Fix
-                        </h6>
-                        <ul class="list-unstyled ms-3">
-                          <li class="mb-2">
-                            <i class="fas fa-check-circle text-success me-2"></i>
-                            Fixed retry logic
-                          </li>
-                          <li class="mb-2">
-                            <i class="fas fa-check-circle text-success me-2"></i>
-                            Resolved encoding issues
-                          </li>
-                        </ul>
-                      </div>
-
-                      <hr class="my-3">
-                      <div class="category-section mb-4">
-                        <h6 class="category-title mb-3">
-                          🔥 Hotfix
-                        </h6>
-                        <ul class="list-unstyled ms-3">
-                          <li class="mb-2">
-                            <i class="fas fa-check-circle text-success me-2"></i>
-                            Emergency patch for high-priority delivery bug
-                          </li>
-                        </ul>
-                      </div>
-
-                      <hr class="my-3">
-                      <div class="category-section mb-4">
-                        <h6 class="category-title mb-3">
-                          ⚙️ Chore
-                        </h6>
-                        <ul class="list-unstyled ms-3">
-                          <li class="mb-2">
-                            <i class="fas fa-check-circle text-success me-2"></i>
-                            Codebase cleanup
-                          </li>
-                          <li class="mb-2">
-                            <i class="fas fa-check-circle text-success me-2"></i>
-                            Updated dependencies
-                          </li>
-                        </ul>
-                      </div>
-
-                      <hr class="my-3">
-                      <div class="category-section mb-4">
-                        <h6 class="category-title mb-3">
-                          📚 Documentation Changes
-                        </h6>
-                        <ul class="list-unstyled ms-3">
-                          <li class="mb-2">
-                            <i class="fas fa-check-circle text-success me-2"></i>
-                            Updated API documentation
-                          </li>
-                          <li class="mb-2">
-                            <i class="fas fa-check-circle text-success me-2"></i>
-                            Added migration instructions
-                          </li>
-                        </ul>
-                      </div>
-
-                      <hr class="my-3">
-                      <div class="category-section mb-4">
-                        <h6 class="category-title mb-3">
-                          📚 Update &amp; Migration
-                        </h6>
-                        <ul class="list-unstyled ms-3">
-                          <li class="mb-2">
-                            <i class="fas fa-check-circle text-success me-2"></i>
-                            Step-by-step upgrade guide for v3.0.0
-                          </li>
-                        </ul>
-                      </div>
-
-                      <hr class="my-3">
-                      <div class="category-section mb-4">
-                        <h6 class="category-title mb-3">
-                          🚨 Security
-                        </h6>
-                        <ul class="list-unstyled ms-3">
-                          <li class="mb-2">
-                            <i class="fas fa-check-circle text-success me-2"></i>
-                            Patched CVE-2025-1234
-                          </li>
-                        </ul>
-                      </div>
-
-                      <hr class="my-3">
-                      <div class="category-section mb-4">
-                        <h6 class="category-title mb-3">
-                          💡 Upcoming Features
-                        </h6>
-                        <ul class="list-unstyled ms-3">
-                          <li class="mb-2">
-                            <span class="me-2">🎉</span>
-                            Patched CVE-2025-1234
-                          </li>
-                        </ul>
-                      </div>
-
-                    </div>
-                  </div>
-                </div>
-                <div class="accordion-item">
-                  <h2 class="accordion-header" id="heading100whatsapp">
-                    <button class="accordion-button" type="button" data-bs-toggle="collapse"
-                      data-bs-target="#collapse100whatsapp" aria-expanded="false" aria-controls="collapse100whatsapp">
-                      <span class="me-2">📱</span>
-                      WHATSAPP
-                    </button>
-                  </h2>
-                  <div id="collapse100whatsapp" class="accordion-collapse collapse show"
-                    aria-labelledby="heading100whatsapp">
-                    <div class="accordion-body">
-                      <div class="category-section mb-4">
-                        <h6 class="category-title mb-3">
-                          🚀 New Feature
-                        </h6>
-                        <ul class="list-unstyled ms-3">
-                          <li class="mb-2">
-                            <i class="fas fa-check-circle text-success me-2"></i>
-                            Initial WhatsApp integration support
-                          </li>
-                          <li class="mb-2">
-                            <i class="fas fa-check-circle text-success me-2"></i>
-                            Support for templates and sessions
-                          </li>
-                        </ul>
-                      </div>
-
-                      <hr class="my-3">
-                      <div class="category-section mb-4">
-                        <h6 class="category-title mb-3">
-                          💅 Enhancement
-                        </h6>
-                        <ul class="list-unstyled ms-3">
-                          <li class="mb-2">
-                            <i class="fas fa-check-circle text-success me-2"></i>
-                            Improved message tracking
-                          </li>
-                          <li class="mb-2">
-                            <i class="fas fa-check-circle text-success me-2"></i>
-                            Faster template approval sync
-                          </li>
-                        </ul>
-                      </div>
-
-                      <hr class="my-3">
-                      <div class="category-section mb-4">
-                        <h6 class="category-title mb-3">
-                          🐛 Bug Fix
-                        </h6>
-                        <ul class="list-unstyled ms-3">
-                          <li class="mb-2">
-                            <i class="fas fa-check-circle text-success me-2"></i>
-                            Fixed template rendering on older clients
-                          </li>
-                        </ul>
-                      </div>
-
-                      <hr class="my-3">
-                      <div class="category-section mb-4">
-                        <h6 class="category-title mb-3">
-                          🔥 Hotfix
-                        </h6>
-                        <ul class="list-unstyled ms-3">
-                          <li class="mb-2">
-                            <i class="fas fa-check-circle text-success me-2"></i>
-                            Temporary fix for API downtime
-                          </li>
-                        </ul>
-                      </div>
-
-                      <hr class="my-3">
-                      <div class="category-section mb-4">
-                        <h6 class="category-title mb-3">
-                          ⚙️ Chore
-                        </h6>
-                        <ul class="list-unstyled ms-3">
-                          <li class="mb-2">
-                            <i class="fas fa-check-circle text-success me-2"></i>
-                            Updated SDKs
-                          </li>
-                          <li class="mb-2">
-                            <i class="fas fa-check-circle text-success me-2"></i>
-                            Improved error logging
-                          </li>
-                        </ul>
-                      </div>
-
-                      <hr class="my-3">
-                      <div class="category-section mb-4">
-                        <h6 class="category-title mb-3">
-                          📚 Documentation Changes
-                        </h6>
-                        <ul class="list-unstyled ms-3">
-                          <li class="mb-2">
-                            <i class="fas fa-check-circle text-success me-2"></i>
-                            Added WhatsApp setup guide
-                          </li>
-                        </ul>
-                      </div>
-
-                      <hr class="my-3">
-                      <div class="category-section mb-4">
-                        <h6 class="category-title mb-3">
-                          📚 Update &amp; Migration
-                        </h6>
-                        <ul class="list-unstyled ms-3">
-                          <li class="mb-2">
-                            <i class="fas fa-check-circle text-success me-2"></i>
-                            Migration from WhatsApp v2.x to v3.x
-                          </li>
-                        </ul>
-                      </div>
-
-                      <hr class="my-3">
-                      <div class="category-section mb-4">
-                        <h6 class="category-title mb-3">
-                          🚨 Security
-                        </h6>
-                        <ul class="list-unstyled ms-3">
-                          <li class="mb-2">
-                            <i class="fas fa-check-circle text-success me-2"></i>
-                            Token expiration handling improved
-                          </li>
-                        </ul>
-                      </div>
-
-                      <hr class="my-3">
-                      <div class="category-section mb-4">
-                        <h6 class="category-title mb-3">
-                          💡 Upcoming Features
-                        </h6>
-                        <ul class="list-unstyled ms-3">
-                          <li class="mb-2">
-                            <span class="me-2">🎉</span>
-                            Patched CVE-2025-1234
-                          </li>
-                        </ul>
-                      </div>
-
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <!-- Fallback message if no API data -->
         </div>
+
+        <!-- ===== WHATSAPP ===== -->
+        <div class="accordion-item">
+          <h2 class="accordion-header" id="heading100whatsapp">
+            <button class="accordion-button collapsed"
+                    type="button"
+                    data-bs-toggle="collapse"
+                    data-bs-target="#collapse100whatsapp"
+                    aria-expanded="false"
+                    aria-controls="collapse100whatsapp">
+              <span class="me-2">📱</span> WHATSAPP
+            </button>
+          </h2>
+
+          <div id="collapse100whatsapp"
+               class="accordion-collapse collapse"
+               aria-labelledby="heading100whatsapp"
+               data-bs-parent="#accordion100">
+
+            <div class="accordion-body">
+
+              <div class="category-section mb-4">
+                <h6 class="category-title mb-3">🚀 New Feature</h6>
+                <ul class="list-unstyled ms-3">
+                  <li class="mb-2">
+                    <i class="fas fa-check-circle text-success me-2"></i>
+                    Initial WhatsApp integration support
+                  </li>
+                  <li class="mb-2">
+                    <i class="fas fa-check-circle text-success me-2"></i>
+                    Support for templates and sessions
+                  </li>
+                </ul>
+              </div>
+
+              <hr>
+
+              <div class="category-section mb-4">
+                <h6 class="category-title mb-3">💅 Enhancement</h6>
+                <ul class="list-unstyled ms-3">
+                  <li class="mb-2">
+                    <i class="fas fa-check-circle text-success me-2"></i>
+                    Improved message tracking
+                  </li>
+                  <li class="mb-2">
+                    <i class="fas fa-check-circle text-success me-2"></i>
+                    Faster template approval sync
+                  </li>
+                </ul>
+              </div>
+
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+</div>
+
 
 
         <div id="sms-section">
@@ -1200,358 +791,173 @@
                 </div>
 
                 <!-- FAQ Section -->
-                 <div class="pt-4">
-                  <div class="card mb-4 version-card">
-                    <div class="card-header bg-light d-flex justify-content-between align-items-center">
-                      <div>
-                        <strong class="h5 mb-0 text-primary">
-                          <i class="fas fa-file-alt"></i> Frequently Asked Questions
-                        </strong>
-                      </div>
-                    </div>
+                <div class="pt-4">
+                    <div class="card mb-4 version-card">
+                        <!-- ===== OUTER ACCORDION HEADER (FAQ) ===== -->
+                        <div class="accordion" id="faqMainAccordion">
+                            <div class="accordion-item">
+                                <h2 class="accordion-header" id="faqMainHeading">
+                                <button class="accordion-button" type="button"
+                                        data-bs-toggle="collapse"
+                                        data-bs-target="#faqMainCollapse"
+                                        aria-expanded="true"
+                                        aria-controls="faqMainCollapse">
+                                    <i class="fas fa-file-alt me-2"></i> Frequently Asked Questions
+                                </button>
+                                </h2>
 
-                    <div class="card-body">
-                      <!-- Accordion for modules -->
-                      <div class="accordion" id="accordion101">
-                        <div class="accordion-item">
-                          <h2 class="accordion-header" id="faq-topic-1">
-                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapse101sms" aria-expanded="false" aria-controls="collapse101sms">
-                              <span class="me-2">💬</span>
-                              SMS
-                            </button>
-                          </h2>
-                          <div id="collapse101sms" class="accordion-collapse collapse show" aria-labelledby="heading101sms">
-                            <div class="accordion-body">
+                                <!-- ===== OUTER ACCORDION BODY ===== -->
+                                <div id="faqMainCollapse"
+                                    class="accordion-collapse collapse show"
+                                    aria-labelledby="faqMainHeading"
+                                    data-bs-parent="#faqMainAccordion">
 
-                              <!-- 🔹 SMS Routing -->
-                              <div class="mb-4">
-                                <h5 class="fw-bold text-primary mb-3">SMS Routing</h5>
+                                <div class="accordion-body p-0">
 
-                                <div class="mb-3">
-                                  <h6 class="fw-semibold">
-                                    Q1. What should be configured for successful SMS routing?
-                                  </h6>
-                                
-                                  <ul class="list-unstyled ms-3">
-                                    <li class="mb-2">
-                                      <i class="fas fa-check-circle text-success me-2"></i>
-                                      Routing condition must evaluate to <strong>True</strong>
-                                    </li>
-                                    <li class="mb-2">
-                                      <i class="fas fa-check-circle text-success me-2"></i>
-                                      Vendor product must have positive weight
-                                    </li>
-                                  </ul>
-                                
-                                  <!-- ✅ Watch Video -->
-                                  <div class="ms-3 mt-2">
-                                    <a href="https://www.youtube.com/watch?v=VIDEO_ID"
-                                       target="_blank"
-                                       class="text-primary fw-semibold">
-                                      <i class="fas fa-play-circle me-1"></i> Watch Video
-                                    </a>
-                                  </div>
+                                    <!-- ===== INNER ACCORDION (SMS) ===== -->
+                                    <div class="accordion" id="accordion101">
+
+                                    <div class="accordion-item">
+                                        <h2 class="accordion-header" id="faq-topic-1">
+                                        <button class="accordion-button collapsed" type="button"
+                                                data-bs-toggle="collapse"
+                                                data-bs-target="#collapse101sms"
+                                                aria-expanded="false"
+                                                aria-controls="collapse101sms">
+                                            <span class="me-2">💬</span> SMS
+                                        </button>
+                                        </h2>
+
+                                        <div id="collapse101sms"
+                                            class="accordion-collapse collapse show"
+                                            aria-labelledby="faq-topic-1"
+                                            data-bs-parent="#accordion101">
+
+                                        <div class="accordion-body">
+
+                                            <!-- 🔹 SMS Routing -->
+                                            <div class="mb-4">
+                                            <h5 class="fw-bold text-primary mb-3">SMS Routing</h5>
+
+                                            <div class="mb-3">
+                                                <h6 class="fw-semibold">
+                                                Q1. What should be configured for successful SMS routing?
+                                                </h6>
+                                                <ul class="list-unstyled ms-3">
+                                                <li class="mb-2">
+                                                    <i class="fas fa-check-circle text-success me-2"></i>
+                                                    Routing condition must evaluate to <strong>True</strong>
+                                                </li>
+                                                <li class="mb-2">
+                                                    <i class="fas fa-check-circle text-success me-2"></i>
+                                                    Vendor product must have positive weight
+                                                </li>
+                                                </ul>
+                                                <div class="ms-3 mt-2">
+                                                <a href="https://www.youtube.com/watch?v=VIDEO_ID"
+                                                    target="_blank"
+                                                    class="text-primary fw-semibold">
+                                                    <i class="fas fa-play-circle me-1"></i> Watch Video
+                                                </a>
+                                                </div>
+                                            </div>
+
+                                            <div class="mb-3">
+                                                <h6 class="fw-semibold">
+                                                Q2. Why are messages failing intermittently?
+                                                </h6>
+                                                <ul class="list-unstyled ms-3">
+                                                <li class="mb-2">
+                                                    <i class="fas fa-check-circle text-success me-2"></i>
+                                                    Supplier TPS limits exceeded
+                                                </li>
+                                                <li class="mb-2">
+                                                    <i class="fas fa-check-circle text-success me-2"></i>
+                                                    SMPP bind reconnecting frequently
+                                                </li>
+                                                </ul>
+                                                <div class="ms-3 mt-2">
+                                                <a href="https://www.youtube.com/watch?v=VIDEO_ID"
+                                                    target="_blank"
+                                                    class="text-primary fw-semibold">
+                                                    <i class="fas fa-play-circle me-1"></i> Watch Video
+                                                </a>
+                                                </div>
+                                            </div>
+                                            </div>
+
+                                            <hr>
+
+                                            <!-- 🔹 SMS Rates -->
+                                            <div class="mb-4">
+                                            <h5 class="fw-bold text-primary mb-3">SMS Rates</h5>
+
+                                            <div class="mb-3">
+                                                <h6 class="fw-semibold">Q1. How are SMS rates calculated?</h6>
+                                                <ul class="list-unstyled ms-3">
+                                                <li class="mb-2">
+                                                    <i class="fas fa-check-circle text-success me-2"></i>
+                                                    Rates are based on destination MCC/MNC
+                                                </li>
+                                                <li class="mb-2">
+                                                    <i class="fas fa-check-circle text-success me-2"></i>
+                                                    Vendor cost + margin configuration
+                                                </li>
+                                                </ul>
+                                            </div>
+
+                                            <div class="mb-3">
+                                                <h6 class="fw-semibold">Q2. Why do rates differ between vendors?</h6>
+                                                <ul class="list-unstyled ms-3">
+                                                <li class="mb-2">
+                                                    <i class="fas fa-check-circle text-success me-2"></i>
+                                                    Different quality routes and termination partners
+                                                </li>
+                                                </ul>
+                                            </div>
+                                            </div>
+
+                                            <hr>
+
+                                            <!-- 🔹 SMS Billing -->
+                                            <div class="mb-4">
+                                            <h5 class="fw-bold text-primary mb-3">SMS Billing</h5>
+
+                                            <div class="mb-3">
+                                                <h6 class="fw-semibold">Q1. When is billing triggered?</h6>
+                                                <ul class="list-unstyled ms-3">
+                                                <li class="mb-2">
+                                                    <i class="fas fa-check-circle text-success me-2"></i>
+                                                    Billing occurs on submit or DLR (configurable)
+                                                </li>
+                                                </ul>
+                                            </div>
+
+                                            <div class="mb-3">
+                                                <h6 class="fw-semibold">Q2. Are failed messages billed?</h6>
+                                                <ul class="list-unstyled ms-3">
+                                                <li class="mb-2">
+                                                    <i class="fas fa-check-circle text-success me-2"></i>
+                                                    Depends on DLR mapping and billing rules
+                                                </li>
+                                                </ul>
+                                            </div>
+                                            </div>
+
+                                        </div>
+                                        </div>
+                                    </div>
+
+                                    </div>
+                                    <!-- ===== END INNER ACCORDION ===== -->
+
                                 </div>
-
-                                <div class="mb-3">
-                                  <h6 class="fw-semibold">
-                                    Q2. Why are messages failing intermittently?
-                                  </h6>
-                                  <ul class="list-unstyled ms-3">
-                                    <li class="mb-2">
-                                      <i class="fas fa-check-circle text-success me-2"></i>
-                                      Supplier TPS limits exceeded
-                                    </li>
-                                    <li class="mb-2">
-                                      <i class="fas fa-check-circle text-success me-2"></i>
-                                      SMPP bind reconnecting frequently
-                                    </li>
-                                  </ul>
-                                  <!-- ✅ Watch Video -->
-                                  <div class="ms-3 mt-2">
-                                    <a href="https://www.youtube.com/watch?v=VIDEO_ID"
-                                       target="_blank"
-                                       class="text-primary fw-semibold">
-                                      <i class="fas fa-play-circle me-1"></i> Watch Video
-                                    </a>
-                                  </div>
                                 </div>
-                              </div>
-
-                              <hr>
-
-                              <!-- 🔹 SMS Rates -->
-                              <div class="mb-4">
-                                <h5 class="fw-bold text-primary mb-3">SMS Rates</h5>
-
-                                <div class="mb-3">
-                                  <h6 class="fw-semibold">
-                                    Q1. How are SMS rates calculated?
-                                  </h6>
-                                  <ul class="list-unstyled ms-3">
-                                    <li class="mb-2">
-                                      <i class="fas fa-check-circle text-success me-2"></i>
-                                      Rates are based on destination MCC/MNC
-                                    </li>
-                                    <li class="mb-2">
-                                      <i class="fas fa-check-circle text-success me-2"></i>
-                                      Vendor cost + margin configuration
-                                    </li>
-                                  </ul>
-                                  <!-- ✅ Watch Video -->
-                                  <div class="ms-3 mt-2">
-                                    <a href="https://www.youtube.com/watch?v=VIDEO_ID"
-                                       target="_blank"
-                                       class="text-primary fw-semibold">
-                                      <i class="fas fa-play-circle me-1"></i> Watch Video
-                                    </a>
-                                  </div>
-                                </div>
-
-                                <div class="mb-3">
-                                  <h6 class="fw-semibold">
-                                    Q2. Why do rates differ between vendors?
-                                  </h6>
-                                  <ul class="list-unstyled ms-3">
-                                    <li class="mb-2">
-                                      <i class="fas fa-check-circle text-success me-2"></i>
-                                      Different quality routes and termination partners
-                                    </li>
-                                  </ul>
-                                  <!-- ✅ Watch Video -->
-                                  <div class="ms-3 mt-2">
-                                    <a href="https://www.youtube.com/watch?v=VIDEO_ID"
-                                       target="_blank"
-                                       class="text-primary fw-semibold">
-                                      <i class="fas fa-play-circle me-1"></i> Watch Video
-                                    </a>
-                                  </div>
-                                </div>
-                              </div>
-
-                              <hr>
-
-                              <!-- 🔹 SMS Billing -->
-                              <div class="mb-4">
-                                <h5 class="fw-bold text-primary mb-3">SMS Billing</h5>
-
-                                <div class="mb-3">
-                                  <h6 class="fw-semibold">
-                                    Q1. When is billing triggered?
-                                  </h6>
-                                  <ul class="list-unstyled ms-3">
-                                    <li class="mb-2">
-                                      <i class="fas fa-check-circle text-success me-2"></i>
-                                      Billing occurs on submit or DLR (configurable)
-                                    </li>
-                                  </ul>
-                                  <!-- ✅ Watch Video -->
-                                  <div class="ms-3 mt-2">
-                                    <a href="https://www.youtube.com/watch?v=VIDEO_ID"
-                                       target="_blank"
-                                       class="text-primary fw-semibold">
-                                      <i class="fas fa-play-circle me-1"></i> Watch Video
-                                    </a>
-                                  </div>
-                                </div>
-
-                                <div class="mb-3">
-                                  <h6 class="fw-semibold">
-                                    Q2. Are failed messages billed?
-                                  </h6>
-                                  <ul class="list-unstyled ms-3">
-                                    <li class="mb-2">
-                                      <i class="fas fa-check-circle text-success me-2"></i>
-                                      Depends on DLR mapping and billing rules
-                                    </li>
-                                  </ul>
-                                  <!-- ✅ Watch Video -->
-                                  <div class="ms-3 mt-2">
-                                    <a href="https://www.youtube.com/watch?v=VIDEO_ID"
-                                       target="_blank"
-                                       class="text-primary fw-semibold">
-                                      <i class="fas fa-play-circle me-1"></i> Watch Video
-                                    </a>
-                                  </div>
-                                </div>
-                              </div>
                             </div>
-                          </div>
                         </div>
-                        <!-- <div class="accordion-item">
-                          <h2 class="accordion-header" id="faq-topic-2">
-                            <button class="accordion-button"
-                                    type="button"
-                                    data-bs-toggle="collapse"
-                                    data-bs-target="#collapse101whatsapp"
-                                    aria-expanded="true"
-                                    aria-controls="collapse101whatsapp">
-                              <span class="me-2">📱</span>
-                              WHATSAPP
-                            </button>
-                          </h2>
-
-                          <div id="collapse101whatsapp"
-                              class="accordion-collapse collapse show"
-                              aria-labelledby="faq-topic-2">
-
-                            <div class="accordion-body">
-                              <div class="mb-4">
-                                <h5 class="fw-bold text-primary mb-3">WhatsApp Routing</h5>
-
-                                <div class="mb-3">
-                                  <h6 class="fw-semibold">
-                                    Q1. What should be configured for successful routing?
-                                  </h6>
-                                  <ul class="list-unstyled ms-3">
-                                    <li class="mb-2">
-                                      <i class="fas fa-check-circle text-success me-2"></i>
-                                      WhatsApp Business API approved phone number
-                                    </li>
-                                    <li class="mb-2">
-                                      <i class="fas fa-check-circle text-success me-2"></i>
-                                      Valid access token configured in the system
-                                    </li>
-                                  </ul>
-                                  <div class="ms-3 mt-2">
-                                    <a href="https://www.youtube.com/watch?v=VIDEO_ID"
-                                       target="_blank"
-                                       class="text-primary fw-semibold">
-                                      <i class="fas fa-play-circle me-1"></i> Watch Video
-                                    </a>
-                                  </div>
-                                </div>
-
-                                <div class="mb-3">
-                                  <h6 class="fw-semibold">
-                                    Q2. Why are messages not routed to Meta?
-                                  </h6>
-                                  <ul class="list-unstyled ms-3">
-                                    <li class="mb-2">
-                                      <i class="fas fa-check-circle text-success me-2"></i>
-                                      Webhook callback URL not reachable
-                                    </li>
-                                    <li class="mb-2">
-                                      <i class="fas fa-check-circle text-success me-2"></i>
-                                      Invalid or expired API token
-                                    </li>
-                                  </ul>
-                                  <div class="ms-3 mt-2">
-                                    <a href="https://www.youtube.com/watch?v=VIDEO_ID"
-                                       target="_blank"
-                                       class="text-primary fw-semibold">
-                                      <i class="fas fa-play-circle me-1"></i> Watch Video
-                                    </a>
-                                  </div>
-                                </div>
-                              </div>
-
-                              <hr>
-
-                              <div class="mb-4">
-                                <h5 class="fw-bold text-primary mb-3">WhatsApp Templates</h5>
-
-                                <div class="mb-3">
-                                  <h6 class="fw-semibold">
-                                    Q1. How does template approval work?
-                                  </h6>
-                                  <ul class="list-unstyled ms-3">
-                                    <li class="mb-2">
-                                      <i class="fas fa-check-circle text-success me-2"></i>
-                                      Templates must comply with Meta content policies
-                                    </li>
-                                    <li class="mb-2">
-                                      <i class="fas fa-check-circle text-success me-2"></i>
-                                      Approval time ranges from minutes to a few hours
-                                    </li>
-                                  </ul>
-                                  <div class="ms-3 mt-2">
-                                    <a href="https://www.youtube.com/watch?v=VIDEO_ID"
-                                       target="_blank"
-                                       class="text-primary fw-semibold">
-                                      <i class="fas fa-play-circle me-1"></i> Watch Video
-                                    </a>
-                                  </div>
-                                </div>
-
-                                <div class="mb-3">
-                                  <h6 class="fw-semibold">
-                                    Q2. Why was my template rejected?
-                                  </h6>
-                                  <ul class="list-unstyled ms-3">
-                                    <li class="mb-2">
-                                      <i class="fas fa-check-circle text-success me-2"></i>
-                                      Promotional or misleading language detected
-                                    </li>
-                                    <li class="mb-2">
-                                      <i class="fas fa-check-circle text-success me-2"></i>
-                                      Template violates WhatsApp commerce policies
-                                    </li>
-                                  </ul>
-                                  <div class="ms-3 mt-2">
-                                    <a href="https://www.youtube.com/watch?v=VIDEO_ID"
-                                       target="_blank"
-                                       class="text-primary fw-semibold">
-                                      <i class="fas fa-play-circle me-1"></i> Watch Video
-                                    </a>
-                                  </div>
-                                </div>
-                              </div>
-
-                              <hr>
-
-                              <div class="mb-4">
-                                <h5 class="fw-bold text-primary mb-3">Delivery & Sessions</h5>
-
-                                <div class="mb-3">
-                                  <h6 class="fw-semibold">
-                                    Q1. Why are messages not being delivered?
-                                  </h6>
-                                  <ul class="list-unstyled ms-3">
-                                    <li class="mb-2">
-                                      <i class="fas fa-check-circle text-success me-2"></i>
-                                      Session window expired (24-hour rule)
-                                    </li>
-                                    <li class="mb-2">
-                                      <i class="fas fa-check-circle text-success me-2"></i>
-                                      User has blocked or reported the business
-                                    </li>
-                                  </ul>
-                                  <div class="ms-3 mt-2">
-                                    <a href="https://www.youtube.com/watch?v=VIDEO_ID"
-                                       target="_blank"
-                                       class="text-primary fw-semibold">
-                                      <i class="fas fa-play-circle me-1"></i> Watch Video
-                                    </a>
-                                  </div>
-                                </div>
-
-                                <div class="mb-3">
-                                  <h6 class="fw-semibold">
-                                    Q2. When can free-form messages be sent?
-                                  </h6>
-                                  <ul class="list-unstyled ms-3">
-                                    <li class="mb-2">
-                                      <i class="fas fa-check-circle text-success me-2"></i>
-                                      Only within an active 24-hour user-initiated session
-                                    </li>
-                                  </ul>
-                                  <div class="ms-3 mt-2">
-                                    <a href="https://www.youtube.com/watch?v=VIDEO_ID"
-                                       target="_blank"
-                                       class="text-primary fw-semibold">
-                                      <i class="fas fa-play-circle me-1"></i> Watch Video
-                                    </a>
-                                  </div>
-                                </div>
-                              </div>
-                            </div>
-                          </div>
-                        </div> -->
-                      </div>
                     </div>
-                  </div>
-                 </div>
+                </div>
+
 
                 <!-- Start logs section -->
                 <div id="startlog-section">
