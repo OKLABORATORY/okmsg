@@ -316,35 +316,83 @@ html {
     padding: 10px;
     font-size: 13px;
 }
-/* Watch Video button – right aligned & premium */
-.watch-video {
+
+#smsInnerAccordion .accordion-button {
+    font-size: 16px;          /* bada text */
+    font-weight: 700;         /* bold */
+    letter-spacing: 0.2px;
+
+    padding: 14px 18px;       /* thoda premium spacing */
+    background: #eef5ff;      /* subtle highlight */
+    color: #0d3b8a;
+}
+
+/* Active (opened) accordion title */
+#smsInnerAccordion .accordion-button:not(.collapsed) {
+    background: #0d6efd;
+    color: #ffffff;
+}
+
+/* Arrow icon (Bootstrap chevron) thoda bold feel */
+#smsInnerAccordion .accordion-button::after {
+    transform: scale(1.1);
+    font-weight: bold;
+}
+
+/* Section container ko thoda strong card feel */
+#smsInnerAccordion .accordion-item {
+    border-radius: 14px;
+    overflow: hidden;
+    margin-bottom: 16px;
+}
+
+/* ================= WATCH VIDEO CTA ================= */
+.watch-video-wrap {
+    display: flex;
+    justify-content: center;
+    margin-top: 14px;
+}
+
+.watch-video-btn {
     display: inline-flex;
     align-items: center;
-    gap: 6px;
+    gap: 8px;
 
-    padding: 6px 12px;
-    font-size: 0.85rem;
+    padding: 8px 16px;
+    font-size: 14px;
     font-weight: 600;
 
     color: #0d6efd;
     background: #eef5ff;
-    border-radius: 20px;
 
+    border-radius: 999px;
+    border: 1px solid #cfe2ff;
     text-decoration: none;
-    transition: all 0.2s ease;
+
+    transition: all 0.25s ease;
 }
 
-.watch-video:hover {
+.watch-video-btn i {
+    font-size: 16px;
+}
+
+/* Hover animation */
+.watch-video-btn:hover {
     background: #0d6efd;
     color: #ffffff;
-    box-shadow: 0 4px 10px rgba(13,110,253,0.25);
-    text-decoration: none;
+    box-shadow: 0 6px 16px rgba(13, 110, 253, 0.3);
+    transform: translateY(-1px);
 }
 
-/* right alignment */
-.watch-video-wrap {
-    display: flex;
-    justify-content: flex-end;
-    margin-top: 10px;
+/* Click feedback */
+.watch-video-btn:active {
+    transform: scale(0.96);
 }
-
+.watch-video-btn {
+    animation: pulse 2s infinite;
+}
+@keyframes pulse {
+    0% { box-shadow: 0 0 0 0 rgba(13,110,253,.4); }
+    70% { box-shadow: 0 0 0 8px rgba(13,110,253,0); }
+    100% { box-shadow: 0 0 0 0 rgba(13,110,253,0); }
+}
