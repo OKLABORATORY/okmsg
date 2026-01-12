@@ -207,3 +207,144 @@ html {
     background-color: rgba(255, 255, 255, 0.05) !important;
 
 }
+/* Section wrapper (Routing / Rates / Billing) */
+.sms-section {
+  background: #f9fafb;
+  border-radius: 12px;
+  padding: 18px 20px;
+  border-left: 5px solid #0d6efd;
+  margin-bottom: 24px;
+}
+
+/* Section heading */
+.sms-section-title {
+  font-size: 1.05rem;
+  font-weight: 700;
+  color: #0d6efd;
+  margin-bottom: 16px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+/* Question block */
+.sms-question {
+  background: #ffffff;
+  border-radius: 10px;
+  padding: 14px 16px;
+  box-shadow: 0 1px 4px rgba(0,0,0,0.05);
+  margin-bottom: 14px;
+}
+
+/* Question title */
+.sms-question h6 {
+  font-weight: 600;
+  font-size: 0.95rem;
+  margin-bottom: 10px;
+}
+
+/* Answer list */
+.sms-question ul {
+  margin-bottom: 0;
+}
+
+.sms-question li {
+  font-size: 0.9rem;
+  line-height: 1.6;
+}
+
+/* Watch video link */
+.sms-question a {
+  font-size: 0.85rem;
+  text-decoration: none;
+}
+
+/* Divider tweak */
+.accordion-body hr {
+  border-top: 1px dashed #e5e7eb;
+  margin: 28px 0;
+}
+/* ================= INNER (SMS) ACCORDION LOOK ================= */
+#accordion101 {
+    margin: 12px;                 /* thoda andar ghusao */
+    border-radius: 10px;
+    background: #f8fafc;          /* halka background */
+    border: 1px solid #e5e7eb;    /* subtle border */
+}
+
+/* inner accordion button thoda chhota */
+#accordion101 .accordion-button {
+    padding: 10px 14px;
+    font-size: 14px;
+    background-color: #f1f5f9;
+}
+
+/* outer accordion se visually separate */
+#accordion101 .accordion-item {
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+/* inner accordion body compact */
+#accordion101 .accordion-body {
+    padding: 14px;
+    font-size: 13.5px;
+}
+
+/* optional: emoji/icon thoda subtle */
+#accordion101 .accordion-button span {
+    font-size: 14px;
+}
+/* ================= FINAL NESTED ACCORDION FIX ================= */
+#accordion101 {
+    margin: 16px 24px;              /* clearly inset */
+    padding: 4px;
+    background: #f1f6ff;
+    border-radius: 12px;
+}
+
+/* SMS accordion header = clearly smaller */
+#accordion101 .accordion-button {
+    padding: 8px 12px;
+    font-size: 13px;
+    font-weight: 600;
+    background: #eaf2ff;
+}
+
+/* Body compact so nested feel aaye */
+#accordion101 .accordion-body {
+    padding: 10px;
+    font-size: 13px;
+}
+/* Watch Video button – right aligned & premium */
+.watch-video {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+
+    padding: 6px 12px;
+    font-size: 0.85rem;
+    font-weight: 600;
+
+    color: #0d6efd;
+    background: #eef5ff;
+    border-radius: 20px;
+
+    text-decoration: none;
+    transition: all 0.2s ease;
+}
+
+.watch-video:hover {
+    background: #0d6efd;
+    color: #ffffff;
+    box-shadow: 0 4px 10px rgba(13,110,253,0.25);
+    text-decoration: none;
+}
+
+/* right alignment */
+.watch-video-wrap {
+    display: flex;
+    justify-content: flex-end;
+    margin-top: 10px;
+}
+

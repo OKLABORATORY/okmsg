@@ -766,23 +766,23 @@
                                 <!-- Headers Tab -->
                                 <div class="tab-pane fade" id="headers" role="tabpanel">
                                   <pre class="bg-dark text-light p-3 rounded">
-    No special headers required
+                                    No special headers required
                                   </pre>
                                 </div>
 
                                 <!-- Response Tab -->
                                 <div class="tab-pane fade" id="response" role="tabpanel">
                                   <pre class="bg-dark text-success p-3 rounded">
-    [
-        [
-            {
-                "destination": "+917999452711",
-                "message_id": "747d4af1-7f01-4433-8ff1-85adbaeade84",
-                "segment_count": 1,
-                "chnl": "H"
-            }
-        ]
-    ]
+                                      [
+                                          [
+                                              {   
+                                                  "destination": "+917999452711",
+                                                  "message_id": "747d4af1-7f01-4433-8ff1-85adbaeade84",
+                                                  "segment_count": 1,
+                                                  "chnl": "H"
+                                              }
+                                          ]
+                                      ]
                                   </pre>
                                 </div>
                             </div>
@@ -791,172 +791,345 @@
                 </div>
 
                 <!-- FAQ Section -->
-                <div class="pt-4">
-                    <div class="card mb-4 version-card">
-                        <!-- ===== OUTER ACCORDION HEADER (FAQ) ===== -->
-                        <div class="accordion" id="faqMainAccordion">
-                            <div class="accordion-item">
-                                <h2 class="accordion-header" id="faqMainHeading">
-                                <button class="accordion-button" type="button"
-                                        data-bs-toggle="collapse"
-                                        data-bs-target="#faqMainCollapse"
-                                        aria-expanded="true"
-                                        aria-controls="faqMainCollapse">
-                                    <i class="fas fa-file-alt me-2"></i> Frequently Asked Questions
+              <div class="pt-4">
+                <div class="card mb-4 version-card">
+
+                    <!-- OUTER FAQ ACCORDION -->
+                    <div class="accordion" id="faqMainAccordion">
+                        <div class="accordion-item">
+
+                            <h2 class="accordion-header" id="faqMainHeading">
+                                <button
+                                    class="accordion-button"
+                                    type="button"
+                                    data-bs-toggle="collapse"
+                                    data-bs-target="#faqMainCollapse"
+                                    aria-expanded="true"
+                                >
+                                    <i class="fas fa-file-alt me-2"></i>
+                                    Frequently Asked Questions
                                 </button>
-                                </h2>
+                            </h2>
 
-                                <!-- ===== OUTER ACCORDION BODY ===== -->
-                                <div id="faqMainCollapse"
-                                    class="accordion-collapse collapse show"
-                                    aria-labelledby="faqMainHeading"
-                                    data-bs-parent="#faqMainAccordion">
-
+                            <div
+                                id="faqMainCollapse"
+                                class="accordion-collapse collapse show"
+                                data-bs-parent="#faqMainAccordion"
+                            >
                                 <div class="accordion-body p-0">
 
-                                    <!-- ===== INNER ACCORDION (SMS) ===== -->
+                                    <!-- INNER SMS ACCORDION -->
                                     <div class="accordion" id="accordion101">
+                                        <div class="accordion-item">
 
-                                    <div class="accordion-item">
-                                        <h2 class="accordion-header" id="faq-topic-1">
-                                        <button class="accordion-button collapsed" type="button"
-                                                data-bs-toggle="collapse"
-                                                data-bs-target="#collapse101sms"
-                                                aria-expanded="false"
-                                                aria-controls="collapse101sms">
-                                            <span class="me-2">💬</span> SMS
-                                        </button>
-                                        </h2>
+                                            <h2 class="accordion-header" id="faq-topic-1">
+                                                <button
+                                                    class="accordion-button collapsed"
+                                                    type="button"
+                                                    data-bs-toggle="collapse"
+                                                    data-bs-target="#collapse101sms"
+                                                >
+                                                    <span class="me-2">💬</span>
+                                                    SMS
+                                                </button>
+                                            </h2>
 
-                                        <div id="collapse101sms"
-                                            class="accordion-collapse collapse show"
-                                            aria-labelledby="faq-topic-1"
-                                            data-bs-parent="#accordion101">
+                                            <div id="collapse101sms" class="accordion-collapse collapse show" data-bs-parent="#accordion101">
+                                                <div class="accordion-body">
+                                                  <!-- ================= SMS SENT VIA SMPP ================= -->
+                                                 <div class="sms-section">
+    <div class="sms-section-title">
+        🔌 SMS Sent via SMPP
+    </div>
 
-                                        <div class="accordion-body">
+    <!-- ================= Q1 ================= -->
+    <div class="sms-question">
+        <h6>
+            Q1. How can I send an SMS message via SMPP using the REPL console?
+        </h6>
 
-                                            <!-- 🔹 SMS Routing -->
-                                            <div class="mb-4">
-                                            <h5 class="fw-bold text-primary mb-3">SMS Routing</h5>
+        <ol class="ms-3">
+            <li>
+                <strong>Open Visual Studio Code (VS Code)</strong><br>
+                Launch VS Code on your system.
+            </li>
 
-                                            <div class="mb-3">
-                                                <h6 class="fw-semibold">
-                                                Q1. What should be configured for successful SMS routing?
-                                                </h6>
-                                                <ul class="list-unstyled ms-3">
-                                                <li class="mb-2">
-                                                    <i class="fas fa-check-circle text-success me-2"></i>
-                                                    Routing condition must evaluate to <strong>True</strong>
-                                                </li>
-                                                <li class="mb-2">
-                                                    <i class="fas fa-check-circle text-success me-2"></i>
-                                                    Vendor product must have positive weight
-                                                </li>
-                                                </ul>
-                                                <div class="ms-3 mt-2">
-                                                <a href="https://www.youtube.com/watch?v=VIDEO_ID"
-                                                    target="_blank"
-                                                    class="text-primary fw-semibold">
-                                                    <i class="fas fa-play-circle me-1"></i> Watch Video
-                                                </a>
+            <li class="mt-2">
+                <strong>Open the Integrated Terminal</strong><br>
+                Go to <code>View &gt; Terminal</code> or press
+                <code>Ctrl + `</code>
+            </li>
+
+            <li class="mt-2">
+                <strong>Check all running containers</strong>
+                <pre class="mt-2"><code>docker ps -a</code></pre>
+            </li>
+
+            <li>
+                <strong>Access the SMPP Docker container</strong>
+                <pre class="mt-2"><code>docker exec -it &lt;container_id_or_name&gt; bash</code></pre>
+            </li>
+
+            <li>
+                <strong>Start SMPP services inside the container</strong>
+                <pre class="mt-2"><code>npm start</code></pre>
+            </li>
+
+            <li>
+                <strong>Wait for the Moleculer REPL console</strong><br>
+                You will see:
+                <pre class="mt-2"><code>mol $</code></pre>
+            </li>
+
+            <li>
+                <strong>Send SMS using SMPP</strong>
+                <pre class="mt-2"><code>
+call smpp_client.message \
+--username "client1@client.com" \
+--password "********" \
+--src_addr "AIRTEL" \
+--destination "+919098925163" \
+--message "This test message via SMPP using the REPL console"
+                </code></pre>
+            </li>
+
+            <li>
+                <strong>Verify SMS report</strong><br>
+                Check status in Redis (DF) and on the website:
+                <code>Reports &gt; Client SMS &gt; All Messages</code>
+            </li>
+        </ol>
+    </div>
+
+    <!-- ================= Q2 ================= -->
+    <div class="sms-question">
+        <h6>
+            Q2. How to send multiple SMS messages via SMPP (single destination)?
+        </h6>
+
+        <p class="ms-3">
+            Use the following command to send multiple messages (example: 100 SMS):
+        </p>
+
+        <pre class="ms-3"><code>
+call smpp_client.message \
+--username "client1@client.com" \
+--password "********" \
+--message "This SMS From Dollor.infotech" \
+--src_addr "AIRTEL" \
+--destination "+919098925163" \
+--msgCount 100
+        </code></pre>
+
+        <p class="ms-3 mt-2"><strong>Parameters:</strong></p>
+        <ul class="ms-4">
+            <li><code>--username</code> → SMPP client username</li>
+            <li><code>--password</code> → SMPP client password</li>
+            <li><code>--src_addr</code> → Sender ID</li>
+            <li><code>--destination</code> → Receiver number</li>
+            <li><code>--msgCount</code> → Number of messages</li>
+        </ul>
+    </div>
+
+    <!-- ================= Q3 ================= -->
+    <div class="sms-question">
+        <h6>
+            Q3. How to send SMS to multiple destinations via SMPP?
+        </h6>
+
+        <pre class="ms-3"><code>
+call smpp_client.message \
+--username "client1@client.com" \
+--password "********" \
+--message "This SMS From Dollor.infotech" \
+--src_addr "AIRTEL" \
+--destination "+919098925163,+919988776655,+918888999000" \
+--msgCount 1
+        </code></pre>
+
+        <p class="ms-3 mt-2">
+            Multiple destination numbers must be comma-separated and preferably
+            in <strong>E.164 format</strong>.
+        </p>
+    </div>
+
+    <!-- ================= Q4 ================= -->
+    <div class="sms-question">
+        <h6>
+            Q4. How to send an SMS using HTTP API (Postman)?
+        </h6>
+
+        <ol class="ms-3">
+            <li>
+                Import <strong>Messaging.postman_collection1.json</strong> into Postman
+            </li>
+
+            <li class="mt-2">
+                Start all services:
+                <pre class="mt-2"><code>npm start</code></pre>
+            </li>
+
+            <li>
+                Navigate in Postman:
+                <pre class="mt-2"><code>Messaging → MT_sms → for-submit-sms</code></pre>
+            </li>
+
+            <li>
+                Select the environment and click <strong>Send</strong>
+            </li>
+
+            <li class="mt-2">
+                Verify delivery in:
+                <code>Reports &gt; Client SMS &gt; All Messages</code>
+            </li>
+        </ol>
+    </div>
+
+</div>
+
+
+                                                    <hr>
+
+                                                    <!-- ================= SMS ROUTING ================= -->
+                                                    <div class="sms-section">
+                                                        <div class="sms-section-title">
+                                                            📡 SMS Routing
+                                                        </div>
+
+                                                        <div class="sms-question">
+                                                            <h6>
+                                                                Q1. What should be configured for successful SMS routing?
+                                                            </h6>
+
+                                                            <ul class="list-unstyled ms-3">
+                                                                <li>
+                                                                    <i class="fas fa-check-circle text-success me-2"></i>
+                                                                    Routing condition must evaluate to
+                                                                    <strong>True</strong>
+                                                                </li>
+                                                                <li>
+                                                                    <i class="fas fa-check-circle text-success me-2"></i>
+                                                                    Vendor product must have positive weight
+                                                                </li>
+                                                            </ul>
+
+                                                            <div class="watch-video-wrap">
+                                                                <a href="#" class="watch-video">
+                                                                    <i class="fas fa-play-circle"></i>
+                                                                    Watch Video
+                                                                </a>
+                                                            </div>
+                                                        </div>
+
+                                                        <div class="sms-question">
+                                                            <h6>
+                                                                Q2. Why are messages failing intermittently?
+                                                            </h6>
+
+                                                            <ul class="list-unstyled ms-3">
+                                                                <li>
+                                                                    <i class="fas fa-check-circle text-success me-2"></i>
+                                                                    Supplier TPS limits exceeded
+                                                                </li>
+                                                                <li>
+                                                                    <i class="fas fa-check-circle text-success me-2"></i>
+                                                                    SMPP bind reconnecting frequently
+                                                                </li>
+                                                            </ul>
+                                                        </div>
+                                                    </div>
+
+                                                    <hr>
+
+                                                    <!-- ================= SMS RATES ================= -->
+                                                    <div class="sms-section">
+                                                        <div class="sms-section-title">
+                                                            💰 SMS Rates
+                                                        </div>
+
+                                                        <div class="sms-question">
+                                                            <h6>
+                                                                Q1. How are SMS rates calculated?
+                                                            </h6>
+
+                                                            <ul class="list-unstyled ms-3">
+                                                                <li>
+                                                                    <i class="fas fa-check-circle text-success me-2"></i>
+                                                                    Destination MCC/MNC based
+                                                                </li>
+                                                                <li>
+                                                                    <i class="fas fa-check-circle text-success me-2"></i>
+                                                                    Vendor cost + margin configuration
+                                                                </li>
+                                                            </ul>
+                                                        </div>
+
+                                                        <div class="sms-question">
+                                                            <h6>
+                                                                Q2. Why do rates differ between vendors?
+                                                            </h6>
+
+                                                            <ul class="list-unstyled ms-3">
+                                                                <li>
+                                                                    <i class="fas fa-check-circle text-success me-2"></i>
+                                                                    Different quality routes & partners
+                                                                </li>
+                                                            </ul>
+                                                        </div>
+                                                    </div>
+
+                                                    <hr>
+
+                                                    <!-- ================= SMS BILLING ================= -->
+                                                    <div class="sms-section">
+                                                        <div class="sms-section-title">
+                                                            🧾 SMS Billing
+                                                        </div>
+
+                                                        <div class="sms-question">
+                                                            <h6>
+                                                                Q1. When is billing triggered?
+                                                            </h6>
+
+                                                            <ul class="list-unstyled ms-3">
+                                                                <li>
+                                                                    <i class="fas fa-check-circle text-success me-2"></i>
+                                                                    On submit or DLR (configurable)
+                                                                </li>
+                                                            </ul>
+                                                        </div>
+
+                                                        <div class="sms-question">
+                                                            <h6>
+                                                                Q2. Are failed messages billed?
+                                                            </h6>
+
+                                                            <ul class="list-unstyled ms-3">
+                                                                <li>
+                                                                    <i class="fas fa-check-circle text-success me-2"></i>
+                                                                    Depends on DLR mapping rules
+                                                                </li>
+                                                            </ul>
+                                                        </div>
+                                                    </div>
+
+                                                    <hr>
                                                 </div>
                                             </div>
 
-                                            <div class="mb-3">
-                                                <h6 class="fw-semibold">
-                                                Q2. Why are messages failing intermittently?
-                                                </h6>
-                                                <ul class="list-unstyled ms-3">
-                                                <li class="mb-2">
-                                                    <i class="fas fa-check-circle text-success me-2"></i>
-                                                    Supplier TPS limits exceeded
-                                                </li>
-                                                <li class="mb-2">
-                                                    <i class="fas fa-check-circle text-success me-2"></i>
-                                                    SMPP bind reconnecting frequently
-                                                </li>
-                                                </ul>
-                                                <div class="ms-3 mt-2">
-                                                <a href="https://www.youtube.com/watch?v=VIDEO_ID"
-                                                    target="_blank"
-                                                    class="text-primary fw-semibold">
-                                                    <i class="fas fa-play-circle me-1"></i> Watch Video
-                                                </a>
-                                                </div>
-                                            </div>
-                                            </div>
-
-                                            <hr>
-
-                                            <!-- 🔹 SMS Rates -->
-                                            <div class="mb-4">
-                                            <h5 class="fw-bold text-primary mb-3">SMS Rates</h5>
-
-                                            <div class="mb-3">
-                                                <h6 class="fw-semibold">Q1. How are SMS rates calculated?</h6>
-                                                <ul class="list-unstyled ms-3">
-                                                <li class="mb-2">
-                                                    <i class="fas fa-check-circle text-success me-2"></i>
-                                                    Rates are based on destination MCC/MNC
-                                                </li>
-                                                <li class="mb-2">
-                                                    <i class="fas fa-check-circle text-success me-2"></i>
-                                                    Vendor cost + margin configuration
-                                                </li>
-                                                </ul>
-                                            </div>
-
-                                            <div class="mb-3">
-                                                <h6 class="fw-semibold">Q2. Why do rates differ between vendors?</h6>
-                                                <ul class="list-unstyled ms-3">
-                                                <li class="mb-2">
-                                                    <i class="fas fa-check-circle text-success me-2"></i>
-                                                    Different quality routes and termination partners
-                                                </li>
-                                                </ul>
-                                            </div>
-                                            </div>
-
-                                            <hr>
-
-                                            <!-- 🔹 SMS Billing -->
-                                            <div class="mb-4">
-                                            <h5 class="fw-bold text-primary mb-3">SMS Billing</h5>
-
-                                            <div class="mb-3">
-                                                <h6 class="fw-semibold">Q1. When is billing triggered?</h6>
-                                                <ul class="list-unstyled ms-3">
-                                                <li class="mb-2">
-                                                    <i class="fas fa-check-circle text-success me-2"></i>
-                                                    Billing occurs on submit or DLR (configurable)
-                                                </li>
-                                                </ul>
-                                            </div>
-
-                                            <div class="mb-3">
-                                                <h6 class="fw-semibold">Q2. Are failed messages billed?</h6>
-                                                <ul class="list-unstyled ms-3">
-                                                <li class="mb-2">
-                                                    <i class="fas fa-check-circle text-success me-2"></i>
-                                                    Depends on DLR mapping and billing rules
-                                                </li>
-                                                </ul>
-                                            </div>
-                                            </div>
-
-                                        </div>
                                         </div>
                                     </div>
+                                    <!-- END SMS ACCORDION -->
 
-                                    </div>
-                                    <!-- ===== END INNER ACCORDION ===== -->
-
-                                </div>
                                 </div>
                             </div>
+
                         </div>
                     </div>
+
                 </div>
+              </div>
+
 
 
                 <!-- Start logs section -->
