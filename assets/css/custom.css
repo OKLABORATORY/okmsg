@@ -333,6 +333,22 @@ html {
     color: #ffffff;
 }
 
+#smsInnerAccordion .accordion-button.collapsed::after {
+    transform: rotate(-90deg) scale(1.15);
+    transition: transform 0.3s ease;
+}
+
+/* Default (collapsed) — blue bg, dark arrow OK */
+#smsInnerAccordion .accordion-button.collapsed::after {
+    filter: none;
+}
+
+/* Expanded — blue background, make arrow WHITE */
+#smsInnerAccordion .accordion-button:not(.collapsed)::after {
+    filter: brightness(0) invert(1);
+}
+
+
 /* Arrow icon (Bootstrap chevron) thoda bold feel */
 #smsInnerAccordion .accordion-button::after {
     transform: scale(1.1);
@@ -348,7 +364,6 @@ html {
 /* =========================================================
    YT EXPAND BUTTON – FIXED CENTER + ULTRA SMOOTH
    ========================================================= */
-
 .watch-video-wrap {
     display: flex;
     justify-content: center;
@@ -363,16 +378,20 @@ html {
     width: 46px;
     height: 46px;
 
-    background: #fff;
+    background: #ffffff;
     border: 2px solid #ff0000;
     border-radius: 999px;
     text-decoration: none;
 
-    box-shadow: 0 6px 16px rgba(0,0,0,0.1);
+    /* subtle professional default depth */
+    box-shadow:
+        0 6px 16px rgba(0,0,0,0.1),
+        inset 0 0 0 1px rgba(255,0,0,0.08);
 
     transition:
         width 0.45s cubic-bezier(.4,0,.2,1),
-        box-shadow 0.3s ease;
+        box-shadow 0.3s ease,
+        background 0.3s ease;
 }
 
 /* ICON — CENTER BY DEFAULT */
@@ -408,13 +427,19 @@ html {
         transform 0.25s ease 0.15s;
 }
 
-/* HOVER — EXPAND → RIGHT */
+/* HOVER — EXPAND → RIGHT + RED EFFECT */
 .watch-video-btn.yt-expand:hover {
     width: 190px;
-    box-shadow: 0 14px 32px rgba(255,0,0,0.25);
+
+    /* professional red fill */
+    background: linear-gradient(135deg, #fff5f5, #ffffff);
+
+    box-shadow:
+        0 16px 36px rgba(255,0,0,0.28),
+        inset 0 0 0 1px rgba(255,0,0,0.15);
 }
 
-/* 🔥 FIX: ICON STOPS AT PERFECT LEFT POSITION */
+/* ICON FINAL POSITION */
 .watch-video-btn.yt-expand:hover i {
     transform: translate(-78px, -50%);
 }
@@ -425,10 +450,16 @@ html {
     transform: translateY(-50%) translateX(0);
 }
 
+/* CLICK FEEDBACK */
+.watch-video-btn.yt-expand:active {
+    transform: scale(0.97);
+}
+
 /* MOBILE */
 @media (hover: none) {
     .watch-video-btn.yt-expand {
         width: 190px;
+        background: linear-gradient(135deg, #fff5f5, #ffffff);
     }
 
     .watch-video-btn.yt-expand i {
@@ -516,21 +547,16 @@ html {
     animation: openPulse 0.45s ease-out;
 }
 
-/* Left accent bar */
-#smsInnerAccordion .accordion-button:not(.collapsed)::after {
-    filter: brightness(0) invert(1);
-}
-
 /* Chevron animation */
 #smsInnerAccordion .accordion-button::after {
     transition: transform 0.35s ease;
     transform: scale(1.15);
 }
 
+/* Expanded (open) — DOWN */
 #smsInnerAccordion .accordion-button:not(.collapsed)::after {
-    transform: rotate(180deg) scale(1.25);
+    transform: rotate(0deg) scale(1.25);
 }
-
 /* Glow pulse on open */
 @keyframes openPulse {
     0% {
@@ -542,4 +568,94 @@ html {
     100% {
         box-shadow: 0 18px 40px rgba(13,110,253,0.45);
     }
+}
+.accordion-collapse {
+    will-change: height, opacity, transform;
+    transition:
+        height 0.6s cubic-bezier(.22,1,.36,1),
+        opacity 0.45s ease,
+        transform 0.45s cubic-bezier(.22,1,.36,1);
+}
+
+/* While collapsing (closing) */
+.accordion-collapse.collapsing {
+    opacity: 0;
+    transform: translateY(-10px) scale(0.985);
+}
+
+/* Fully opened */
+.accordion-collapse.show {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+}
+
+/* Accordion body smooth entrance */
+#smsInnerAccordion .accordion-body {
+    animation: smoothFadeSlide 0.55s cubic-bezier(.22,1,.36,1);
+}
+
+/* Micro-animation */
+@keyframes smoothFadeSlide {
+    from {
+        opacity: 0;
+        transform: translateY(-12px) scale(0.97);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+    }
+}
+/* Button micro-feedback */
+#smsInnerAccordion .accordion-button {
+    transition:
+        background 0.35s ease,
+        box-shadow 0.35s ease,
+        transform 0.25s cubic-bezier(.22,1,.36,1);
+}
+
+/* Slight lift on open */
+#smsInnerAccordion .accordion-button:not(.collapsed) {
+    transform: translateY(-1px);
+}
+.video-info-line {
+    text-align: center;
+    margin-top: 22px;
+    margin-bottom: 14px;
+
+    font-size: 14.5px;
+    font-weight: 500;
+    line-height: 1.6;
+
+    color: #1f2937; /* dark gray (almost black) */
+
+    padding: 12px 18px;
+    border-radius: 12px;
+
+    background: linear-gradient(
+        90deg,
+        #f8fafc,
+        #f1f5f9
+    );
+
+    border-left: 4px solid #9ca3af; /* neutral gray accent */
+
+    box-shadow:
+        inset 0 0 0 1px #e5e7eb,
+        0 4px 14px rgba(0, 0, 0, 0.06);
+
+    transition: all 0.25s ease;
+}
+
+/* subtle hover – documentation friendly */
+.video-info-line:hover {
+    transform: translateY(-1px);
+    box-shadow:
+        inset 0 0 0 1px #d1d5db,
+        0 8px 20px rgba(0, 0, 0, 0.1);
+}
+
+/* emphasis without color clash */
+.video-info-line strong {
+    font-weight: 700;
+    color: #111827; /* near-black */
 }
