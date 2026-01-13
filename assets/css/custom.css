@@ -659,3 +659,68 @@ html {
     font-weight: 700;
     color: #111827; /* near-black */
 }
+
+.category-divider {
+    border: none;
+    height: 2px;
+    margin: 28px 0;
+    background-color: #6b7280; /* medium gray */
+}
+/* =====================================================
+   REMOVE ACCORDION ARROW — WHATSAPP ONLY (FINAL)
+   ===================================================== */
+
+/* Kill the arrow pseudo-element completely */
+#accordion100 .whatsapp-only .accordion-button::after {
+    display: none !important;
+    content: none !important;
+    background-image: none !important;
+    background: none !important;
+    width: 0 !important;
+    height: 0 !important;
+    transform: none !important;
+}
+
+/* Remove arrow spacing + disable expand behavior */
+#accordion100 .whatsapp-only .accordion-button {
+    padding-right: 18px !important;
+    pointer-events: none;
+    cursor: default;
+}
+#faqMainHeading .accordion-button {
+    font-weight: 800;
+    letter-spacing: 0.3px;
+    color: #111827;            /* dark gray / near black */
+}
+
+/* Expanded state – keep same color */
+#faqMainHeading .accordion-button:not(.collapsed) {
+    color: #111827;
+    background-color: #f9fafb; /* subtle neutral background */
+}
+/* ================= WHATSAPP = EXACT SMS LOOK ================= */
+
+/* Remove arrow completely */
+.whatsapp-only .accordion-button::after {
+    display: none !important;
+}
+
+/* Disable click */
+.whatsapp-only .accordion-button {
+    pointer-events: none;
+    cursor: default;
+}
+
+/* Match SMS background + spacing */
+.whatsapp-only .accordion-button {
+    background-color: #eef5ff;
+    padding: 10px 14px;
+    font-size: 14px;
+    font-weight: 600;
+    border-radius: 8px;
+}
+
+/* Same hover feel as SMS (but no action) */
+.whatsapp-only .accordion-button:hover {
+    background-color: #eaf2ff;
+}
