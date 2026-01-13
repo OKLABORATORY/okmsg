@@ -839,320 +839,537 @@
 
                                                   <!-- ================= INNER SECTIONS ACCORDION ================= -->
                                                  <div class="accordion" id="smsInnerAccordion">
-                                                      <!-- ========================================================= -->
-                                                      <!-- SMPP ARCHITECTURE & MESSAGE FLOW -->
-                                                      <!-- ========================================================= -->
-                                                      <div class="accordion-item sms-section">
-                                                          <h2 class="accordion-header" id="smppArchitectureHeading">
-                                                              <button
-                                                                  class="accordion-button collapsed"
-                                                                  type="button"
-                                                                  data-bs-toggle="collapse"
-                                                                  data-bs-target="#smppArchitectureCollapse"
-                                                              >
-                                                                  🏗️ SMPP Messaging Platform Architecture & Workflow
-                                                              </button>
-                                                          </h2>
+                                                    <!-- ========================================================= -->
+                                                    <!-- Que 1 -->
+                                                    <!-- ========================================================= -->
+                                                    <div class="accordion-item sms-section">
+                                                        <h2 class="accordion-header" id="singleSmsHeading">
+                                                            <button
+                                                                class="accordion-button collapsed"
+                                                                type="button"
+                                                                data-bs-toggle="collapse"
+                                                                data-bs-target="#singleSmsCollapse"
+                                                            >
+                                                                💬 Que 1) How to send a single SMS via SMPP (REPL)?
+                                                            </button>
+                                                        </h2>
 
-                                                          <div id="smppArchitectureCollapse" class="accordion-collapse collapse" data-bs-parent="#smsInnerAccordion">
+                                                        <div
+                                                            id="singleSmsCollapse"
+                                                            class="accordion-collapse collapse"
+                                                            data-bs-parent="#smsInnerAccordion"
+                                                        >
                                                             <div class="accordion-body">
-
-                                                                <!-- ================= PLATFORM OVERVIEW ================= -->
                                                                 <div class="sms-question">
-                                                                    <h6>🔍 Platform Overview</h6>
+                                                                    <ol class="ms-3">
+                                                                        <li>Open VS Code → Integrated Terminal</li>
+                                                                        <li><pre><code>docker ps -a</code></pre></li>
+                                                                        <li><pre><code>docker exec -it &lt;container_id_or_name&gt; bash</code></pre></li>
+                                                                        <li><pre><code>npm start</code></pre></li>
+                                                                        <li>
+                                                                            <pre><code>
+mol $ call smpp_client.message \
+      --username "client1@client.com" \
+      --password "********" \
+      --src_addr "AIRTEL" \
+      --destination "+919098925163" \
+      --message "Test SMS via SMPP"
+                                                                            </code></pre>
+                                                                        </li>
+                                                                    </ol>
 
                                                                     <p>
-                                                                        Before starting any SMPP-related service, it is mandatory to
-                                                                        enter the <strong>SMPP Docker container</strong>. None of the
-                                                                        services can run outside the container environment.
-                                                                    </p>
-
-                                                                    <p>
-                                                                        All services must be started in parallel. The platform begins
-                                                                        by initializing the <strong>SMPP Server</strong> and
-                                                                        <strong>SMPP Client</strong>.
-                                                                    </p>
-
-                                                                    <p>
-                                                                        The SMPP Server creates multiple listening ports defined
-                                                                        in the <code>.env</code> file. Each port becomes active and
-                                                                        ready to accept client connections.
-                                                                    </p>
-
-                                                                    <p>
-                                                                        The SMPP Client connects to the server using configured
-                                                                        credentials (Username, Password, IP, Port). Once authenticated,
-                                                                        the client is authorized to send and receive messages.
-                                                                    </p>
-
-                                                                    <p>
-                                                                        Invalid credentials result in immediate disconnection,
-                                                                        ensuring security and controlled access.
+                                                                        Verify report at:
+                                                                        <code>Reports &gt; Client SMS &gt; All Messages</code>
                                                                     </p>
                                                                 </div>
-
-                                                                <!-- ================= SMPP CLIENT SERVICE ================= -->
-                                                                <div class="sms-question">
-                                                                    <h6>1️⃣ SMPP_CLIENT Service</h6>
-
-                                                                    <p>
-                                                                        After successful connection, the SMPP Client prepares
-                                                                        the message for delivery.
-                                                                    </p>
-
-                                                                    <p><strong>Required message parameters:</strong></p>
-                                                                    <ul class="ms-3">
-                                                                        <li>Username</li>
-                                                                        <li>Password</li>
-                                                                        <li>Source Address</li>
-                                                                        <li>Destination Address</li>
-                                                                        <li>Message Content</li>
-                                                                    </ul>
-
-                                                                    <p>
-                                                                        Messages are processed through the
-                                                                        <code>message</code> action, where the
-                                                                        <strong>channel</strong> is identified:
-                                                                    </p>
-
-                                                                    <ul class="ms-3">
-                                                                        <li>SMPP → Channel = <strong>S</strong></li>
-                                                                        <li>HTTP → Channel = <strong>H</strong></li>
-                                                                        <li>App / Website Campaign → Channel = <strong>A</strong></li>
-                                                                    </ul>
-
-                                                                    <p>
-                                                                        Based on <code>data_coding</code>, the message is passed to
-                                                                        <code>sendMessage()</code>, where:
-                                                                    </p>
-
-                                                                    <ul class="ms-3">
-                                                                        <li>Message is split according to encoding rules</li>
-                                                                        <li>Extra TLVs are attached if required</li>
-                                                                        <li>Final payload is forwarded to the SMPP Server</li>
-                                                                    </ul>
-                                                                </div>
-
-                                                                <!-- ================= SMPP SERVER SERVICE ================= -->
-                                                                <div class="sms-question">
-                                                                    <h6>2️⃣ SMPP_SERVER Service</h6>
-
-                                                                    <p>On receiving a message, the SMPP Server performs:</p>
-
-                                                                    <ul class="ms-3">
-                                                                        <li>Generation of a unique Message ID (OMSGID)</li>
-                                                                        <li>Reuse of client-supplied ID if provided</li>
-                                                                        <li>Revalidation of client credentials</li>
-                                                                        <li>Rate-limit and capacity checks</li>
-                                                                    </ul>
-
-                                                                    <p>
-                                                                        Messages are processed in per-second loops to maintain
-                                                                        throughput and performance.
-                                                                    </p>
-
-                                                                    <p>
-                                                                        After validation, messages are forwarded to the
-                                                                        <strong>DF Service</strong>.
-                                                                    </p>
-                                                                </div>
-
-                                                                <!-- ================= DF SERVICE ================= -->
-                                                                <div class="sms-question">
-                                                                    <h6>3️⃣ DF Service (DragonFly)</h6>
-
-                                                                    <p>
-                                                                        The DF service receives the message payload from the
-                                                                        SMPP Server and stores it securely in
-                                                                        <strong>Redis (DragonFly)</strong>.
-                                                                    </p>
-
-                                                                    <ul class="ms-3">
-                                                                        <li>Ensures persistence and queue safety</li>
-                                                                        <li>Stores metadata for downstream services</li>
-                                                                        <li>Acts as the backbone for message flow</li>
-                                                                    </ul>
-
-                                                                    <p>
-                                                                        After storage, the message is forwarded to the
-                                                                        <strong>Validator Service</strong>.
-                                                                    </p>
-                                                                </div>
-
-                                                                <!-- ================= VALIDATOR SERVICE ================= -->
-                                                                <div class="sms-question">
-                                                                    <h6>4️⃣ Validator Service</h6>
-
-                                                                    <p>
-                                                                        The Validator Service retrieves message data from Redis
-                                                                        and performs critical checks:
-                                                                    </p>
-
-                                                                    <ul class="ms-3">
-                                                                        <li>Billing completion verification</li>
-                                                                        <li>Destination blacklist checks</li>
-                                                                        <li>Source address blacklist checks</li>
-                                                                        <li>Spam and restricted content detection</li>
-                                                                        <li>TLV validation</li>
-                                                                    </ul>
-
-                                                                    <p>
-                                                                        Only messages that pass all validation steps are approved
-                                                                        and forwarded to the Translation Service.
-                                                                    </p>
-                                                                </div>
-
-                                                                <!-- ================= TRANSLATION SERVICE ================= -->
-                                                                <div class="sms-question">
-                                                                    <h6>5️⃣ Translation Service</h6>
-
-                                                                    <p>
-                                                                        The Translation Service applies client-specific or
-                                                                        message-specific transformation rules.
-                                                                    </p>
-
-                                                                    <ul class="ms-3">
-                                                                        <li>Fetch rules from Redis</li>
-                                                                        <li>Match rules against message/client</li>
-                                                                        <li>Modify or translate content if required</li>
-                                                                    </ul>
-
-                                                                    <p>
-                                                                        After translation, messages move to the Buffer Service.
-                                                                    </p>
-                                                                </div>
-
-                                                                <!-- ================= BUFFER SERVICE ================= -->
-                                                                <div class="sms-question">
-                                                                    <h6>6️⃣ Buffer Service</h6>
-
-                                                                    <p>
-                                                                        The Buffer Service controls message timing and delivery
-                                                                        eligibility.
-                                                                    </p>
-
-                                                                    <ul class="ms-3">
-                                                                        <li>Check country & region restrictions</li>
-                                                                        <li>Validate promotional time windows</li>
-                                                                        <li>Hold messages outside allowed time periods</li>
-                                                                        <li>Queue messages with priority and retry rules</li>
-                                                                    </ul>
-
-                                                                    <p>
-                                                                        Eligible messages are forwarded to the
-                                                                        <strong>FDLR Service</strong>.
-                                                                    </p>
-                                                                </div>
-
-                                                                <!-- ================= FDLR SERVICE ================= -->
-                                                                <div class="sms-question">
-                                                                    <h6>7️⃣ FDLR Service</h6>
-
-                                                                    <p>
-                                                                        The FDLR Service applies controlled DLR splitting using
-                                                                        <code>cfdlr_ratio</code>.
-                                                                    </p>
-
-                                                                    <ul class="ms-3">
-                                                                        <li>100:0 → All messages routed normally</li>
-                                                                        <li>Other ratios → Partial real delivery + fake DLRs</li>
-                                                                        <li>Per-second ratio enforcement</li>
-                                                                        <li>Redis logging for reconciliation</li>
-                                                                    </ul>
-
-                                                                    <p>
-                                                                        Routed messages proceed to the Routing Service.
-                                                                    </p>
-                                                                </div>
-
-                                                                <!-- ================= ROUTING SERVICE ================= -->
-                                                                <div class="sms-question">
-                                                                    <h6>8️⃣ Routing Service</h6>
-
-                                                                    <p>
-                                                                        Routing rules are evaluated using
-                                                                        client system_id and MCC/MNC data.
-                                                                    </p>
-
-                                                                    <ul class="ms-3">
-                                                                        <li><strong>LCR</strong> – Least cost supplier</li>
-                                                                        <li><strong>PCR</strong> – Premium supplier</li>
-                                                                        <li><strong>CHOICE_LIST</strong> – Percentage-based split</li>
-                                                                    </ul>
-
-                                                                    <p>
-                                                                        Supplier rates are fetched and messages are forwarded
-                                                                        to the SEND_SMS Service.
-                                                                    </p>
-                                                                </div>
-
-                                                                <!-- ================= SEND_SMS SERVICE ================= -->
-                                                                <div class="sms-question">
-                                                                    <h6>9️⃣ SEND_SMS Service</h6>
-
-                                                                    <ul class="ms-3">
-                                                                        <li>Maintains supplier connections</li>
-                                                                        <li>Triggers billing before delivery</li>
-                                                                        <li>Sends provider-specific payloads</li>
-                                                                        <li>Receives and maps supplier DLRs</li>
-                                                                    </ul>
-
-                                                                    <p>
-                                                                        Standardized DLRs are forwarded to the DLR Service.
-                                                                    </p>
-                                                                </div>
-
-                                                                <!-- ================= DLR SERVICE ================= -->
-                                                                <div class="sms-question">
-                                                                    <h6>🔟 DLR Service</h6>
-
-                                                                    <ul class="ms-3">
-                                                                        <li>Maps SMSGID → OMSGID</li>
-                                                                        <li>Applies DLR status/code mapping</li>
-                                                                        <li>Delivers DLRs to active SMPP clients</li>
-                                                                        <li>Stores undelivered DLRs for retry</li>
-                                                                    </ul>
-                                                                </div>
-
-                                                                <!-- ================= BILLING SERVICE ================= -->
-                                                                <div class="sms-question">
-                                                                    <h6>1️⃣1️⃣ BILLING-SMS Service</h6>
-
-                                                                    <ul class="ms-3">
-                                                                        <li>Client billing deduction</li>
-                                                                        <li>Supplier billing calculation</li>
-                                                                        <li>Updates C-Cost and S-Cost</li>
-                                                                        <li>Used across all services</li>
-                                                                    </ul>
-                                                                </div>
-
-                                                                <!-- ================= FINAL SUMMARY ================= -->
-                                                                <div class="sms-question">
-                                                                    <h6>✅ Final Message Flow Summary</h6>
-
-                                                                    <p>
-                                                                        The SMPP platform ensures secure, scalable, and traceable
-                                                                        message delivery using Redis-backed services, controlled
-                                                                        routing, precise billing, and reliable DLR handling.
-                                                                    </p>
-
-                                                                    <p>
-                                                                        This architecture guarantees complete message lifecycle
-                                                                        visibility, reconciliation, and reporting.
-                                                                    </p>
-                                                                </div>
-
                                                             </div>
+
                                                             <div class="watch-video-wrap">
-                                                                <a href="https://www.youtube.com/watch?v=VIDEO_ID" target="_blank" class="watch-video-btn">
+                                                                <a
+                                                                    href="https://www.youtube.com/watch?v=VIDEO_ID"
+                                                                    target="_blank"
+                                                                    class="watch-video-btn"
+                                                                >
                                                                     <i class="fas fa-play-circle"></i>
                                                                     Watch Video
                                                                 </a>
                                                             </div>
                                                         </div>
-                                                      </div>
+                                                    </div>
 
-                                                      <!-- ========================================================= -->
+                                                    <!-- ========================================================= -->
+                                                    <!-- Que 2 -->
+                                                    <!-- ========================================================= -->
+                                                    <div class="accordion-item sms-section">
+                                                        <h2 class="accordion-header" id="bulkSingleHeading">
+                                                            <button
+                                                                class="accordion-button collapsed"
+                                                                type="button"
+                                                                data-bs-toggle="collapse"
+                                                                data-bs-target="#bulkSingleCollapse"
+                                                            >
+                                                                💬 Que 2) How to send multiple SMS messages to a single destination?
+                                                            </button>
+                                                        </h2>
+
+                                                        <div
+                                                            id="bulkSingleCollapse"
+                                                            class="accordion-collapse collapse"
+                                                            data-bs-parent="#smsInnerAccordion"
+                                                        >
+                                                            <div class="accordion-body">
+                                                                <div class="sms-question">
+                                                                    <pre><code>
+    call smpp_client.message \
+      --username "client1@client.com" \
+      --password "********" \
+      --message "Bulk SMS Test" \
+      --src_addr "AIRTEL" \
+      --destination "+919098925163" \
+      --msgCount 100
+                                                                    </code></pre>
+
+                                                                    <ul class="ms-3">
+                                                                        <li><code>msgCount</code> → Number of SMS</li>
+                                                                        <li>E.164 number format recommended</li>
+                                                                    </ul>
+                                                                </div>
+                                                            </div>
+
+                                                            <div class="watch-video-wrap">
+                                                                <a
+                                                                    href="https://www.youtube.com/watch?v=VIDEO_ID"
+                                                                    target="_blank"
+                                                                    class="watch-video-btn"
+                                                                >
+                                                                    <i class="fas fa-play-circle"></i>
+                                                                    Watch Video
+                                                                </a>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+
+                                                    <!-- ========================================================= -->
+                                                    <!-- Que 3 -->
+                                                    <!-- ========================================================= -->
+                                                    <div class="accordion-item sms-section">
+                                                        <h2 class="accordion-header" id="multiDestHeading">
+                                                            <button
+                                                                class="accordion-button collapsed"
+                                                                type="button"
+                                                                data-bs-toggle="collapse"
+                                                                data-bs-target="#multiDestCollapse"
+                                                            >
+                                                                💬 Que 3) How to send SMS to multiple destination numbers?
+                                                            </button>
+                                                        </h2>
+
+                                                        <div
+                                                            id="multiDestCollapse"
+                                                            class="accordion-collapse collapse"
+                                                            data-bs-parent="#smsInnerAccordion"
+                                                        >
+                                                            <div class="accordion-body">
+                                                                <div class="sms-question">
+                                                                    <pre><code>
+    call smpp_client.message \
+      --username "client1@client.com" \
+      --password "********" \
+      --message "Multi Destination SMS" \
+      --src_addr "AIRTEL" \
+      --destination "+919098925163,+919988776655,+918888999000" \
+      --msgCount 1
+                                                                    </code></pre>
+
+                                                                    <p>
+                                                                        Numbers must be comma-separated and in
+                                                                        <strong>E.164 format</strong>.
+                                                                    </p>
+                                                                </div>
+                                                            </div>
+
+                                                            <div class="watch-video-wrap">
+                                                                <a
+                                                                    href="https://www.youtube.com/watch?v=VIDEO_ID"
+                                                                    target="_blank"
+                                                                    class="watch-video-btn"
+                                                                >
+                                                                    <i class="fas fa-play-circle"></i>
+                                                                    Watch Video
+                                                                </a>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+
+                                                    <!-- ========================================================= -->
+                                                    <!-- Que 4 -->
+                                                    <!-- ========================================================= -->
+                                                    <div class="accordion-item sms-section">
+                                                        <h2 class="accordion-header" id="httpApiHeading">
+                                                            <button
+                                                                class="accordion-button collapsed"
+                                                                type="button"
+                                                                data-bs-toggle="collapse"
+                                                                data-bs-target="#httpApiCollapse"
+                                                            >
+                                                                💬 Que 4) How to send an SMS via HTTP API using Postman?
+                                                            </button>
+                                                        </h2>
+
+                                                        <div
+                                                            id="httpApiCollapse"
+                                                            class="accordion-collapse collapse"
+                                                            data-bs-parent="#smsInnerAccordion"
+                                                        >
+                                                            <div class="accordion-body">
+                                                                <div class="sms-question">
+                                                                    <ol class="ms-3">
+                                                                        <li>Import <strong>Messaging.postman_collection1.json</strong></li>
+                                                                        <li><pre><code>npm start</code></pre></li>
+                                                                        <li><pre><code>Messaging → MT_sms → for-submit-sms</code></pre></li>
+                                                                        <li>Click <strong>Send</strong></li>
+                                                                    </ol>
+
+                                                                    <p>
+                                                                        Check reports at:
+                                                                        <code>Reports &gt; Client SMS &gt; All Messages</code>
+                                                                    </p>
+                                                                </div>
+                                                            </div>
+
+                                                            <div class="watch-video-wrap">
+                                                                <a
+                                                                    href="https://www.youtube.com/watch?v=VIDEO_ID"
+                                                                    target="_blank"
+                                                                    class="watch-video-btn"
+                                                                >
+                                                                    <i class="fas fa-play-circle"></i>
+                                                                    Watch Video
+                                                                </a>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+
+
+                                                    <!-- ========================================================= -->
+                                                    <!-- SMPP ARCHITECTURE & MESSAGE FLOW -->
+                                                    <!-- ========================================================= -->
+                                                    <div class="accordion-item sms-section">
+                                                      <h2 class="accordion-header" id="smppArchitectureHeading">
+                                                          <button
+                                                              class="accordion-button collapsed"
+                                                              type="button"
+                                                              data-bs-toggle="collapse"
+                                                              data-bs-target="#smppArchitectureCollapse"
+                                                          >
+                                                              💬 Que 20) How does the SMPP messaging platform work and what is its overall architecture?
+                                                          </button>
+                                                      </h2>
+                                                      <div id="smppArchitectureCollapse" class="accordion-collapse collapse" data-bs-parent="#smsInnerAccordion">
+                                                        <div class="accordion-body">
+
+                                                            <!-- ================= PLATFORM OVERVIEW ================= -->
+                                                            <div class="sms-question">
+                                                                <h6>🔍 Platform Overview</h6>
+
+                                                                <p>
+                                                                    Before starting any SMPP-related service, it is mandatory to
+                                                                    enter the <strong>SMPP Docker container</strong>. None of the
+                                                                    services can run outside the container environment.
+                                                                </p>
+
+                                                                <p>
+                                                                    All services must be started in parallel. The platform begins
+                                                                    by initializing the <strong>SMPP Server</strong> and
+                                                                    <strong>SMPP Client</strong>.
+                                                                </p>
+
+                                                                <p>
+                                                                    The SMPP Server creates multiple listening ports defined
+                                                                    in the <code>.env</code> file. Each port becomes active and
+                                                                    ready to accept client connections.
+                                                                </p>
+
+                                                                <p>
+                                                                    The SMPP Client connects to the server using configured
+                                                                    credentials (Username, Password, IP, Port). Once authenticated,
+                                                                    the client is authorized to send and receive messages.
+                                                                </p>
+
+                                                                <p>
+                                                                    Invalid credentials result in immediate disconnection,
+                                                                    ensuring security and controlled access.
+                                                                </p>
+                                                            </div>
+
+                                                            <!-- ================= SMPP CLIENT SERVICE ================= -->
+                                                            <div class="sms-question">
+                                                                <h6>1️⃣ SMPP_CLIENT Service</h6>
+
+                                                                <p>
+                                                                    After successful connection, the SMPP Client prepares
+                                                                    the message for delivery.
+                                                                </p>
+
+                                                                <p><strong>Required message parameters:</strong></p>
+                                                                <ul class="ms-3">
+                                                                    <li>Username</li>
+                                                                    <li>Password</li>
+                                                                    <li>Source Address</li>
+                                                                    <li>Destination Address</li>
+                                                                    <li>Message Content</li>
+                                                                </ul>
+
+                                                                <p>
+                                                                    Messages are processed through the
+                                                                    <code>message</code> action, where the
+                                                                    <strong>channel</strong> is identified:
+                                                                </p>
+
+                                                                <ul class="ms-3">
+                                                                    <li>SMPP → Channel = <strong>S</strong></li>
+                                                                    <li>HTTP → Channel = <strong>H</strong></li>
+                                                                    <li>App / Website Campaign → Channel = <strong>A</strong></li>
+                                                                </ul>
+
+                                                                <p>
+                                                                    Based on <code>data_coding</code>, the message is passed to
+                                                                    <code>sendMessage()</code>, where:
+                                                                </p>
+
+                                                                <ul class="ms-3">
+                                                                    <li>Message is split according to encoding rules</li>
+                                                                    <li>Extra TLVs are attached if required</li>
+                                                                    <li>Final payload is forwarded to the SMPP Server</li>
+                                                                </ul>
+                                                            </div>
+
+                                                            <!-- ================= SMPP SERVER SERVICE ================= -->
+                                                            <div class="sms-question">
+                                                                <h6>2️⃣ SMPP_SERVER Service</h6>
+
+                                                                <p>On receiving a message, the SMPP Server performs:</p>
+
+                                                                <ul class="ms-3">
+                                                                    <li>Generation of a unique Message ID (OMSGID)</li>
+                                                                    <li>Reuse of client-supplied ID if provided</li>
+                                                                    <li>Revalidation of client credentials</li>
+                                                                    <li>Rate-limit and capacity checks</li>
+                                                                </ul>
+
+                                                                <p>
+                                                                    Messages are processed in per-second loops to maintain
+                                                                    throughput and performance.
+                                                                </p>
+
+                                                                <p>
+                                                                    After validation, messages are forwarded to the
+                                                                    <strong>DF Service</strong>.
+                                                                </p>
+                                                            </div>
+
+                                                            <!-- ================= DF SERVICE ================= -->
+                                                            <div class="sms-question">
+                                                                <h6>3️⃣ DF Service (DragonFly)</h6>
+
+                                                                <p>
+                                                                    The DF service receives the message payload from the
+                                                                    SMPP Server and stores it securely in
+                                                                    <strong>Redis (DragonFly)</strong>.
+                                                                </p>
+
+                                                                <ul class="ms-3">
+                                                                    <li>Ensures persistence and queue safety</li>
+                                                                    <li>Stores metadata for downstream services</li>
+                                                                    <li>Acts as the backbone for message flow</li>
+                                                                </ul>
+
+                                                                <p>
+                                                                    After storage, the message is forwarded to the
+                                                                    <strong>Validator Service</strong>.
+                                                                </p>
+                                                            </div>
+
+                                                            <!-- ================= VALIDATOR SERVICE ================= -->
+                                                            <div class="sms-question">
+                                                                <h6>4️⃣ Validator Service</h6>
+
+                                                                <p>
+                                                                    The Validator Service retrieves message data from Redis
+                                                                    and performs critical checks:
+                                                                </p>
+
+                                                                <ul class="ms-3">
+                                                                    <li>Billing completion verification</li>
+                                                                    <li>Destination blacklist checks</li>
+                                                                    <li>Source address blacklist checks</li>
+                                                                    <li>Spam and restricted content detection</li>
+                                                                    <li>TLV validation</li>
+                                                                </ul>
+
+                                                                <p>
+                                                                    Only messages that pass all validation steps are approved
+                                                                    and forwarded to the Translation Service.
+                                                                </p>
+                                                            </div>
+
+                                                            <!-- ================= TRANSLATION SERVICE ================= -->
+                                                            <div class="sms-question">
+                                                                <h6>5️⃣ Translation Service</h6>
+
+                                                                <p>
+                                                                    The Translation Service applies client-specific or
+                                                                    message-specific transformation rules.
+                                                                </p>
+
+                                                                <ul class="ms-3">
+                                                                    <li>Fetch rules from Redis</li>
+                                                                    <li>Match rules against message/client</li>
+                                                                    <li>Modify or translate content if required</li>
+                                                                </ul>
+
+                                                                <p>
+                                                                    After translation, messages move to the Buffer Service.
+                                                                </p>
+                                                            </div>
+
+                                                            <!-- ================= BUFFER SERVICE ================= -->
+                                                            <div class="sms-question">
+                                                                <h6>6️⃣ Buffer Service</h6>
+
+                                                                <p>
+                                                                    The Buffer Service controls message timing and delivery
+                                                                    eligibility.
+                                                                </p>
+
+                                                                <ul class="ms-3">
+                                                                    <li>Check country & region restrictions</li>
+                                                                    <li>Validate promotional time windows</li>
+                                                                    <li>Hold messages outside allowed time periods</li>
+                                                                    <li>Queue messages with priority and retry rules</li>
+                                                                </ul>
+
+                                                                <p>
+                                                                    Eligible messages are forwarded to the
+                                                                    <strong>FDLR Service</strong>.
+                                                                </p>
+                                                            </div>
+
+                                                            <!-- ================= FDLR SERVICE ================= -->
+                                                            <div class="sms-question">
+                                                                <h6>7️⃣ FDLR Service</h6>
+
+                                                                <p>
+                                                                    The FDLR Service applies controlled DLR splitting using
+                                                                    <code>cfdlr_ratio</code>.
+                                                                </p>
+
+                                                                <ul class="ms-3">
+                                                                    <li>100:0 → All messages routed normally</li>
+                                                                    <li>Other ratios → Partial real delivery + fake DLRs</li>
+                                                                    <li>Per-second ratio enforcement</li>
+                                                                    <li>Redis logging for reconciliation</li>
+                                                                </ul>
+
+                                                                <p>
+                                                                    Routed messages proceed to the Routing Service.
+                                                                </p>
+                                                            </div>
+
+                                                            <!-- ================= ROUTING SERVICE ================= -->
+                                                            <div class="sms-question">
+                                                                <h6>8️⃣ Routing Service</h6>
+
+                                                                <p>
+                                                                    Routing rules are evaluated using
+                                                                    client system_id and MCC/MNC data.
+                                                                </p>
+
+                                                                <ul class="ms-3">
+                                                                    <li><strong>LCR</strong> – Least cost supplier</li>
+                                                                    <li><strong>PCR</strong> – Premium supplier</li>
+                                                                    <li><strong>CHOICE_LIST</strong> – Percentage-based split</li>
+                                                                </ul>
+
+                                                                <p>
+                                                                    Supplier rates are fetched and messages are forwarded
+                                                                    to the SEND_SMS Service.
+                                                                </p>
+                                                            </div>
+
+                                                            <!-- ================= SEND_SMS SERVICE ================= -->
+                                                            <div class="sms-question">
+                                                                <h6>9️⃣ SEND_SMS Service</h6>
+
+                                                                <ul class="ms-3">
+                                                                    <li>Maintains supplier connections</li>
+                                                                    <li>Triggers billing before delivery</li>
+                                                                    <li>Sends provider-specific payloads</li>
+                                                                    <li>Receives and maps supplier DLRs</li>
+                                                                </ul>
+
+                                                                <p>
+                                                                    Standardized DLRs are forwarded to the DLR Service.
+                                                                </p>
+                                                            </div>
+
+                                                            <!-- ================= DLR SERVICE ================= -->
+                                                            <div class="sms-question">
+                                                                <h6>🔟 DLR Service</h6>
+
+                                                                <ul class="ms-3">
+                                                                    <li>Maps SMSGID → OMSGID</li>
+                                                                    <li>Applies DLR status/code mapping</li>
+                                                                    <li>Delivers DLRs to active SMPP clients</li>
+                                                                    <li>Stores undelivered DLRs for retry</li>
+                                                                </ul>
+                                                            </div>
+
+                                                            <!-- ================= BILLING SERVICE ================= -->
+                                                            <div class="sms-question">
+                                                                <h6>1️⃣1️⃣ BILLING-SMS Service</h6>
+
+                                                                <ul class="ms-3">
+                                                                    <li>Client billing deduction</li>
+                                                                    <li>Supplier billing calculation</li>
+                                                                    <li>Updates C-Cost and S-Cost</li>
+                                                                    <li>Used across all services</li>
+                                                                </ul>
+                                                            </div>
+
+                                                            <!-- ================= FINAL SUMMARY ================= -->
+                                                            <div class="sms-question">
+                                                                <h6>✅ Final Message Flow Summary</h6>
+
+                                                                <p>
+                                                                    The SMPP platform ensures secure, scalable, and traceable
+                                                                    message delivery using Redis-backed services, controlled
+                                                                    routing, precise billing, and reliable DLR handling.
+                                                                </p>
+
+                                                                <p>
+                                                                    This architecture guarantees complete message lifecycle
+                                                                    visibility, reconciliation, and reporting.
+                                                                </p>
+                                                            </div>
+
+                                                        </div>
+                                                        <div class="watch-video-wrap">
+                                                            <a
+                                                                href="https://www.youtube.com/watch?v=jSqEWell3q8"
+                                                                target="_blank"
+                                                                class="watch-video-btn yt-expand"
+                                                                aria-label="Watch on YouTube"
+                                                            >
+                                                                <i class="fab fa-youtube"></i>
+                                                                <span class="yt-text">Watch on YouTube</span>
+                                                            </a>
+                                                        </div>
+                                                      </div>
+                                                    </div>
+
+                                                       <!-- ========================================================= -->
                                                       <!-- SMPP OVERVIEW -->
                                                       <!-- ========================================================= -->
                                                       <div class="accordion-item sms-section">
@@ -1203,199 +1420,6 @@
                                                               </div>
                                                           </div>
                                                       </div>
-
-                                                      <!-- ========================================================= -->
-                                                      <!-- SINGLE SMS VIA SMPP -->
-                                                      <!-- ========================================================= -->
-                                                      <div class="accordion-item sms-section">
-                                                          <h2 class="accordion-header" id="singleSmsHeading">
-                                                              <button
-                                                                  class="accordion-button collapsed"
-                                                                  type="button"
-                                                                  data-bs-toggle="collapse"
-                                                                  data-bs-target="#singleSmsCollapse"
-                                                              >
-                                                                  💬 Send Single SMS via SMPP (REPL)
-                                                              </button>
-                                                          </h2>
-
-                                                          <div
-                                                              id="singleSmsCollapse"
-                                                              class="accordion-collapse collapse"
-                                                              data-bs-parent="#smsInnerAccordion"
-                                                          >
-                                                              <div class="accordion-body">
-                                                                  <div class="sms-question">
-                                                                      <ol class="ms-3">
-                                                                          <li>Open VS Code → Integrated Terminal</li>
-                                                                          <li><pre><code>docker ps -a</code></pre></li>
-                                                                          <li><pre><code>docker exec -it &lt;container_id_or_name&gt; bash</code></pre></li>
-                                                                          <li><pre><code>npm start</code></pre></li>
-                                                                          <li>
-                                                                              <pre><code>
-                                                  call smpp_client.message \
-                                                    --username "client1@client.com" \
-                                                    --password "********" \
-                                                    --src_addr "AIRTEL" \
-                                                    --destination "+919098925163" \
-                                                    --message "Test SMS via SMPP"
-                                                                              </code></pre>
-                                                                          </li>
-                                                                      </ol>
-
-                                                                      <p>
-                                                                          Verify report at:
-                                                                          <code>Reports &gt; Client SMS &gt; All Messages</code>
-                                                                      </p>
-                                                                  </div>
-                                                              </div>
-                                                              <div class="watch-video-wrap">
-                                                                  <a href="https://www.youtube.com/watch?v=VIDEO_ID" target="_blank" class="watch-video-btn">
-                                                                      <i class="fas fa-play-circle"></i>
-                                                                      Watch Video
-                                                                  </a>
-                                                              </div>
-                                                          </div>
-                                                      </div>
-
-                                                      <!-- ========================================================= -->
-                                                      <!-- MULTIPLE SMS (SINGLE DESTINATION) -->
-                                                      <!-- ========================================================= -->
-                                                      <div class="accordion-item sms-section">
-                                                          <h2 class="accordion-header" id="bulkSingleHeading">
-                                                              <button
-                                                                  class="accordion-button collapsed"
-                                                                  type="button"
-                                                                  data-bs-toggle="collapse"
-                                                                  data-bs-target="#bulkSingleCollapse"
-                                                              >
-                                                                  📦 Multiple SMS (Single Destination)
-                                                              </button>
-                                                          </h2>
-
-                                                          <div
-                                                              id="bulkSingleCollapse"
-                                                              class="accordion-collapse collapse"
-                                                              data-bs-parent="#smsInnerAccordion"
-                                                          >
-                                                              <div class="accordion-body">
-                                                                  <div class="sms-question">
-                                                                      <pre><code>
-                                                  call smpp_client.message \
-                                                    --username "client1@client.com" \
-                                                    --password "********" \
-                                                    --message "Bulk SMS Test" \
-                                                    --src_addr "AIRTEL" \
-                                                    --destination "+919098925163" \
-                                                    --msgCount 100
-                                                                      </code></pre>
-
-                                                                      <ul class="ms-3">
-                                                                          <li><code>msgCount</code> → Number of SMS</li>
-                                                                          <li>E.164 number format recommended</li>
-                                                                      </ul>
-                                                                  </div>
-                                                              </div>
-                                                              <div class="watch-video-wrap">
-                                                                  <a href="https://www.youtube.com/watch?v=VIDEO_ID" target="_blank" class="watch-video-btn">
-                                                                      <i class="fas fa-play-circle"></i>
-                                                                      Watch Video
-                                                                  </a>
-                                                              </div>
-                                                          </div>
-                                                      </div>
-
-                                                      <!-- ========================================================= -->
-                                                      <!-- MULTIPLE DESTINATIONS -->
-                                                      <!-- ========================================================= -->
-                                                      <div class="accordion-item sms-section">
-                                                          <h2 class="accordion-header" id="multiDestHeading">
-                                                              <button
-                                                                  class="accordion-button collapsed"
-                                                                  type="button"
-                                                                  data-bs-toggle="collapse"
-                                                                  data-bs-target="#multiDestCollapse"
-                                                              >
-                                                                  📨 SMS to Multiple Destinations
-                                                              </button>
-                                                          </h2>
-
-                                                          <div
-                                                              id="multiDestCollapse"
-                                                              class="accordion-collapse collapse"
-                                                              data-bs-parent="#smsInnerAccordion"
-                                                          >
-                                                              <div class="accordion-body">
-                                                                  <div class="sms-question">
-                                                                      <pre><code>
-                                                  call smpp_client.message \
-                                                    --username "client1@client.com" \
-                                                    --password "********" \
-                                                    --message "Multi Destination SMS" \
-                                                    --src_addr "AIRTEL" \
-                                                    --destination "+919098925163,+919988776655,+918888999000" \
-                                                    --msgCount 1
-                                                                      </code></pre>
-
-                                                                      <p>
-                                                                          Numbers must be comma-separated and in
-                                                                          <strong>E.164 format</strong>.
-                                                                      </p>
-                                                                  </div>
-                                                              </div>
-                                                              <div class="watch-video-wrap">
-                                                                  <a href="https://www.youtube.com/watch?v=VIDEO_ID" target="_blank" class="watch-video-btn">
-                                                                      <i class="fas fa-play-circle"></i>
-                                                                      Watch Video
-                                                                  </a>
-                                                              </div>
-                                                          </div>
-                                                      </div>
-
-                                                      <!-- ========================================================= -->
-                                                      <!-- HTTP API (POSTMAN) -->
-                                                      <!-- ========================================================= -->
-                                                      <div class="accordion-item sms-section">
-                                                          <h2 class="accordion-header" id="httpApiHeading">
-                                                              <button
-                                                                  class="accordion-button collapsed"
-                                                                  type="button"
-                                                                  data-bs-toggle="collapse"
-                                                                  data-bs-target="#httpApiCollapse"
-                                                              >
-                                                                  🌐 Send SMS via HTTP API (Postman)
-                                                              </button>
-                                                          </h2>
-
-                                                          <div
-                                                              id="httpApiCollapse"
-                                                              class="accordion-collapse collapse"
-                                                              data-bs-parent="#smsInnerAccordion"
-                                                          >
-                                                              <div class="accordion-body">
-                                                                  <div class="sms-question">
-                                                                      <ol class="ms-3">
-                                                                          <li>Import <strong>Messaging.postman_collection1.json</strong></li>
-                                                                          <li><pre><code>npm start</code></pre></li>
-                                                                          <li><pre><code>Messaging → MT_sms → for-submit-sms</code></pre></li>
-                                                                          <li>Click <strong>Send</strong></li>
-                                                                      </ol>
-
-                                                                      <p>
-                                                                          Check reports at:
-                                                                          <code>Reports &gt; Client SMS &gt; All Messages</code>
-                                                                      </p>
-                                                                  </div>
-                                                              </div>
-                                                              <div class="watch-video-wrap">
-                                                                  <a href="https://www.youtube.com/watch?v=VIDEO_ID" target="_blank" class="watch-video-btn">
-                                                                      <i class="fas fa-play-circle"></i>
-                                                                      Watch Video
-                                                                  </a>
-                                                              </div>
-                                                          </div>
-                                                      </div>
-
                                                       
                                                   </div>
 

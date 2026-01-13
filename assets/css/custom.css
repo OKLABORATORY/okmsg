@@ -345,54 +345,201 @@ html {
     overflow: hidden;
     margin-bottom: 16px;
 }
+/* =========================================================
+   YT EXPAND BUTTON – FIXED CENTER + ULTRA SMOOTH
+   ========================================================= */
 
-/* ================= WATCH VIDEO CTA ================= */
 .watch-video-wrap {
     display: flex;
     justify-content: center;
-    margin-top: 14px;
+    margin-top: 20px;
 }
 
-.watch-video-btn {
-    display: inline-flex;
-    align-items: center;
-    gap: 8px;
+/* BUTTON */
+.watch-video-btn.yt-expand {
+    position: relative;
+    overflow: hidden;
 
-    padding: 8px 16px;
-    font-size: 14px;
-    font-weight: 600;
+    width: 46px;
+    height: 46px;
 
-    color: #0d6efd;
-    background: #eef5ff;
-
+    background: #fff;
+    border: 2px solid #ff0000;
     border-radius: 999px;
-    border: 1px solid #cfe2ff;
     text-decoration: none;
 
-    transition: all 0.25s ease;
+    box-shadow: 0 6px 16px rgba(0,0,0,0.1);
+
+    transition:
+        width 0.45s cubic-bezier(.4,0,.2,1),
+        box-shadow 0.3s ease;
 }
 
-.watch-video-btn i {
+/* ICON — CENTER BY DEFAULT */
+.watch-video-btn.yt-expand i {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+
+    font-size: 20px;
+    color: #ff0000;
+    z-index: 2;
+
+    transition: transform 0.45s cubic-bezier(.4,0,.2,1);
+}
+
+/* TEXT */
+.watch-video-btn.yt-expand .yt-text {
+    position: absolute;
+    left: 52px;
+    top: 50%;
+    transform: translateY(-50%) translateX(-6px);
+
+    white-space: nowrap;
+    opacity: 0;
+
+    font-size: 14px;
+    font-weight: 700;
+    color: #ff0000;
+
+    transition:
+        opacity 0.25s ease 0.15s,
+        transform 0.25s ease 0.15s;
+}
+
+/* HOVER — EXPAND → RIGHT */
+.watch-video-btn.yt-expand:hover {
+    width: 190px;
+    box-shadow: 0 14px 32px rgba(255,0,0,0.25);
+}
+
+/* 🔥 FIX: ICON STOPS AT PERFECT LEFT POSITION */
+.watch-video-btn.yt-expand:hover i {
+    transform: translate(-78px, -50%);
+}
+
+/* SHOW TEXT */
+.watch-video-btn.yt-expand:hover .yt-text {
+    opacity: 1;
+    transform: translateY(-50%) translateX(0);
+}
+
+/* MOBILE */
+@media (hover: none) {
+    .watch-video-btn.yt-expand {
+        width: 190px;
+    }
+
+    .watch-video-btn.yt-expand i {
+        transform: translate(-78px, -50%);
+    }
+
+    .watch-video-btn.yt-expand .yt-text {
+        opacity: 1;
+        transform: translateY(-50%) translateX(0);
+    }
+}
+
+/* ================= ULTRA PREMIUM SMPP ACCORDION ================= */
+#smsInnerAccordion .accordion-item {
+    margin-bottom: 20px;
+    border-radius: 18px;
+    overflow: hidden;
+}
+
+/* Base button style */
+#smsInnerAccordion .accordion-button {
+    position: relative;
+    isolation: isolate;
+
+    background: linear-gradient(135deg, #eef5ff, #e6f0ff);
+    color: #0d3b8a;
+
     font-size: 16px;
+    font-weight: 700;
+    letter-spacing: 0.25px;
+
+    padding: 18px 22px;
+    border-radius: 18px;
+
+    border: 1px solid #cfe2ff;
+    box-shadow:
+        0 8px 18px rgba(13, 110, 253, 0.12),
+        inset 0 0 0 0 rgba(255,255,255,0.6);
+
+    transition: 
+        background 0.35s ease,
+        box-shadow 0.35s ease,
+        transform 0.25s ease;
+}
+
+/* Subtle animated shine */
+#smsInnerAccordion .accordion-button::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(
+        120deg,
+        transparent 30%,
+        rgba(255,255,255,0.55),
+        transparent 70%
+    );
+    opacity: 0;
+    transform: translateX(-100%);
+    transition: all 0.6s ease;
+    z-index: -1;
 }
 
 /* Hover animation */
-.watch-video-btn:hover {
-    background: #0d6efd;
-    color: #ffffff;
-    box-shadow: 0 6px 16px rgba(13, 110, 253, 0.3);
-    transform: translateY(-1px);
+#smsInnerAccordion .accordion-button:hover {
+    transform: translateY(-2px);
+    box-shadow:
+        0 14px 30px rgba(13, 110, 253, 0.25),
+        inset 0 0 0 1px rgba(255,255,255,0.4);
 }
 
-/* Click feedback */
-.watch-video-btn:active {
-    transform: scale(0.96);
+#smsInnerAccordion .accordion-button:hover::before {
+    opacity: 1;
+    transform: translateX(100%);
 }
-.watch-video-btn {
-    animation: pulse 2s infinite;
+
+/* OPEN / ACTIVE state */
+#smsInnerAccordion .accordion-button:not(.collapsed) {
+    background: linear-gradient(135deg, #0d6efd, #2563eb);
+    color: #ffffff;
+
+    box-shadow:
+        0 18px 40px rgba(13, 110, 253, 0.45),
+        inset 0 0 0 1px rgba(255,255,255,0.25);
+
+    animation: openPulse 0.45s ease-out;
 }
-@keyframes pulse {
-    0% { box-shadow: 0 0 0 0 rgba(13,110,253,.4); }
-    70% { box-shadow: 0 0 0 8px rgba(13,110,253,0); }
-    100% { box-shadow: 0 0 0 0 rgba(13,110,253,0); }
+
+/* Left accent bar */
+#smsInnerAccordion .accordion-button:not(.collapsed)::after {
+    filter: brightness(0) invert(1);
+}
+
+/* Chevron animation */
+#smsInnerAccordion .accordion-button::after {
+    transition: transform 0.35s ease;
+    transform: scale(1.15);
+}
+
+#smsInnerAccordion .accordion-button:not(.collapsed)::after {
+    transform: rotate(180deg) scale(1.25);
+}
+
+/* Glow pulse on open */
+@keyframes openPulse {
+    0% {
+        box-shadow: 0 0 0 rgba(13,110,253,0);
+    }
+    60% {
+        box-shadow: 0 0 28px rgba(13,110,253,0.6);
+    }
+    100% {
+        box-shadow: 0 18px 40px rgba(13,110,253,0.45);
+    }
 }
