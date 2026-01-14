@@ -209,7 +209,7 @@
         </aside>
         <!-- Section -->
         <!-- <section class="ms-auto overflow-auto" style="margin-left: 220px; width: calc(100% - 250px);"> -->
-          <section class="content-area ms-auto overflow-auto">
+        <section class="content-area ms-auto overflow-auto">
             <div class="p-4 mt-3 pt-5">
                 <!-- Overview Section -->
                 <div id="overview">
@@ -2473,13 +2473,12 @@ GET  http:&lt;IP&gt;:4001/api/sms?command=submit&username=client1@client.com&pas
                                 features, and implementation details.
                             </p>
 
-                            <a href="https://oklaboratory.github.io/okmsg/latest/"
-                            target="_blank"
-                            class="btn btn-primary px-4 py-2">
-                                <i class="fas fa-arrow-right me-2"></i>
-                                Go to Documentation
-                            </a>
-
+                            <div class="watch-video-wrap">
+                                <a href="https://oklaboratory.github.io/okmsg/latest/" target="_blank" class="watch-video-btn yt-expand doc-expand" aria-label="Go to Documentation">
+                                    <i class="fas fa-book-open"></i>
+                                    <span class="yt-text">Click here</span>
+                                </a>
+                            </div>
                         </div>
                     </div>
 
@@ -2546,37 +2545,6 @@ GET  http:&lt;IP&gt;:4001/api/sms?command=submit&username=client1@client.com&pas
             }
         }
     </script>
-    <!-- <script>
-      function setupMobileSidebarClone() {
-        const sidebar = document.querySelector("#mainSidebar .navbar-nav");
-        const mobileBody = document.getElementById("mobileSidebarBody");
-
-        if (!sidebar || !mobileBody) return;
-
-        // clear old injected sidebar
-        mobileBody.innerHTML = "";
-
-        // clone sidebar menu
-        const clone = sidebar.cloneNode(true);
-
-        // ✅ Fix duplicate collapse IDs inside clone
-        clone.querySelectorAll("[id]").forEach(el => {
-          el.id = el.id + "-m";
-        });
-
-        clone.querySelectorAll("[data-bs-target]").forEach(el => {
-          el.setAttribute("data-bs-target", el.getAttribute("data-bs-target") + "-m");
-        });
-
-        clone.querySelectorAll("[href^='#']").forEach(el => {
-          // keep same anchor scrolling
-        });
-
-        mobileBody.appendChild(clone);
-      }
-
-      window.addEventListener("load", setupMobileSidebarClone);
-    </script> -->
     <script>
       function setupMobileSidebarClone() {
         const sidebar = document.querySelector("#mainSidebar .navbar-nav");
@@ -2624,24 +2592,6 @@ GET  http:&lt;IP&gt;:4001/api/sms?command=submit&username=client1@client.com&pas
 
       window.addEventListener("load", setupMobileSidebarClone);
     </script>
-    <!-- <script>
-        function scrollToSection(id, event) {
-            event.preventDefault();
-
-            const headerHeight = 64; // MUST match .app-header height
-            const element = document.getElementById(id);
-
-            if (!element) return;
-
-            const elementTop = element.getBoundingClientRect().top;
-            const scrollPosition = window.pageYOffset + elementTop - headerHeight - 10;
-
-            window.scrollTo({
-                top: scrollPosition,
-                behavior: "smooth"
-            });
-        }
-    </script> -->
 </body>
 </html>
 

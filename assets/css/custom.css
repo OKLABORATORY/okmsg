@@ -843,3 +843,26 @@ html {
         font-size: 0.85rem;
     }
 }
+/* ================= DOCUMENTATION EXPAND BUTTON ================= */
+.watch-video-btn.doc-expand {
+    border-color: #0d6efd;
+    box-shadow:
+        0 6px 16px rgba(0,0,0,0.1),
+        inset 0 0 0 1px rgba(13,110,253,0.12);
+}
+
+.watch-video-btn.doc-expand i {
+    color: #0d6efd;
+}
+
+.watch-video-btn.doc-expand .yt-text {
+    color: #0d6efd;
+}
+
+/* Hover state */
+.watch-video-btn.doc-expand:hover {
+    background: linear-gradient(135deg, #f5f9ff, #ffffff);
+    box-shadow:
+        0 16px 36px rgba(13,110,253,0.28),
+        inset 0 0 0 1px rgba(13,110,253,0.2);
+}

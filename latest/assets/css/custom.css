@@ -34,7 +34,7 @@
     position: fixed;
     top: 0;
     width: 100%;
-    height: 64px;
+    height: 60px;
     z-index: 1050;
     background-color: #001C46;
     color: #ffffff;
@@ -67,8 +67,8 @@
 }
 
 aside.sidebar {
-    top: 64px;
-    height: calc(100vh - 64px);
+    top: 60px;
+    height: calc(100vh - 60px);
 }
 
 .r_bg {
@@ -135,16 +135,34 @@ aside.sidebar {
         opacity: 0.6;
     }
 
-    @media (max-width: 991px) {
-        /* Hide sidebar on tablets and smaller devices */
+    /* ✅ Desktop sidebar visible by default */
+    aside.sidebar {
+        display: block;
+    }
+
+    /* ✅ Mobile: hide normal sidebar, use Offcanvas only */
+    @media (max-width: 576px) {
         aside.sidebar {
             display: none !important;
         }
 
-        /* Make content take full width */
         section.ms-auto {
             margin-left: 0 !important;
             width: 100% !important;
+        }
+    }
+
+    /* Desktop layout with sidebar */
+    .content-area {
+        margin-left: 250px;
+        width: calc(100% - 250px);
+    }
+
+    /* Mobile layout full width */
+    @media (max-width: 576px) {
+        .content-area {
+            margin-left: 0;
+            width: 100%;
         }
     }
 
@@ -723,4 +741,105 @@ html {
 /* Same hover feel as SMS (but no action) */
 .whatsapp-only .accordion-button:hover {
     background-color: #eaf2ff;
+}
+
+/* ===================== DESKTOP DEFAULT ===================== */
+.header-center {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    align-items: center;
+    white-space: nowrap;
+}
+
+/* Desktop => title + subtitle same line */
+.brand-wrap {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 10px;
+    white-space: nowrap;
+}
+
+.brand-top {
+    font-weight: 800;
+    font-size: 1.05rem;
+    display: flex;
+    align-items: center;
+}
+
+.brand-bottom {
+    font-size: 0.9rem;
+    font-weight: 500;
+    opacity: 0.9;
+}
+
+/* Hide mobile header-right by default */
+.desktop-header-right {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+.mobile-header-right {
+    display: none;
+}
+
+/* ===================== MOBILE VIEW ===================== */
+@media (max-width: 576px) {
+
+    /* Hide desktop header right */
+    .desktop-header-right {
+        display: none !important;
+    }
+
+    /* ✅ Keep header fixed height, not stacked */
+    .app-header {
+        height: 45px;
+        padding: 0 12px;
+        flex-direction: row;
+        align-items: center;
+        justify-content: center;
+        position: fixed;
+    }
+
+    /* ✅ Center brand text */
+    .header-center {
+        position: absolute;
+        left: 50%;
+        transform: translateX(-50%);
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 2px;
+        white-space: nowrap;
+        text-align: center;
+    }
+
+    /* ✅ Title only in mobile */
+    .brand-wrap {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 0;
+        white-space: nowrap;
+    }
+
+    /* ✅ Hide subtitle in mobile */
+    .brand-bottom {
+        display: none !important;
+    }
+
+    /* ✅ MOBILE BADGE STAYS RIGHT */
+    .mobile-header-right {
+        display: flex !important;
+        position: absolute;
+        right: 12px;
+        top: 50%;
+        transform: translateY(-50%);
+        align-items: center;
+        gap: 8px;
+        margin-top: 0;
+        font-size: 0.85rem;
+    }
 }
