@@ -1,0 +1,870 @@
+/* Override NProgress bar color */
+.watch-video {
+    color: #0d6efd;
+    font-weight: 600;
+    text-decoration: none;
+}
+.watch-video:hover {
+    text-decoration: underline;
+}
+#nprogress .bar {
+    height: 2px;
+    z-index: 100000;
+    background: #faa21c !important;
+}
+
+/* Override blur effect color */
+#nprogress .peg {
+    box-shadow: 0 0 10px #b0de37, 0 0 5px #b0de37 !important;
+}
+
+#nprogress .spinner-icon {
+    display: none;
+}
+
+
+.r_text>li>a {
+    color: #000 !important;
+}
+
+/* header.sticky-top {
+        z-index: 1051;
+    } */
+.app-header {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    height: 60px;
+    z-index: 1050;
+    background-color: #001C46;
+    color: #ffffff;
+
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+
+    padding: 0 24px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.25);
+}
+.header-center {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+
+    display: flex;
+    align-items: center;
+    font-size: 0.95rem;
+    white-space: nowrap;
+}
+
+.header-center i {
+    color: #faa21c;
+}
+
+.header-center .brand {
+    font-weight: 700;
+    font-size: 1.05rem;
+}
+
+aside.sidebar {
+    top: 60px;
+    height: calc(100vh - 60px);
+}
+
+.r_bg {
+    background: rgba(0, 0, 0, 0.4);
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2);
+    backdrop-filter: blur(20px) saturate(180%);
+    -webkit-backdrop-filter: blur(20px) saturate(180%);
+}
+
+@keyframes borderGlow {
+    0% {
+        border-color: #2b5876;
+        box-shadow: 0 0 10px #2b5876;
+    }
+
+    50% {
+        border-color: #4e4376;
+        box-shadow: 0 0 20px #4e4376;
+    }
+
+    100% {
+        border-color: #2b5876;
+        box-shadow: 0 0 10px #2b5876;
+    }
+    }
+
+    @keyframes bgFlow {
+    0% {
+        background-position: 0% 50%;
+    }
+
+    50% {
+        background-position: 100% 50%;
+    }
+
+    100% {
+        background-position: 0% 50%;
+    }
+    }
+
+    .super-box {
+        display: inline-block;
+        padding: 12px 25px;
+        font-size: 18px;
+        font-weight: 600;
+        border-radius: 12px;
+        border: 2px solid;
+        color: #fff;
+        background: linear-gradient(90deg, #2b5876, #4e4376, #2b5876);
+        background-size: 300% 300%;
+        animation: bgFlow 6s infinite, borderGlow 2s infinite;
+        transition: 0.3s;
+        letter-spacing: 0.3px;
+        text-shadow: 0 0 6px rgba(255, 255, 255, 0.4);
+    }
+
+    .super-box:hover {
+        transform: scale(1.03);
+        text-shadow: 0 0 10px #fff;
+    }
+
+    .super-box span {
+        margin: 0 8px;
+        opacity: 0.6;
+    }
+
+    /* ✅ Desktop sidebar visible by default */
+    aside.sidebar {
+        display: block;
+    }
+
+    /* ✅ Mobile: hide normal sidebar, use Offcanvas only */
+    @media (max-width: 576px) {
+        aside.sidebar {
+            display: none !important;
+        }
+
+        section.ms-auto {
+            margin-left: 0 !important;
+            width: 100% !important;
+        }
+    }
+
+    /* Desktop layout with sidebar */
+    .content-area {
+        margin-left: 250px;
+        width: calc(100% - 250px);
+    }
+
+    /* Mobile layout full width */
+    @media (max-width: 576px) {
+        .content-area {
+            margin-left: 0;
+            width: 100%;
+        }
+    }
+
+.r_bg {
+    background: rgba(0, 0, 0, 0.4);
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2);
+    backdrop-filter: blur(5px) saturate(180%);
+    -webkit-backdrop-filter: blur(5px) saturate(180%);
+}
+/* Smooth transitions */
+.collapse {
+    transition: all 0.3s ease-in-out !important;
+}
+
+.collapsing {
+    transition: height 0.3s ease-in-out !important;
+}
+
+/* Smooth chevron rotation */
+.fa-chevron-down {
+    transition: transform 0.3s ease-in-out;
+}
+
+.rotate-180 {
+    transform: rotate(180deg);
+}
+
+/* Active link styles */
+.nav-link.active {
+    background-color: rgba(255, 255, 255, 0.2) !important;
+    border-radius: 5px;
+    font-weight: 600;
+}
+
+.nav-link {
+    cursor: pointer;
+    padding: 10px 15px !important;
+    margin: 2px 0;
+    border-radius: 5px;
+}
+
+.nav-link:hover {
+    background-color: rgba(255, 255, 255, 0.1) !important;
+}
+
+/* Smooth scrolling */
+html {
+    scroll-behavior: smooth;
+}
+
+/* Sub menu styles */
+.nav-sm .nav-link {
+    padding: 8px 15px !important;
+    font-size: 14px;
+    border-left: 2px solid transparent;
+}
+
+.nav-sm .nav-link:hover {
+    border-left: 2px solid #fff;
+    background-color: rgba(255, 255, 255, 0.05) !important;
+
+}
+/* Section wrapper (Routing / Rates / Billing) */
+.sms-section {
+  background: #f9fafb;
+  border-radius: 12px;
+  padding: 18px 20px;
+  border-left: 5px solid #0d6efd;
+  margin-bottom: 24px;
+}
+
+/* Section heading */
+.sms-section-title {
+  font-size: 1.05rem;
+  font-weight: 700;
+  color: #0d6efd;
+  margin-bottom: 16px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+/* Question block */
+.sms-question {
+  background: #ffffff;
+  border-radius: 10px;
+  padding: 14px 16px;
+  box-shadow: 0 1px 4px rgba(0,0,0,0.05);
+  margin-bottom: 14px;
+}
+
+/* Question title */
+.sms-question h6 {
+  font-weight: 600;
+  font-size: 0.95rem;
+  margin-bottom: 10px;
+}
+
+/* Answer list */
+.sms-question ul {
+  margin-bottom: 0;
+}
+
+.sms-question li {
+  font-size: 0.9rem;
+  line-height: 1.6;
+}
+
+/* Watch video link */
+.sms-question a {
+  font-size: 0.85rem;
+  text-decoration: none;
+}
+
+/* Divider tweak */
+.accordion-body hr {
+  border-top: 1px dashed #e5e7eb;
+  margin: 28px 0;
+}
+/* ================= INNER (SMS) ACCORDION LOOK ================= */
+#accordion101 {
+    margin: 12px;                 /* thoda andar ghusao */
+    border-radius: 10px;
+    background: #f8fafc;          /* halka background */
+    border: 1px solid #e5e7eb;    /* subtle border */
+}
+
+/* inner accordion button thoda chhota */
+#accordion101 .accordion-button {
+    padding: 10px 14px;
+    font-size: 14px;
+    background-color: #f1f5f9;
+}
+
+/* outer accordion se visually separate */
+#accordion101 .accordion-item {
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+/* inner accordion body compact */
+#accordion101 .accordion-body {
+    padding: 14px;
+    font-size: 13.5px;
+}
+
+/* optional: emoji/icon thoda subtle */
+#accordion101 .accordion-button span {
+    font-size: 14px;
+}
+/* ================= FINAL NESTED ACCORDION FIX ================= */
+#accordion101 {
+    margin: 16px 24px;              /* clearly inset */
+    padding: 4px;
+    background: #f1f6ff;
+    border-radius: 12px;
+}
+
+/* SMS accordion header = clearly smaller */
+#accordion101 .accordion-button {
+    padding: 8px 12px;
+    font-size: 13px;
+    font-weight: 600;
+    background: #eaf2ff;
+}
+
+/* Body compact so nested feel aaye */
+#accordion101 .accordion-body {
+    padding: 10px;
+    font-size: 13px;
+}
+
+#smsInnerAccordion .accordion-button {
+    font-size: 16px;          /* bada text */
+    font-weight: 700;         /* bold */
+    letter-spacing: 0.2px;
+
+    padding: 14px 18px;       /* thoda premium spacing */
+    background: #eef5ff;      /* subtle highlight */
+    color: #0d3b8a;
+}
+
+/* Active (opened) accordion title */
+#smsInnerAccordion .accordion-button:not(.collapsed) {
+    background: #0d6efd;
+    color: #ffffff;
+}
+
+#smsInnerAccordion .accordion-button.collapsed::after {
+    transform: rotate(-90deg) scale(1.15);
+    transition: transform 0.3s ease;
+}
+
+/* Default (collapsed) — blue bg, dark arrow OK */
+#smsInnerAccordion .accordion-button.collapsed::after {
+    filter: none;
+}
+
+/* Expanded — blue background, make arrow WHITE */
+#smsInnerAccordion .accordion-button:not(.collapsed)::after {
+    filter: brightness(0) invert(1);
+}
+
+
+/* Arrow icon (Bootstrap chevron) thoda bold feel */
+#smsInnerAccordion .accordion-button::after {
+    transform: scale(1.1);
+    font-weight: bold;
+}
+
+/* Section container ko thoda strong card feel */
+#smsInnerAccordion .accordion-item {
+    border-radius: 14px;
+    overflow: hidden;
+    margin-bottom: 16px;
+}
+/* =========================================================
+   YT EXPAND BUTTON – FIXED CENTER + ULTRA SMOOTH
+   ========================================================= */
+.watch-video-wrap {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+}
+
+/* BUTTON */
+.watch-video-btn.yt-expand {
+    position: relative;
+    overflow: hidden;
+
+    width: 46px;
+    height: 46px;
+
+    background: #ffffff;
+    border: 2px solid #ff0000;
+    border-radius: 999px;
+    text-decoration: none;
+
+    /* subtle professional default depth */
+    box-shadow:
+        0 6px 16px rgba(0,0,0,0.1),
+        inset 0 0 0 1px rgba(255,0,0,0.08);
+
+    transition:
+        width 0.45s cubic-bezier(.4,0,.2,1),
+        box-shadow 0.3s ease,
+        background 0.3s ease;
+}
+
+/* ICON — CENTER BY DEFAULT */
+.watch-video-btn.yt-expand i {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+
+    font-size: 20px;
+    color: #ff0000;
+    z-index: 2;
+
+    transition: transform 0.45s cubic-bezier(.4,0,.2,1);
+}
+
+/* TEXT */
+.watch-video-btn.yt-expand .yt-text {
+    position: absolute;
+    left: 52px;
+    top: 50%;
+    transform: translateY(-50%) translateX(-6px);
+
+    white-space: nowrap;
+    opacity: 0;
+
+    font-size: 14px;
+    font-weight: 700;
+    color: #ff0000;
+
+    transition:
+        opacity 0.25s ease 0.15s,
+        transform 0.25s ease 0.15s;
+}
+
+/* HOVER — EXPAND → RIGHT + RED EFFECT */
+.watch-video-btn.yt-expand:hover {
+    width: 190px;
+
+    /* professional red fill */
+    background: linear-gradient(135deg, #fff5f5, #ffffff);
+
+    box-shadow:
+        0 16px 36px rgba(255,0,0,0.28),
+        inset 0 0 0 1px rgba(255,0,0,0.15);
+}
+
+/* ICON FINAL POSITION */
+.watch-video-btn.yt-expand:hover i {
+    transform: translate(-78px, -50%);
+}
+
+/* SHOW TEXT */
+.watch-video-btn.yt-expand:hover .yt-text {
+    opacity: 1;
+    transform: translateY(-50%) translateX(0);
+}
+
+/* CLICK FEEDBACK */
+.watch-video-btn.yt-expand:active {
+    transform: scale(0.97);
+}
+
+/* MOBILE */
+@media (hover: none) {
+    .watch-video-btn.yt-expand {
+        width: 190px;
+        background: linear-gradient(135deg, #fff5f5, #ffffff);
+    }
+
+    .watch-video-btn.yt-expand i {
+        transform: translate(-78px, -50%);
+    }
+
+    .watch-video-btn.yt-expand .yt-text {
+        opacity: 1;
+        transform: translateY(-50%) translateX(0);
+    }
+}
+
+/* ================= ULTRA PREMIUM SMPP ACCORDION ================= */
+#smsInnerAccordion .accordion-item {
+    margin-bottom: 20px;
+    border-radius: 18px;
+    overflow: hidden;
+}
+
+/* Base button style */
+#smsInnerAccordion .accordion-button {
+    position: relative;
+    isolation: isolate;
+
+    background: linear-gradient(135deg, #eef5ff, #e6f0ff);
+    color: #0d3b8a;
+
+    font-size: 16px;
+    font-weight: 700;
+    letter-spacing: 0.25px;
+
+    padding: 18px 22px;
+    border-radius: 18px;
+
+    border: 1px solid #cfe2ff;
+    box-shadow:
+        0 8px 18px rgba(13, 110, 253, 0.12),
+        inset 0 0 0 0 rgba(255,255,255,0.6);
+
+    transition: 
+        background 0.35s ease,
+        box-shadow 0.35s ease,
+        transform 0.25s ease;
+}
+
+/* Subtle animated shine */
+#smsInnerAccordion .accordion-button::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(
+        120deg,
+        transparent 30%,
+        rgba(255,255,255,0.55),
+        transparent 70%
+    );
+    opacity: 0;
+    transform: translateX(-100%);
+    transition: all 0.6s ease;
+    z-index: -1;
+}
+
+/* Hover animation */
+#smsInnerAccordion .accordion-button:hover {
+    transform: translateY(-2px);
+    box-shadow:
+        0 14px 30px rgba(13, 110, 253, 0.25),
+        inset 0 0 0 1px rgba(255,255,255,0.4);
+}
+
+#smsInnerAccordion .accordion-button:hover::before {
+    opacity: 1;
+    transform: translateX(100%);
+}
+
+/* OPEN / ACTIVE state */
+#smsInnerAccordion .accordion-button:not(.collapsed) {
+    background: linear-gradient(135deg, #0d6efd, #2563eb);
+    color: #ffffff;
+
+    box-shadow:
+        0 18px 40px rgba(13, 110, 253, 0.45),
+        inset 0 0 0 1px rgba(255,255,255,0.25);
+
+    animation: openPulse 0.45s ease-out;
+}
+
+/* Chevron animation */
+#smsInnerAccordion .accordion-button::after {
+    transition: transform 0.35s ease;
+    transform: scale(1.15);
+}
+
+/* Expanded (open) — DOWN */
+#smsInnerAccordion .accordion-button:not(.collapsed)::after {
+    transform: rotate(0deg) scale(1.25);
+}
+/* Glow pulse on open */
+@keyframes openPulse {
+    0% {
+        box-shadow: 0 0 0 rgba(13,110,253,0);
+    }
+    60% {
+        box-shadow: 0 0 28px rgba(13,110,253,0.6);
+    }
+    100% {
+        box-shadow: 0 18px 40px rgba(13,110,253,0.45);
+    }
+}
+.accordion-collapse {
+    will-change: height, opacity, transform;
+    transition:
+        height 0.6s cubic-bezier(.22,1,.36,1),
+        opacity 0.45s ease,
+        transform 0.45s cubic-bezier(.22,1,.36,1);
+}
+
+/* While collapsing (closing) */
+.accordion-collapse.collapsing {
+    opacity: 0;
+    transform: translateY(-10px) scale(0.985);
+}
+
+/* Fully opened */
+.accordion-collapse.show {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+}
+
+/* Accordion body smooth entrance */
+#smsInnerAccordion .accordion-body {
+    animation: smoothFadeSlide 0.55s cubic-bezier(.22,1,.36,1);
+}
+
+/* Micro-animation */
+@keyframes smoothFadeSlide {
+    from {
+        opacity: 0;
+        transform: translateY(-12px) scale(0.97);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+    }
+}
+/* Button micro-feedback */
+#smsInnerAccordion .accordion-button {
+    transition:
+        background 0.35s ease,
+        box-shadow 0.35s ease,
+        transform 0.25s cubic-bezier(.22,1,.36,1);
+}
+
+/* Slight lift on open */
+#smsInnerAccordion .accordion-button:not(.collapsed) {
+    transform: translateY(-1px);
+}
+.video-info-line {
+    text-align: center;
+    margin-top: 22px;
+    margin-bottom: 14px;
+
+    font-size: 14.5px;
+    font-weight: 500;
+    line-height: 1.6;
+
+    color: #1f2937; /* dark gray (almost black) */
+
+    padding: 12px 18px;
+    border-radius: 12px;
+
+    background: linear-gradient(
+        90deg,
+        #f8fafc,
+        #f1f5f9
+    );
+
+    border-left: 4px solid #9ca3af; /* neutral gray accent */
+
+    box-shadow:
+        inset 0 0 0 1px #e5e7eb,
+        0 4px 14px rgba(0, 0, 0, 0.06);
+
+    transition: all 0.25s ease;
+}
+
+/* subtle hover – documentation friendly */
+.video-info-line:hover {
+    transform: translateY(-1px);
+    box-shadow:
+        inset 0 0 0 1px #d1d5db,
+        0 8px 20px rgba(0, 0, 0, 0.1);
+}
+
+/* emphasis without color clash */
+.video-info-line strong {
+    font-weight: 700;
+    color: #111827; /* near-black */
+}
+
+.category-divider {
+    border: none;
+    height: 2px;
+    margin: 28px 0;
+    background-color: #6b7280; /* medium gray */
+}
+/* =====================================================
+   REMOVE ACCORDION ARROW — WHATSAPP ONLY (FINAL)
+   ===================================================== */
+
+/* Kill the arrow pseudo-element completely */
+#accordion100 .whatsapp-only .accordion-button::after {
+    display: none !important;
+    content: none !important;
+    background-image: none !important;
+    background: none !important;
+    width: 0 !important;
+    height: 0 !important;
+    transform: none !important;
+}
+
+/* Remove arrow spacing + disable expand behavior */
+#accordion100 .whatsapp-only .accordion-button {
+    padding-right: 18px !important;
+    pointer-events: none;
+    cursor: default;
+}
+#faqMainHeading .accordion-button {
+    font-weight: 800;
+    letter-spacing: 0.3px;
+    color: #111827;            /* dark gray / near black */
+}
+
+/* Expanded state – keep same color */
+#faqMainHeading .accordion-button:not(.collapsed) {
+    color: #111827;
+    background-color: #f9fafb; /* subtle neutral background */
+}
+/* ================= WHATSAPP = EXACT SMS LOOK ================= */
+
+/* Remove arrow completely */
+.whatsapp-only .accordion-button::after {
+    display: none !important;
+}
+
+/* Disable click */
+.whatsapp-only .accordion-button {
+    pointer-events: none;
+    cursor: default;
+}
+
+/* Match SMS background + spacing */
+.whatsapp-only .accordion-button {
+    background-color: #eef5ff;
+    padding: 10px 14px;
+    font-size: 14px;
+    font-weight: 600;
+    border-radius: 8px;
+}
+
+/* Same hover feel as SMS (but no action) */
+.whatsapp-only .accordion-button:hover {
+    background-color: #eaf2ff;
+}
+
+/* ===================== DESKTOP DEFAULT ===================== */
+.header-center {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    align-items: center;
+    white-space: nowrap;
+}
+
+/* Desktop => title + subtitle same line */
+.brand-wrap {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 10px;
+    white-space: nowrap;
+}
+
+.brand-top {
+    font-weight: 800;
+    font-size: 1.05rem;
+    display: flex;
+    align-items: center;
+}
+
+.brand-bottom {
+    font-size: 0.9rem;
+    font-weight: 500;
+    opacity: 0.9;
+}
+
+/* Hide mobile header-right by default */
+.desktop-header-right {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+.mobile-header-right {
+    display: none;
+}
+
+/* ===================== MOBILE VIEW ===================== */
+@media (max-width: 576px) {
+
+    /* Hide desktop header right */
+    .desktop-header-right {
+        display: none !important;
+    }
+
+    /* ✅ Keep header fixed height, not stacked */
+    .app-header {
+        height: 45px;
+        padding: 0 12px;
+        flex-direction: row;
+        align-items: center;
+        justify-content: center;
+        position: fixed;
+    }
+
+    /* ✅ Center brand text */
+    .header-center {
+        position: absolute;
+        left: 50%;
+        transform: translateX(-50%);
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 2px;
+        white-space: nowrap;
+        text-align: center;
+    }
+
+    /* ✅ Title only in mobile */
+    .brand-wrap {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 0;
+        white-space: nowrap;
+    }
+
+    /* ✅ Hide subtitle in mobile */
+    .brand-bottom {
+        display: none !important;
+    }
+
+    /* ✅ MOBILE BADGE STAYS RIGHT */
+    .mobile-header-right {
+        display: flex !important;
+        position: absolute;
+        right: 12px;
+        top: 50%;
+        transform: translateY(-50%);
+        align-items: center;
+        gap: 8px;
+        margin-top: 0;
+        font-size: 0.85rem;
+    }
+}
+/* ================= DOCUMENTATION EXPAND BUTTON ================= */
+.watch-video-btn.doc-expand {
+    width: 48px;
+    border-color: #0d6efd;
+    box-shadow:
+        0 6px 16px rgba(0,0,0,0.1),
+        inset 0 0 0 1px rgba(13,110,253,0.12);
+}
+
+.watch-video-btn.doc-expand i {
+    color: #0d6efd;
+}
+
+.watch-video-btn.doc-expand .yt-text {
+    color: #0d6efd;
+}
+
+/* Hover state */
+.watch-video-btn.doc-expand:hover {
+    width: 210px;
+    background: linear-gradient(135deg, #f5f9ff, #ffffff);
+    box-shadow:
+        0 16px 36px rgba(13,110,253,0.28),
+        inset 0 0 0 1px rgba(13,110,253,0.2);
+}
