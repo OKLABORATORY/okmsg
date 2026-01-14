@@ -845,6 +845,7 @@ html {
 }
 /* ================= DOCUMENTATION EXPAND BUTTON ================= */
 .watch-video-btn.doc-expand {
+    width: 48px;
     border-color: #0d6efd;
     box-shadow:
         0 6px 16px rgba(0,0,0,0.1),
@@ -861,6 +862,7 @@ html {
 
 /* Hover state */
 .watch-video-btn.doc-expand:hover {
+    width: 210px;
     background: linear-gradient(135deg, #f5f9ff, #ffffff);
     box-shadow:
         0 16px 36px rgba(13,110,253,0.28),
