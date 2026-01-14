@@ -15,18 +15,53 @@
 </head>
 <body>
     <header class="app-header">
-        <div class="header-center">
-            <i class="fas fa-rocket me-2"></i>
-            <strong class="brand me-2">OKMESSAGING - Enterprise Grade Omni Channel Communication Platform</strong>
+      <button class="btn btn-sm text-white d-inline d-sm-none ms-3"
+        style="position: absolute; left: 0px;"
+        type="button"
+        data-bs-toggle="offcanvas"
+        data-bs-target="#mobileSidebar"
+        aria-controls="mobileSidebar">
+        <i class="fas fa-bars"></i>
+      </button>
+
+      <div class="header-center">
+        <div class="brand-wrap">
+            <strong class="brand-top"><i class="fas fa-rocket me-2"></i>OKMESSAGING</strong>
+            <span class="brand-bottom">- Enterprise Grade Omni Channel Communication Platform</span>
         </div>
-        <div class="header-right">
-            <strong>v1.0.0</strong>
-            <span class="badge bg-success">Latest</span>
-        </div>
+      </div>
+
+      <!-- ✅ MOBILE RIGHT VERSION -->
+      <div class="header-right mobile-header-right d-flex d-sm-none align-items-center gap-2"
+          style="position:absolute; right:12px; top:50%; transform:translateY(-50%);">
+          <strong class="text-white">v1.0.0</strong>
+          <span class="badge bg-success">Latest</span>
+      </div>
+
+      <!-- ✅ DESKTOP RIGHT VERSION -->
+      <div class="header-right desktop-header-right d-none d-sm-flex">
+          <strong>v1.0.0</strong>
+          <span class="badge bg-success">Latest</span>
+      </div>
     </header>
     <main class="d-flex">
         <!-- Aside -->
-        <aside class="sidebar border-end fixed-top px-3" style="width: 250px; height: 100vh; padding-top: 20px; background: #001C46; color: #FFF; overflow-y: auto;">
+        <div class="offcanvas offcanvas-start d-sm-none"
+          tabindex="-1"
+          id="mobileSidebar"
+          aria-labelledby="mobileSidebarLabel"
+          style="background:#001C46; color:#fff; width:250px;">
+
+          <div class="offcanvas-header">
+              <h6 class="offcanvas-title text-white" id="mobileSidebarLabel">Menu</h6>
+              <button type="button" class="btn-close btn-close-white" data-bs-dismiss="offcanvas"></button>
+          </div>
+
+          <div class="offcanvas-body px-3" id="mobileSidebarBody">
+              <!-- ✅ Sidebar will be injected here -->
+          </div>
+        </div>
+        <aside id="mainSidebar" class="sidebar border-end fixed-top px-3" style="width: 250px; height: 100vh; padding-top: 20px; background: #001C46; color: #FFF; overflow-y: auto;">
             <ul class="navbar-nav">
 
                 <!-- Overview -->
@@ -173,8 +208,9 @@
             </ul>
         </aside>
         <!-- Section -->
-        <section class="ms-auto overflow-auto" style="margin-left: 220px; width: calc(100% - 250px);">
-            <div class="p-4 mt-5 pt-5">
+        <!-- <section class="ms-auto overflow-auto" style="margin-left: 220px; width: calc(100% - 250px);"> -->
+          <section class="content-area ms-auto overflow-auto">
+            <div class="p-4 mt-3 pt-5">
                 <!-- Overview Section -->
                 <div id="overview">
                     <h1 class="text-center">
@@ -2490,6 +2526,108 @@ GET  http:&lt;IP&gt;:4001/api/sms?command=submit&username=client1@client.com&pas
         function scrollToSection(id, event) {
             event.preventDefault();
 
+            const headerHeight = 64;
+            const element = document.getElementById(id);
+            if (!element) return;
+
+            const elementTop = element.getBoundingClientRect().top;
+            const scrollPosition = window.pageYOffset + elementTop - headerHeight - 10;
+
+            window.scrollTo({
+                top: scrollPosition,
+                behavior: "smooth"
+            });
+
+            // ✅ close offcanvas (mobile)
+            const offcanvasEl = document.getElementById("mobileSidebar");
+            if (offcanvasEl) {
+                const instance = bootstrap.Offcanvas.getInstance(offcanvasEl);
+                if (instance) instance.hide();
+            }
+        }
+    </script>
+    <!-- <script>
+      function setupMobileSidebarClone() {
+        const sidebar = document.querySelector("#mainSidebar .navbar-nav");
+        const mobileBody = document.getElementById("mobileSidebarBody");
+
+        if (!sidebar || !mobileBody) return;
+
+        // clear old injected sidebar
+        mobileBody.innerHTML = "";
+
+        // clone sidebar menu
+        const clone = sidebar.cloneNode(true);
+
+        // ✅ Fix duplicate collapse IDs inside clone
+        clone.querySelectorAll("[id]").forEach(el => {
+          el.id = el.id + "-m";
+        });
+
+        clone.querySelectorAll("[data-bs-target]").forEach(el => {
+          el.setAttribute("data-bs-target", el.getAttribute("data-bs-target") + "-m");
+        });
+
+        clone.querySelectorAll("[href^='#']").forEach(el => {
+          // keep same anchor scrolling
+        });
+
+        mobileBody.appendChild(clone);
+      }
+
+      window.addEventListener("load", setupMobileSidebarClone);
+    </script> -->
+    <script>
+      function setupMobileSidebarClone() {
+        const sidebar = document.querySelector("#mainSidebar .navbar-nav");
+        const mobileBody = document.getElementById("mobileSidebarBody");
+
+        if (!sidebar || !mobileBody) return;
+
+        // clear old injected sidebar
+        mobileBody.innerHTML = "";
+
+        // clone sidebar menu
+        const clone = sidebar.cloneNode(true);
+
+        // ✅ Fix duplicate collapse IDs inside clone
+        clone.querySelectorAll("[id]").forEach(el => {
+          el.id = el.id + "-m";
+        });
+
+        // ✅ Update data-bs-target="#xyz" → "#xyz-m"
+        clone.querySelectorAll("[data-bs-target]").forEach(el => {
+          const target = el.getAttribute("data-bs-target");
+          if (target && target.startsWith("#")) {
+            el.setAttribute("data-bs-target", target + "-m");
+          }
+        });
+
+        // ✅ Update href="#xyz" → "#xyz-m"
+        clone.querySelectorAll("a[href^='#']").forEach(el => {
+          const href = el.getAttribute("href");
+          if (href && href.startsWith("#navbar-")) {
+            el.setAttribute("href", href + "-m");
+          }
+        });
+
+        // ✅ Update aria-controls="xyz" → "xyz-m"
+        clone.querySelectorAll("[aria-controls]").forEach(el => {
+          const controls = el.getAttribute("aria-controls");
+          if (controls) {
+            el.setAttribute("aria-controls", controls + "-m");
+          }
+        });
+
+        mobileBody.appendChild(clone);
+      }
+
+      window.addEventListener("load", setupMobileSidebarClone);
+    </script>
+    <!-- <script>
+        function scrollToSection(id, event) {
+            event.preventDefault();
+
             const headerHeight = 64; // MUST match .app-header height
             const element = document.getElementById(id);
 
@@ -2503,7 +2641,7 @@ GET  http:&lt;IP&gt;:4001/api/sms?command=submit&username=client1@client.com&pas
                 behavior: "smooth"
             });
         }
-    </script>
+    </script> -->
 </body>
 </html>
 
