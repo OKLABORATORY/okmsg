@@ -4,6 +4,7 @@
 <head>
     <meta charset="utf-8">
     <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <meta http-equiv="refresh" content="0; url=./latest/">
     <title>OKMESSAGING - Enterprise grade omni channel communication platform</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="shortcut icon" type="image/x-icon" href="assets\images\oklabs.jpeg">
@@ -100,6 +101,30 @@
                                     onclick="scrollToSection('changeLog100', event)">
                                     <i class="fas fa-code-branch me-2"></i>
                                     <span>Version 1.0.0</span>
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                </li>
+
+                <!-- StartLog -->
+                <li class="nav-item">
+                    <a class="nav-link d-flex justify-content-between align-items-center" href="#navbar-startlog"
+                        data-bs-toggle="collapse">
+                        <div>
+                            <i class="fas fa-play-circle me-2"></i>
+                            <span>StartLog</span>
+                        </div>
+                        <i class="fas fa-chevron-down transition"></i>
+                    </a>
+
+                    <div class="collapse" id="navbar-startlog">
+                        <ul class="nav nav-sm flex-column ms-3 mt-2">
+                            <li class="nav-item">
+                                <a class="nav-link text-white" href="#startlog-smpp"
+                                    onclick="scrollToSection('startlog-smpp', event)">
+                                    <i class="fas fa-signal me-2"></i>
+                                    <span>SMPP</span>
                                 </a>
                             </li>
                         </ul>
@@ -689,16 +714,191 @@
                         </div>
                     </div>
                 </div>
-                <!-- SMS Section -->
+                <!-- Startlog Section -->
+                <div id="startlog-smpp" class="pt-3">
+                    <!-- ===== Heading (Same style as FAQ) ===== -->
+                    <h2 class="faq-heading d-flex align-items-center justify-content-center gap-2">
+                        <span class="faq-icon">
+                            <i class="fas fa-play-circle"></i>
+                        </span>
+                        <span class="faq-title">StartLog</span>
+                    </h2>
+
+                    <div class="card mb-4 version-card">
+                        <div class="card-body p-0">
+
+                            <!-- ===== ACCORDION ===== -->
+                            <div class="accordion" id="startlogAccordion">
+
+                                <div class="accordion-item">
+                                    <h2 class="accordion-header">
+                                        <button
+                                            class="accordion-button collapsed"
+                                            type="button"
+                                            data-bs-toggle="collapse"
+                                            data-bs-target="#collapseStartlogSMPP"
+                                        >
+                                            <span class="me-2">🚀</span>
+                                            SMPP Startup Logs
+                                        </button>
+                                    </h2>
+
+                                    <div
+                                        id="collapseStartlogSMPP"
+                                        class="accordion-collapse collapse show"
+                                        data-bs-parent="#startlogAccordion"
+                                    >
+                                        <div class="accordion-body">
+
+                                            <!-- ===== LOG LIST (UNCHANGED CONTENT) ===== -->
+                                            <ul class="nav flex-column log-list">
+
+                                                <!-- SMPP Server Services -->
+                                                <li class="log-item">🚀 smpp/smpp_server.service.js service started...</li>
+                                                <li class="log-item">🌍 SMPP Server is listening on port 2775</li>
+                                                <li class="log-item">🌍 SMPP Server is listening on port 2776</li>
+                                                <li class="log-item">🌍 SMPP Server is listening on port 2777</li>
+                                                <li class="log-item">🌍 SMPP Server is listening on port 2778</li>
+                                                <li class="log-item">🌍 SMPP Server is listening on port 2779</li>
+
+                                                <!-- Fake SMPP Supplier -->
+                                                <li class="log-item">🚀 smpp/fake_smpp_supplier.service.js service started...</li>
+                                                <li class="log-item">🌐 MT Supplier server listening on port 2800</li>
+                                                <li class="log-item">🌐 MT Supplier server listening on port 2801</li>
+                                                <li class="log-item">🌐 MT Supplier server listening on port 2802</li>
+                                                <li class="log-item">🌐 MT Supplier server listening on port 2803</li>
+                                                <li class="log-item">🌐 MT Supplier server listening on port 2804</li>
+                                                <li class="log-item">🌐 MT Supplier server listening on port 2805</li>
+                                                <li class="log-item">🌐 MT Supplier server listening on port 2806</li>
+                                                <li class="log-item">🌐 MT Supplier server listening on port 2807</li>
+                                                <li class="log-item">🌐 MT Supplier server listening on port 2808</li>
+                                                <li class="log-item">🌐 MT Supplier server listening on port 2809</li>
+                                                <li class="log-item">🌐 MO Supplier server listening on port 2811</li>
+                                                <li class="log-item">🌐 USSD Supplier server listening on port 2812</li>
+
+                                                <!-- Other Services -->
+                                                <li class="log-item">🚀 smpp/df.service.js service started...</li>
+                                                <li class="log-item">🚀 smpp/common.service.js service started...</li>
+                                                <li class="log-item">🚀 smpp/validator.service.js service started...</li>
+                                                <li class="log-item">🚀 smpp/hlr.service.js service started...</li>
+                                                <li class="log-item">🚀 smpp/translation.service.js service started...</li>
+                                                <li class="log-item">🚀 smpp/buffer.service.js service started...</li>
+                                                <li class="log-item">🚀 smpp/routing.service.js service started...</li>
+                                                <li class="log-item">🚀 smpp/fdlr.service.js service started...</li>
+                                                <li class="log-item">🚀 smpp/dlr.service.js service started...</li>
+                                                <li class="log-item">🚀 smpp/billing_sms.service.js service started...</li>
+                                                <li class="log-item">🚀 smpp/fake_dlr_receiver.service.js service started...</li>
+                                                <li class="log-item">🚀 ../api.service.js service started...</li>
+                                                <li class="log-item">🚀 ../hlr_supplier/commpeak.service.js service started...</li>
+                                                <li class="log-item">🚀 ../hlr_supplier/hlr-lookups.service.js service started...</li>
+                                                <li class="log-item">🚀 ../hlr_supplier/hlrlookup_com.service.js service started...</li>
+                                                <li class="log-item">🚀 ../hlr_supplier/infobip.service.js service started...</li>
+                                                <li class="log-item">🚀 ../hlr_supplier/routemobile.service.js service started...</li>
+                                                <li class="log-item">🚀 ../hlr_supplier/telesign.service.js service started...</li>
+                                                <li class="log-item">🚀 ../hlr_supplier/xconnect.service.js service started...</li>
+
+                                                <!-- SMPP Client -->
+                                                <li class="log-item">🚀 smpp/smpp_client.service.js service started...</li>
+                                                <li class="log-item">🤝 Client successfully connected on port '2775' with System_id : 'client2@client.com'</li>
+                                                <li class="log-item">🤝 Client successfully connected on port '2775' with System_id : 'client1@client.com'</li>
+
+                                                <!-- Send SMS -->
+                                                <li class="log-item">🚀 smpp/send_sms.service.js service started...</li>
+
+                                                <!-- MT Supplier Bind -->
+                                                <li class="log-item">🤝 MT Supplier bind successful for sys_mdn5pm1l_ywml</li>
+                                                <li class="log-item">🤝 MT Supplier bind successful for sys_mdn5pm23_evs9</li>
+                                                <li class="log-item">🤝 MT Supplier bind successful for sys_mdn5pm1v_0wey</li>
+                                                <li class="log-item">🤝 MT Supplier bind successful for sys_mdn5pm2b_z3l8</li>
+                                                <li class="log-item">🤝 MT Supplier bind successful for sys_mdn5pm17_a4pd</li>
+                                                <li class="log-item">🤝 MT Supplier bind successful for sys_mdn5pm2y_31vk</li>
+                                                <li class="log-item">🤝 MT Supplier bind successful for sys_mdn5pm36_121l</li>
+                                                <li class="log-item">🤝 MT Supplier bind successful for sys_mdn5pm2k_dqyj</li>
+                                                <li class="log-item">🤝 MT Supplier bind successful for sys_mdn5pm4j_k6he</li>
+
+                                                <!-- MO & USSD -->
+                                                <li class="log-item">🚀 MO Supplier SMPP server started on port 2811</li>
+                                                <li class="log-item">🚀 MO Supplier SMPP server started on port 2811</li>
+                                                <li class="log-item">🚀 USSD Supplier SMPP server started on port 2812</li>
+                                                <li class="log-item">🚀 USSD Supplier SMPP server started on port 2812</li>
+                                                <li class="nav-item">🚀 smpp/sync.service.js service started...</li>
+                                                <li class="nav-item">⚙️ Sync service initializing...</li>
+                                                <li class="nav-item">🔍 Checking Redis state...</li>
+                                                <li class="nav-item">⚠️ Redis empty detected. Forcing full sync...</li>
+                                                <li class="nav-item">🔄 Starting full data synchronization...</li>
+
+                                                <!-- ✅ Data Synchronization Sequence -->
+                                                <li class="nav-item">📦 processAllMethods() triggered...</li>
+                                                <li class="nav-item">🧱 Creating and storing suppliers to SQL...</li>
+                                                <li class="nav-item">🔠 Inserting TLVs definitions from defs.js...</li>
+                                                <li class="nav-item">🚫 Syncing blacklist IPs to DF...</li>
+                                                <li class="nav-item">🚫 Syncing blacklist numbers to DF...</li>
+                                                <li class="nav-item">🚫 Syncing blacklisted sender IDs to DF...</li>
+                                                <li class="nav-item">🔗 Syncing channel clients data to DF...</li>
+                                                <li class="nav-item">🔗 Syncing channel suppliers data to DF...</li>
+                                                <li class="nav-item">⚙️ Syncing client TLVs to DF...</li>
+                                                <li class="nav-item">🧩 Syncing lookup models to DF...</li>
+                                                <li class="nav-item">🌍 Syncing MCC list to DF...</li>
+                                                <li class="nav-item">💬 Syncing message packages data to DF...</li>
+                                                <li class="nav-item">📱 Syncing number managements to DF...</li>
+                                                <li class="nav-item">💰 Syncing client rates to DF...</li>
+                                                <li class="nav-item">💰 Syncing supplier rates to DF...</li>
+                                                <li class="nav-item">🧠 Syncing rule bufferings to DF...</li>
+                                                <li class="nav-item">🚦 Syncing rule routings to DF...</li>
+                                                <li class="nav-item">🌐 Syncing rule translations to DF...</li>
+                                                <li class="nav-item">🕵️ Syncing spam words to DF...</li>
+                                                <li class="nav-item">📡 Syncing supplier TLVs to DF...</li>
+                                                <li class="nav-item">⚙️ Syncing system settings to DF...</li>
+                                                <li class="nav-item">🧾 Syncing TLVs definitions to DF...</li>
+                                                <li class="nav-item">🔤 Syncing translations to DF...</li>
+                                                <li class="nav-item">👥 Syncing users to DF...</li>
+
+                                                <!-- ✅ Change Detection Phase -->
+                                                <li class="nav-item">🔁 checkAndSyncIfChanged() running...</li>
+                                                <li class="nav-item">🔍 Computing table hashes...</li>
+                                                <li class="nav-item">🧮 Detecting database changes...</li>
+                                                <li class="nav-item">🧹 Cleaning up Redis keys before syncing...</li>
+                                                <li class="nav-item">📤 Syncing updated tables to DF...</li>
+                                                <li class="nav-item">✅ All changed tables synced successfully.</li>
+
+                                                <!-- ✅ Service Stability -->
+                                                <li class="nav-item">⏱️ Started periodic sync every 5 seconds.</li>
+                                                <li class="nav-item">💤 Waiting for next sync cycle...</li>
+
+                                                <!-- ✅ Shutdown -->
+                                                <li class="nav-item">🛑 Sync service stopped.</li>
+
+                                            </ul>
+                                            <!-- ===== END LOG LIST ===== -->
+
+                                        </div>
+                                    </div>
+                                </div>
+
+                            </div>
+
+                        </div>
+                    </div>
+
+                </div>
+                <!-- API Section -->
                 <div id="sms-section">
-                    <h2 class="mt-4"><i class="fas fa-sms me-2"></i>SMS Endpoints</h2>
+                    <h2 class="mt-4 d-flex justify-content-center">
+                        <i class="fas fa-plug me-2"></i>
+                        API
+                        <span class="ms-2 text-muted fw-normal" style="font-size: 0.85em;">
+                            (Application Programming Interface)
+                        </span>
+                    </h2>
                     <div class="card">
                         <div class="card-header bg-light">
                             <div class="input-group">
                                 <span class="input-group-text bg-success text-white fw-bold">GET</span>
                                 <span class="input-group-text form-control bg-white"
-                                style="white-space: normal; word-break: break-word;">/api/sms – Submit a SMS message/ Query a
-                                message</span>
+                                    style="white-space: normal; word-break: break-word;">
+                                    /api/sms – Submit a SMS message/ Query a
+                                    message
+                                </span>
                             </div>
                         </div>
                         <div class="card-body">
@@ -850,30 +1050,34 @@ GET /api/sms?command=submit&username=client1@client.com&password=123&message=Hel
                     </div>
                 </div>
                 <!-- FAQ Section -->
-                <div class="pt-4">
+                <div id="faq-topic-1" class="pt-3">
+                     <h2 class="faq-heading d-flex align-items-center justify-content-center gap-2">
+                        <span class="faq-icon">
+                            <i class="fas fa-circle-question"></i>
+                        </span>
+                        <span class="faq-title">FAQ</span>
+                        <span class="faq-subtitle text-muted fw-normal">
+                            (Frequently Asked Questions)
+                        </span>
+                    </h2>
                     <div class="card mb-4 version-card">
+                        <div class="card-body p-0">
+                            <!-- ================= SMS ACCORDION ================= -->
+                            <div class="accordion" id="accordion101">
+                                <div class="accordion-item">
+                                    <h2 class="accordion-header">
+                                        <button
+                                            class="accordion-button collapsed"
+                                            type="button"
+                                            data-bs-toggle="collapse"
+                                            data-bs-target="#collapse101sms"
+                                        >
+                                            <span class="me-2">💬</span> SMS
+                                        </button>
+                                    </h2>
 
-                        <!-- OUTER FAQ ACCORDION -->
-                        <div class="accordion" id="faqMainAccordion">
-                            <div class="accordion-item">
-                                <h2 class="accordion-header" id="faqMainHeading">
-                                    <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#faqMainCollapse" aria-expanded="true">
-                                        <i class="fas fa-file-alt me-2"></i>
-                                        Frequently Asked Questions
-                                    </button>
-                                </h2>
-                                <div id="faqMainCollapse" class="accordion-collapse collapse show" data-bs-parent="#faqMainAccordion">
-                                    <div class="accordion-body p-0">
-                                    <!-- INNER SMS ACCORDION -->
-                                    <div class="accordion" id="accordion101">
-                                        <div class="accordion-item">
-                                            <h2 class="accordion-header" id="faq-topic-1">
-                                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapse101sms">
-                                                <span class="me-2">💬</span> SMS
-                                                </button>
-                                            </h2>
-                                            <div id="collapse101sms" class="accordion-collapse collapse show" data-bs-parent="#accordion101">
-                                            <div class="accordion-body">
+                                    <div id="collapse101sms" class="accordion-collapse collapse show" data-bs-parent="#accordion101">
+                                        <div class="accordion-body">
                                                 <!-- ================= INNER SECTIONS ACCORDION ================= -->
                                                 <div class="accordion" id="smsInnerAccordion">
                                                     <!-- ========================================================= -->
@@ -2224,171 +2428,28 @@ GET /api/sms?command=submit&username=client1@client.com&password=123&message=Hel
                                                     </div>
                                                 </div>
                                                 <!-- ================= END INNER SECTIONS ACCORDION ================= -->
-                                            </div>
-                                            </div>
                                         </div>
                                     </div>
-                                    <div class="accordion" id="accordion101">
-                                        <div class="accordion-item whatsapp-only">
+                                </div>
+                                <!-- ================= WHATSAPP (UPCOMING) ================= -->
+                                <div class="accordion mt-2" id="accordionWhatsapp">
+                                    <div class="accordion-item whatsapp-only">
                                         <h2 class="accordion-header" id="faq-topic-whatsapp">
                                             <button
-                                            class="accordion-button collapsed d-flex align-items-center"
-                                            type="button"
-                                            aria-expanded="false"
+                                                class="accordion-button collapsed d-flex align-items-center"
+                                                type="button"
+                                                disabled
                                             >
-                                            <span class="me-2">📱</span>
-                                            <span>WHATSAPP</span>
-                                            <span class="badge bg-warning text-dark ms-auto">
-                                                Upcoming
-                                            </span>
+                                                <span class="me-2">📱</span>
+                                                <span>WHATSAPP</span>
+                                                <span class="badge bg-warning text-dark ms-auto">
+                                                    Upcoming
+                                                </span>
                                             </button>
                                         </h2>
-                                        </div>
-                                    </div>
                                     </div>
                                 </div>
                             </div>
-                        </div>
-                    </div>
-                </div>
-                <!-- Start logs section -->
-                <div id="startlog-section">
-                    <h2 class="pt-4">
-                        <i class="fas fa-file-alt"></i> SMPP StartLog
-                    </h2>
-                    <div class="card mb-4">
-                        <div class="card-body">
-                            <ul class="nav flex-column">
-                                <!-- ✅ SMPP Server Services -->
-                                <li class="nav-item">🚀 smpp/smpp_server.service.js service started...</li>
-                                <li class="nav-item">🌍 SMPP Server is listening on port 2775</li>
-                                <li class="nav-item">🌍 SMPP Server is listening on port 2776</li>
-                                <li class="nav-item">🌍 SMPP Server is listening on port 2777</li>
-                                <li class="nav-item">🌍 SMPP Server is listening on port 2778</li>
-                                <li class="nav-item">🌍 SMPP Server is listening on port 2779</li>
-
-                                <!-- ✅ Fake SMPP Supplier -->
-                                <li class="nav-item">🚀 smpp/fake_smpp_supplier.service.js service started...</li>
-                                <li class="nav-item">🌐 MT Supplier server listening on port 2800</li>
-                                <li class="nav-item">🌐 MT Supplier server listening on port 2801</li>
-                                <li class="nav-item">🌐 MT Supplier server listening on port 2802</li>
-                                <li class="nav-item">🌐 MT Supplier server listening on port 2803</li>
-                                <li class="nav-item">🌐 MT Supplier server listening on port 2804</li>
-                                <li class="nav-item">🌐 MT Supplier server listening on port 2805</li>
-                                <li class="nav-item">🌐 MT Supplier server listening on port 2806</li>
-                                <li class="nav-item">🌐 MT Supplier server listening on port 2807</li>
-                                <li class="nav-item">🌐 MT Supplier server listening on port 2808</li>
-                                <li class="nav-item">🌐 MT Supplier server listening on port 2809</li>
-                                <li class="nav-item">🌐 MO Supplier server listening on port 2811</li>
-                                <li class="nav-item">🌐 USSD Supplier server listening on port 2812</li>
-
-                                <!-- ✅ Other Services -->
-                                <li class="nav-item">🚀 smpp/df.service.js service started...</li>
-                                <li class="nav-item">🚀 smpp/common.service.js service started...</li>
-                                <li class="nav-item">🚀 smpp/validator.service.js service started...</li>
-                                <li class="nav-item">🚀 smpp/hlr.service.js service started...</li>
-                                <li class="nav-item">🚀 smpp/translation.service.js service started...</li>
-                                <li class="nav-item">🚀 smpp/buffer.service.js service started...</li>
-                                <li class="nav-item">🚀 smpp/routing.service.js service started...</li>
-                                <li class="nav-item">🚀 smpp/fdlr.service.js service started...</li>
-                                <li class="nav-item">🚀 smpp/dlr.service.js service started...</li>
-                                <li class="nav-item">🚀 smpp/billing_sms.service.js service started...</li>
-                                <li class="nav-item">🚀 smpp/fake_dlr_receiver.service.js service started...</li>
-                                <li class="nav-item">🚀 ../api.service.js service started...</li>
-                                <li class="nav-item">🚀 ../hlr_supplier/commpeak.service.js service started...</li>
-                                <li class="nav-item">🚀 ../hlr_supplier/hlr-lookups.service.js service started...</li>
-                                <li class="nav-item">🚀 ../hlr_supplier/hlrlookup_com.service.js service started...</li>
-                                <li class="nav-item">🚀 ../hlr_supplier/infobip.service.js service started...</li>
-                                <li class="nav-item">🚀 ../hlr_supplier/routemobile.service.js service started...</li>
-                                <li class="nav-item">🚀 ../hlr_supplier/telesign.service.js service started...</li>
-                                <li class="nav-item">🚀 ../hlr_supplier/xconnect.service.js service started...</li>
-
-                                <!-- ✅ SMPP Client -->
-                                <li class="nav-item">🚀 smpp/smpp_client.service.js service started...</li>
-                                <li class="nav-item">🤝 Client successfully connected on port '2775' with System_id : 'client2@client.com'</li>
-                                <li class="nav-item">🤝 Client successfully connected on port '2775' with System_id : 'client1@client.com'</li>
-
-                                <!-- ✅ Send SMS Service -->
-                                <li class="nav-item">🚀 smpp/send_sms.service.js service started...</li>
-
-                                <!-- ✅ MT Supplier Bind Success -->
-                                <li class="nav-item">🤝 MT Supplier bind successful for sys_mdn5pm1l_ywml</li>
-                                <li class="nav-item">🤝 MT Supplier bind successful for sys_mdn5pm23_evs9</li>
-                                <li class="nav-item">🤝 MT Supplier bind successful for sys_mdn5pm1v_0wey</li>
-                                <li class="nav-item">🤝 MT Supplier bind successful for sys_mdn5pm2b_z3l8</li>
-                                <li class="nav-item">🤝 MT Supplier bind successful for sys_mdn5pm17_a4pd</li>
-                                <li class="nav-item">🤝 MT Supplier bind successful for sys_mdn5pm2y_31vk</li>
-                                <li class="nav-item">🤝 MT Supplier bind successful for sys_mdn5pm36_121l</li>
-                                <li class="nav-item">🤝 MT Supplier bind successful for sys_mdn5pm2k_dqyj</li>
-                                <li class="nav-item">🤝 MT Supplier bind successful for sys_mdn5pm4j_k6he</li>
-
-                                <!-- ✅ MO & USSD Servers -->
-                                <li class="nav-item">🚀 MO Supplier SMPP server started on port 2811</li>
-                                <li class="nav-item">🚀 MO Supplier SMPP server started on port 2811</li>
-                                <li class="nav-item">🚀 USSD Supplier SMPP server started on port 2812</li>
-                                <li class="nav-item">🚀 USSD Supplier SMPP server started on port 2812</li>
-
-                                <!-- ✅ End -->
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-                <!-- Syncing logs section -->
-                <div id="datalog-section">
-                    <h2 class="pt-4">
-                        <i class="fas fa-file-alt"></i> SMPP Data Syncing Log
-                    </h2>
-                    <div class="card mb-4">
-                        <div class="card-body">
-                            <ul class="nav flex-column">
-                                <!-- ✅ Sync Service Startup -->
-                                <li class="nav-item">🚀 smpp/sync.service.js service started...</li>
-                                <li class="nav-item">⚙️ Sync service initializing...</li>
-                                <li class="nav-item">🔍 Checking Redis state...</li>
-                                <li class="nav-item">⚠️ Redis empty detected. Forcing full sync...</li>
-                                <li class="nav-item">🔄 Starting full data synchronization...</li>
-
-                                <!-- ✅ Data Synchronization Sequence -->
-                                <li class="nav-item">📦 processAllMethods() triggered...</li>
-                                <li class="nav-item">🧱 Creating and storing suppliers to SQL...</li>
-                                <li class="nav-item">🔠 Inserting TLVs definitions from defs.js...</li>
-                                <li class="nav-item">🚫 Syncing blacklist IPs to DF...</li>
-                                <li class="nav-item">🚫 Syncing blacklist numbers to DF...</li>
-                                <li class="nav-item">🚫 Syncing blacklisted sender IDs to DF...</li>
-                                <li class="nav-item">🔗 Syncing channel clients data to DF...</li>
-                                <li class="nav-item">🔗 Syncing channel suppliers data to DF...</li>
-                                <li class="nav-item">⚙️ Syncing client TLVs to DF...</li>
-                                <li class="nav-item">🧩 Syncing lookup models to DF...</li>
-                                <li class="nav-item">🌍 Syncing MCC list to DF...</li>
-                                <li class="nav-item">💬 Syncing message packages data to DF...</li>
-                                <li class="nav-item">📱 Syncing number managements to DF...</li>
-                                <li class="nav-item">💰 Syncing client rates to DF...</li>
-                                <li class="nav-item">💰 Syncing supplier rates to DF...</li>
-                                <li class="nav-item">🧠 Syncing rule bufferings to DF...</li>
-                                <li class="nav-item">🚦 Syncing rule routings to DF...</li>
-                                <li class="nav-item">🌐 Syncing rule translations to DF...</li>
-                                <li class="nav-item">🕵️ Syncing spam words to DF...</li>
-                                <li class="nav-item">📡 Syncing supplier TLVs to DF...</li>
-                                <li class="nav-item">⚙️ Syncing system settings to DF...</li>
-                                <li class="nav-item">🧾 Syncing TLVs definitions to DF...</li>
-                                <li class="nav-item">🔤 Syncing translations to DF...</li>
-                                <li class="nav-item">👥 Syncing users to DF...</li>
-
-                                <!-- ✅ Change Detection Phase -->
-                                <li class="nav-item">🔁 checkAndSyncIfChanged() running...</li>
-                                <li class="nav-item">🔍 Computing table hashes...</li>
-                                <li class="nav-item">🧮 Detecting database changes...</li>
-                                <li class="nav-item">🧹 Cleaning up Redis keys before syncing...</li>
-                                <li class="nav-item">📤 Syncing updated tables to DF...</li>
-                                <li class="nav-item">✅ All changed tables synced successfully.</li>
-
-                                <!-- ✅ Service Stability -->
-                                <li class="nav-item">⏱️ Started periodic sync every 5 seconds.</li>
-                                <li class="nav-item">💤 Waiting for next sync cycle...</li>
-
-                                <!-- ✅ Shutdown -->
-                                <li class="nav-item">🛑 Sync service stopped.</li>
-                            </ul>
                         </div>
                     </div>
                 </div>
