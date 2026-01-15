@@ -2010,6 +2010,53 @@ GET  http:&lt;IP&gt;:4001/api/sms?command=submit&username=client1@client.com&pas
                                                     </div>
 
                                                     <!-- ========================================================= -->
+                                                    <!-- Que 13 -->
+                                                    <!-- ========================================================= -->
+                                                    <div class="accordion-item sms-section">
+                                                        <h2 class="accordion-header" id="mccMncFallbackHeading">
+                                                            <button
+                                                                class="accordion-button collapsed"
+                                                                type="button"
+                                                                data-bs-toggle="collapse"
+                                                                data-bs-target="#mccMncFallbackCollapse"
+                                                            >
+                                                                💬 Que 13) What happens if MCC/MNC is not available in the lookup tables?
+                                                            </button>
+                                                        </h2>
+
+                                                        <div
+                                                            id="mccMncFallbackCollapse"
+                                                            class="accordion-collapse collapse"
+                                                            data-bs-parent="#smsInnerAccordion"
+                                                        >
+                                                            <div class="accordion-body">
+                                                                <div class="sms-question">
+                                                                    <p>
+                                                                        If the MCC/MNC combination is not found in any of the following lookup tables:
+                                                                    </p>
+
+                                                                    <ul class="ms-3">
+                                                                        <li><code>lookup_in</code></li>
+                                                                        <li><code>lookup_uk</code></li>
+                                                                        <li><code>lookup_us</code></li>
+                                                                    </ul>
+
+                                                                    <p class="mt-3">
+                                                                        then the system will automatically apply the SMS rate based on the
+                                                                        <strong>country dial code (+)</strong> of the destination number.
+                                                                    </p>
+
+                                                                    <p>
+                                                                        This ensures that a valid price is always selected, even when MCC/MNC
+                                                                        data is unavailable.
+                                                                    </p>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+
+
+                                                    <!-- ========================================================= -->
                                                     <!-- SMPP ARCHITECTURE & MESSAGE FLOW -->
                                                     <!-- ========================================================= -->
                                                     <div class="accordion-item sms-section">
@@ -2020,7 +2067,7 @@ GET  http:&lt;IP&gt;:4001/api/sms?command=submit&username=client1@client.com&pas
                                                                 data-bs-toggle="collapse"
                                                                 data-bs-target="#smppArchitectureCollapse"
                                                             >
-                                                                💬 Que 13) How does the SMPP messaging platform work and what is its overall architecture?
+                                                                💬 Que 14) How does the SMPP messaging platform work and what is its overall architecture?
                                                             </button>
                                                         </h2>
                                                         <div id="smppArchitectureCollapse" class="accordion-collapse collapse" data-bs-parent="#smsInnerAccordion">
