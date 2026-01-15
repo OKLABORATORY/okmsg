@@ -1,12 +1,4 @@
-/* Override NProgress bar color */
-.watch-video {
-    color: #0d6efd;
-    font-weight: 600;
-    text-decoration: none;
-}
-.watch-video:hover {
-    text-decoration: underline;
-}
+
 #nprogress .bar {
     height: 2px;
     z-index: 100000;
