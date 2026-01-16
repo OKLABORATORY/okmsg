@@ -46,29 +46,21 @@
       </div>
     </header>
     <main class="d-flex">
-        <!-- Aside -->
-        <div class="offcanvas offcanvas-start d-sm-none"
-          tabindex="-1"
-          id="mobileSidebar"
-          aria-labelledby="mobileSidebarLabel"
-          style="background:#001C46; color:#fff; width:250px;">
-
+        <div class="offcanvas offcanvas-start d-sm-none" tabindex="-1" id="mobileSidebar" aria-labelledby="mobileSidebarLabel" style="background:#001C46; color:#fff; width:250px;">
           <div class="offcanvas-header">
               <h6 class="offcanvas-title text-white" id="mobileSidebarLabel">Menu</h6>
               <button type="button" class="btn-close btn-close-white" data-bs-dismiss="offcanvas"></button>
           </div>
-
           <div class="offcanvas-body px-3" id="mobileSidebarBody">
               <!-- ✅ Sidebar will be injected here -->
           </div>
         </div>
+        <!-- Aside -->
         <aside id="mainSidebar" class="sidebar border-end fixed-top px-3" style="width: 250px; height: 100vh; padding-top: 20px; background: #001C46; color: #FFF; overflow-y: auto;">
             <ul class="navbar-nav">
-
                 <!-- Overview -->
                 <li class="nav-item">
-                    <a class="nav-link text-white" href="#overview"
-                        onclick="scrollToSection('overview', event)">
+                    <a class="nav-link text-white" href="#overview" onclick="scrollToSection('overview', event)">
                         <i class="fas fa-chart-pie me-2"></i>
                         <span>Overview</span>
                     </a>
@@ -76,8 +68,7 @@
 
                 <!-- Installation Guide -->
                 <li class="nav-item">
-                    <a class="nav-link text-white" href="#installation-guide"
-                        onclick="scrollToSection('installation-guide', event)">
+                    <a class="nav-link text-white" href="#installation-guide" onclick="scrollToSection('installation-guide', event)">
                         <i class="fas fa-tools me-2"></i>
                         <span>Installation Guide</span>
                     </a>
@@ -85,8 +76,8 @@
 
                 <!-- ChangeLog -->
                 <li class="nav-item">
-                    <a class="nav-link d-flex justify-content-between align-items-center" href="#navbar-changelog"
-                        data-bs-toggle="collapse">
+                    <a class="nav-link d-flex justify-content-between align-items-center"
+                    href="#navbar-changelog" data-bs-toggle="collapse">
                         <div>
                             <i class="fas fa-clock-rotate-left me-2"></i>
                             <span>ChangeLog</span>
@@ -97,8 +88,7 @@
                     <div class="collapse" id="navbar-changelog">
                         <ul class="nav nav-sm flex-column ms-3 mt-2">
                             <li class="nav-item">
-                                <a class="nav-link text-white" href="#changeLog100"
-                                    onclick="scrollToSection('changeLog100', event)">
+                                <a class="nav-link text-white" href="#changeLog100" onclick="scrollToSection('changeLog100', event)">
                                     <i class="fas fa-code-branch me-2"></i>
                                     <span>Version 1.0.0</span>
                                 </a>
@@ -109,8 +99,8 @@
 
                 <!-- StartLog -->
                 <li class="nav-item">
-                    <a class="nav-link d-flex justify-content-between align-items-center" href="#navbar-startlog"
-                        data-bs-toggle="collapse">
+                    <a class="nav-link d-flex justify-content-between align-items-center"
+                    href="#navbar-startlog" data-bs-toggle="collapse">
                         <div>
                             <i class="fas fa-play-circle me-2"></i>
                             <span>StartLog</span>
@@ -121,8 +111,7 @@
                     <div class="collapse" id="navbar-startlog">
                         <ul class="nav nav-sm flex-column ms-3 mt-2">
                             <li class="nav-item">
-                                <a class="nav-link text-white" href="#startlog-smpp"
-                                    onclick="scrollToSection('startlog-smpp', event)">
+                                <a class="nav-link text-white" href="#startlog-smpp" onclick="scrollToSection('startlog-smpp', event)">
                                     <i class="fas fa-signal me-2"></i>
                                     <span>SMPP</span>
                                 </a>
@@ -133,8 +122,8 @@
 
                 <!-- API -->
                 <li class="nav-item">
-                    <a class="nav-link d-flex justify-content-between align-items-center" href="#navbar-api"
-                        data-bs-toggle="collapse">
+                    <a class="nav-link d-flex justify-content-between align-items-center"
+                    href="#navbar-api" data-bs-toggle="collapse">
                         <div>
                             <i class="fas fa-plug me-2"></i>
                             <span>API</span>
@@ -144,11 +133,9 @@
 
                     <div class="collapse" id="navbar-api">
                         <ul class="nav nav-sm flex-column ms-3 mt-2">
-
-                            <!-- SMS -->
                             <li class="nav-item">
                                 <a class="nav-link text-white d-flex justify-content-between align-items-center"
-                                    href="#navbar-sms" data-bs-toggle="collapse">
+                                href="#navbar-sms" data-bs-toggle="collapse">
                                     <div>
                                         <i class="fas fa-comment-dots me-2"></i>
                                         <span>SMS</span>
@@ -159,8 +146,7 @@
                                 <div class="collapse" id="navbar-sms">
                                     <ul class="nav nav-sm flex-column ms-3 mt-2">
                                         <li class="nav-item">
-                                            <a class="nav-link text-white" href="#sms-section"
-                                                onclick="scrollToSection('sms-section', event)">
+                                            <a class="nav-link text-white" href="#sms-section" onclick="scrollToSection('sms-section', event)">
                                                 <i class="fas fa-paper-plane me-2"></i>
                                                 <span>Submit</span>
                                             </a>
@@ -168,7 +154,6 @@
                                     </ul>
                                 </div>
                             </li>
-
                         </ul>
                     </div>
                 </li>
@@ -176,7 +161,7 @@
                 <!-- FAQ -->
                 <li class="nav-item">
                     <a class="nav-link d-flex justify-content-between align-items-center"
-                        href="#navbar-faq" data-bs-toggle="collapse">
+                    href="#navbar-faq" data-bs-toggle="collapse">
                         <div>
                             <i class="fas fa-circle-question me-2"></i>
                             <span>FAQ</span>
@@ -187,8 +172,7 @@
                     <div class="collapse" id="navbar-faq">
                         <ul class="nav nav-sm flex-column ms-3 mt-2">
                             <li class="nav-item">
-                                <a class="nav-link text-white" href="#faq-topic-1"
-                                    onclick="scrollToSection('faq-topic-1', event)">
+                                <a class="nav-link text-white" href="#faq-topic-1" onclick="scrollToSection('faq-topic-1', event)">
                                     <i class="fas fa-message me-2"></i>
                                     <span>SMS</span>
                                 </a>
@@ -199,25 +183,27 @@
 
                 <!-- Latest Docs -->
                 <li class="nav-item">
-                    <a class="nav-link text-white" href="#latest-docs"
-                        onclick="scrollToSection('latest-docs', event)">
+                    <a class="nav-link text-white" href="#latest-docs" onclick="scrollToSection('latest-docs', event)">
                         <i class="fas fa-book-open me-2"></i>
                         <span>Latest Docs</span>
                     </a>
                 </li>
-
             </ul>
         </aside>
+
         <!-- Section -->
-        <!-- <section class="ms-auto overflow-auto" style="margin-left: 220px; width: calc(100% - 250px);"> -->
         <section class="content-area ms-auto overflow-auto">
             <div class="p-4 mt-3 pt-5">
                 <!-- Overview Section -->
                 <div id="overview">
-                    <h1 class="text-center">
-                        <i class="fas fa-chart-pie me-2"></i></i>Overview
+                    <h1 class="text-center d-flex justify-content-center align-items-center gap-2 animate-title">
+                        <span class="pulse-icon icon-black">
+                            <i class="fas fa-chart-pie"></i>
+                        </span>
+                        <span class="fire-text">
+                            Overview
+                        </span>
                     </h1>
-
                     <div class="card mb-4">
                         <div class="card-body">
 
@@ -248,8 +234,13 @@
                 </div>
                 <!-- Installation Guide Section -->
                 <div id="installation-guide">
-                    <h2 class="text-center">
-                        <i class="fas fa-tools me-2"></i>Installation Guide
+                    <h2 class="text-center d-flex justify-content-center align-items-center gap-2 animate-title">
+                        <span class="pulse-icon icon-black">
+                            <i class="fas fa-tools"></i>
+                        </span>
+                        <span class="fire-text">
+                            Installation Guide
+                        </span>
                     </h2>
                     <div class="card mb-4">
                         <div class="card-body">
@@ -510,10 +501,14 @@
                 </div>
                 <!-- Changelog Section -->
                 <div id="changeLog100">
-                    <h2 class="text-center">
-                        <i class="fas fa-clock-rotate-left me-2"></i> Changelog
+                    <h2 class="text-center d-flex justify-content-center align-items-center gap-2 animate-title">
+                        <span class="pulse-icon icon-black">
+                            <i class="fas fa-clock-rotate-left"></i>
+                        </span>
+                        <span class="fire-text">
+                            Changelog
+                        </span>
                     </h2>
-
                     <!-- ================= VERSION 1.0.0 ================= -->
                     <div class="card mb-4 version-card">
 
@@ -736,13 +731,14 @@
                 <!-- Startlog Section -->
                 <div id="startlog-smpp" class="pt-3">
                     <!-- ===== Heading (same style as FAQ / Changelog) ===== -->
-                    <h2 class="faq-heading d-flex align-items-center justify-content-center gap-2">
-                        <span class="faq-icon">
+                    <h2 class="faq-heading d-flex align-items-center justify-content-center gap-2 animate-title">
+                        <span class="faq-icon pulse-icon icon-black">
                             <i class="fas fa-play-circle"></i>
                         </span>
-                        <span class="faq-title">StartLog</span>
+                        <span class="faq-title fire-text">
+                            StartLog
+                        </span>
                     </h2>
-
                     <div class="card mb-4 version-card">
                         <div class="card-body p-0">
 
@@ -889,13 +885,16 @@
                 </div>
                 <!-- API Section -->
                 <div id="sms-section">
-                    <h2 class="mt-4 d-flex justify-content-center">
-                        <i class="fas fa-plug me-2"></i>
-                        API
-                        <span class="ms-2 text-muted fw-normal" style="font-size: 0.85em;">
-                            (Application Programming Interface)
+                    <h2 class="mt-4 d-flex justify-content-center align-items-center gap-2 animate-title">
+                        <span class="pulse-icon icon-black">
+                            <i class="fas fa-plug"></i>
+                        </span>
+
+                        <span class="fire-text">
+                            API (Application Programming Interface)
                         </span>
                     </h2>
+
                     <div class="card">
                         <div class="card-header bg-light">
                             <div class="input-group">
@@ -1055,15 +1054,15 @@ GET  http:&lt;IP&gt;:4001/api/sms?command=submit&username=client1@client.com&pas
                 </div>
                 <!-- FAQ Section -->
                 <div id="faq-topic-1" class="pt-3">
-                     <h2 class="faq-heading d-flex align-items-center justify-content-center gap-2">
-                        <span class="faq-icon">
+                    <h2 class="faq-heading d-flex align-items-center justify-content-center gap-2 animate-title">
+                        <span class="faq-icon pulse-icon icon-black">
                             <i class="fas fa-circle-question"></i>
                         </span>
-                        <span class="faq-title">FAQ</span>
-                        <span class="faq-subtitle text-muted fw-normal">
-                            (Frequently Asked Questions)
+                        <span class="faq-title fire-text">
+                            FAQ (Frequently Asked Questions)
                         </span>
                     </h2>
+
                     <div class="card mb-4 version-card">
                         <div class="card-body p-0">
                             <!-- ================= SMS ACCORDION ================= -->
@@ -2010,6 +2009,53 @@ GET  http:&lt;IP&gt;:4001/api/sms?command=submit&username=client1@client.com&pas
                                                     </div>
 
                                                     <!-- ========================================================= -->
+                                                    <!-- Que 13 -->
+                                                    <!-- ========================================================= -->
+                                                    <div class="accordion-item sms-section">
+                                                        <h2 class="accordion-header" id="mccMncFallbackHeading">
+                                                            <button
+                                                                class="accordion-button collapsed"
+                                                                type="button"
+                                                                data-bs-toggle="collapse"
+                                                                data-bs-target="#mccMncFallbackCollapse"
+                                                            >
+                                                                💬 Que 13) What happens if MCC/MNC is not available in the lookup tables?
+                                                            </button>
+                                                        </h2>
+
+                                                        <div
+                                                            id="mccMncFallbackCollapse"
+                                                            class="accordion-collapse collapse"
+                                                            data-bs-parent="#smsInnerAccordion"
+                                                        >
+                                                            <div class="accordion-body">
+                                                                <div class="sms-question">
+                                                                    <p>
+                                                                        If the MCC/MNC combination is not found in any of the following lookup tables:
+                                                                    </p>
+
+                                                                    <ul class="ms-3">
+                                                                        <li><code>lookup_in</code></li>
+                                                                        <li><code>lookup_uk</code></li>
+                                                                        <li><code>lookup_us</code></li>
+                                                                    </ul>
+
+                                                                    <p class="mt-3">
+                                                                        then the system will automatically apply the SMS rate based on the
+                                                                        <strong>country dial code (+)</strong> of the destination number.
+                                                                    </p>
+
+                                                                    <p>
+                                                                        This ensures that a valid price is always selected, even when MCC/MNC
+                                                                        data is unavailable.
+                                                                    </p>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+
+
+                                                    <!-- ========================================================= -->
                                                     <!-- SMPP ARCHITECTURE & MESSAGE FLOW -->
                                                     <!-- ========================================================= -->
                                                     <div class="accordion-item sms-section">
@@ -2020,303 +2066,236 @@ GET  http:&lt;IP&gt;:4001/api/sms?command=submit&username=client1@client.com&pas
                                                                 data-bs-toggle="collapse"
                                                                 data-bs-target="#smppArchitectureCollapse"
                                                             >
-                                                                💬 Que 13) How does the SMPP messaging platform work and what is its overall architecture?
+                                                                💬 Que 14) How does the SMPP messaging platform work and what is its overall architecture?
                                                             </button>
                                                         </h2>
+
                                                         <div id="smppArchitectureCollapse" class="accordion-collapse collapse" data-bs-parent="#smsInnerAccordion">
-                                                            <div class="accordion-body">
+                                                            <div class="accordion-body smpp-architecture">
 
-                                                                <!-- ================= PLATFORM OVERVIEW ================= -->
-                                                                <div class="sms-question">
-                                                                    <h6>🔍 Platform Overview</h6>
-
+                                                                <!-- PLATFORM OVERVIEW -->
+                                                                <div class="arch-block intro">
+                                                                    <h5>🔍 Platform Overview</h5>
                                                                     <p>
-                                                                        Before starting any SMPP-related service, it is mandatory to
-                                                                        enter the <strong>SMPP Docker container</strong>. None of the
-                                                                        services can run outside the container environment.
+                                                                        The SMPP messaging platform runs entirely inside a
+                                                                        <strong>Docker-based container environment</strong>.
+                                                                        No service is allowed to operate outside the container.
                                                                     </p>
-
                                                                     <p>
-                                                                        All services must be started in parallel. The platform begins
-                                                                        by initializing the <strong>SMPP Server</strong> and
-                                                                        <strong>SMPP Client</strong>.
+                                                                        All core services are started in parallel. The platform
+                                                                        initializes the <strong>SMPP Server</strong> and
+                                                                        <strong>SMPP Client</strong> as the foundation.
                                                                     </p>
-
                                                                     <p>
-                                                                        The SMPP Server creates multiple listening ports defined
-                                                                        in the <code>.env</code> file. Each port becomes active and
-                                                                        ready to accept client connections.
+                                                                        The SMPP Server opens multiple listening ports configured
+                                                                        via the <code>.env</code> file. Each port is dedicated to
+                                                                        accepting authenticated SMPP client connections.
                                                                     </p>
-
                                                                     <p>
-                                                                        The SMPP Client connects to the server using configured
-                                                                        credentials (Username, Password, IP, Port). Once authenticated,
-                                                                        the client is authorized to send and receive messages.
-                                                                    </p>
-
-                                                                    <p>
-                                                                        Invalid credentials result in immediate disconnection,
-                                                                        ensuring security and controlled access.
+                                                                        Clients authenticate using valid credentials
+                                                                        (Username, Password, IP, Port). Any invalid authentication
+                                                                        results in an immediate disconnection.
                                                                     </p>
                                                                 </div>
 
-                                                                <!-- ================= SMPP CLIENT SERVICE ================= -->
-                                                                <div class="sms-question">
-                                                                    <h6>1️⃣ SMPP_CLIENT Service</h6>
+                                                                <!-- SERVICE FLOW -->
+                                                                <div class="arch-flow">
 
-                                                                    <p>
-                                                                        After successful connection, the SMPP Client prepares
-                                                                        the message for delivery.
-                                                                    </p>
+                                                                    <div class="arch-step">
+                                                                        <span class="step-no">1</span>
+                                                                        <div>
+                                                                            <h6>SMPP_CLIENT Service</h6>
+                                                                            <p>
+                                                                                Prepares and submits messages after successful
+                                                                                authentication.
+                                                                            </p>
+                                                                            <ul>
+                                                                                <li>Validates message parameters</li>
+                                                                                <li>Identifies channel (S / H / A)</li>
+                                                                                <li>Handles encoding & message splitting</li>
+                                                                                <li>Attaches optional TLVs</li>
+                                                                            </ul>
+                                                                        </div>
+                                                                    </div>
 
-                                                                    <p><strong>Required message parameters:</strong></p>
-                                                                    <ul class="ms-3">
-                                                                        <li>Username</li>
-                                                                        <li>Password</li>
-                                                                        <li>Source Address</li>
-                                                                        <li>Destination Address</li>
-                                                                        <li>Message Content</li>
-                                                                    </ul>
+                                                                    <div class="arch-step">
+                                                                        <span class="step-no">2</span>
+                                                                        <div>
+                                                                            <h6>SMPP_SERVER Service</h6>
+                                                                            <p>
+                                                                                Performs security and throughput checks before
+                                                                                message acceptance.
+                                                                            </p>
+                                                                            <ul>
+                                                                                <li>Generates unique OMSGID</li>
+                                                                                <li>Revalidates credentials</li>
+                                                                                <li>Applies rate & capacity limits</li>
+                                                                            </ul>
+                                                                        </div>
+                                                                    </div>
 
-                                                                    <p>
-                                                                        Messages are processed through the
-                                                                        <code>message</code> action, where the
-                                                                        <strong>channel</strong> is identified:
-                                                                    </p>
+                                                                    <div class="arch-step">
+                                                                        <span class="step-no">3</span>
+                                                                        <div>
+                                                                            <h6>DF Service (DragonFly / Redis)</h6>
+                                                                            <p>
+                                                                                Acts as the core message queue and persistence layer.
+                                                                            </p>
+                                                                            <ul>
+                                                                                <li>Secure message storage</li>
+                                                                                <li>Metadata preservation</li>
+                                                                                <li>Queue reliability</li>
+                                                                            </ul>
+                                                                        </div>
+                                                                    </div>
 
-                                                                    <ul class="ms-3">
-                                                                        <li>SMPP → Channel = <strong>S</strong></li>
-                                                                        <li>HTTP → Channel = <strong>H</strong></li>
-                                                                        <li>App / Website Campaign → Channel = <strong>A</strong></li>
-                                                                    </ul>
+                                                                    <div class="arch-step">
+                                                                        <span class="step-no">4</span>
+                                                                        <div>
+                                                                            <h6>Validator Service</h6>
+                                                                            <p>
+                                                                                Ensures compliance, billing readiness, and content
+                                                                                integrity.
+                                                                            </p>
+                                                                            <ul>
+                                                                                <li>Billing validation</li>
+                                                                                <li>Blacklist checks</li>
+                                                                                <li>Spam & content filtering</li>
+                                                                                <li>TLV validation</li>
+                                                                            </ul>
+                                                                        </div>
+                                                                    </div>
 
-                                                                    <p>
-                                                                        Based on <code>data_coding</code>, the message is passed to
-                                                                        <code>sendMessage()</code>, where:
-                                                                    </p>
+                                                                    <div class="arch-step">
+                                                                        <span class="step-no">5</span>
+                                                                        <div>
+                                                                            <h6>Translation Service</h6>
+                                                                            <p>
+                                                                                Applies client-specific or rule-based message
+                                                                                transformations.
+                                                                            </p>
+                                                                            <ul>
+                                                                                <li>Fetches rules from Redis</li>
+                                                                                <li>Content modification</li>
+                                                                                <li>Dynamic payload mapping</li>
+                                                                            </ul>
+                                                                        </div>
+                                                                    </div>
 
-                                                                    <ul class="ms-3">
-                                                                        <li>Message is split according to encoding rules</li>
-                                                                        <li>Extra TLVs are attached if required</li>
-                                                                        <li>Final payload is forwarded to the SMPP Server</li>
-                                                                    </ul>
+                                                                    <div class="arch-step">
+                                                                        <span class="step-no">6</span>
+                                                                        <div>
+                                                                            <h6>Buffer Service</h6>
+                                                                            <p>
+                                                                                Controls timing, priority, and eligibility of message delivery.
+                                                                            </p>
+                                                                            <ul>
+                                                                                <li>Time-window enforcement</li>
+                                                                                <li>Country & region restrictions</li>
+                                                                                <li>Retry & priority handling</li>
+                                                                            </ul>
+                                                                        </div>
+                                                                    </div>
+
+                                                                    <div class="arch-step">
+                                                                        <span class="step-no">7</span>
+                                                                        <div>
+                                                                            <h6>FDLR Service</h6>
+                                                                            <p>
+                                                                                Manages controlled delivery and DLR manipulation.
+                                                                            </p>
+                                                                            <ul>
+                                                                                <li>CFDLR ratio enforcement</li>
+                                                                                <li>Fake vs real DLR split</li>
+                                                                                <li>Redis reconciliation logs</li>
+                                                                            </ul>
+                                                                        </div>
+                                                                    </div>
+
+                                                                    <div class="arch-step">
+                                                                        <span class="step-no">8</span>
+                                                                        <div>
+                                                                            <h6>Routing Service</h6>
+                                                                            <p>
+                                                                                Selects the optimal supplier using MCC/MNC and routing logic.
+                                                                            </p>
+                                                                            <ul>
+                                                                                <li>LCR / PCR routing</li>
+                                                                                <li>Choice-based percentage routing</li>
+                                                                                <li>Supplier rate resolution</li>
+                                                                            </ul>
+                                                                        </div>
+                                                                    </div>
+
+                                                                    <div class="arch-step">
+                                                                        <span class="step-no">9</span>
+                                                                        <div>
+                                                                            <h6>SEND_SMS Service</h6>
+                                                                            <p>
+                                                                                Executes final delivery to the supplier.
+                                                                            </p>
+                                                                            <ul>
+                                                                                <li>Supplier connection handling</li>
+                                                                                <li>Billing trigger</li>
+                                                                                <li>DLR reception</li>
+                                                                            </ul>
+                                                                        </div>
+                                                                    </div>
+
+                                                                    <div class="arch-step">
+                                                                        <span class="step-no">10</span>
+                                                                        <div>
+                                                                            <h6>DLR Service</h6>
+                                                                            <p>
+                                                                                Normalizes and delivers delivery reports.
+                                                                            </p>
+                                                                            <ul>
+                                                                                <li>DLR status mapping</li>
+                                                                                <li>SMSGID → OMSGID mapping</li>
+                                                                                <li>Retry handling</li>
+                                                                            </ul>
+                                                                        </div>
+                                                                    </div>
+
+                                                                    <div class="arch-step">
+                                                                        <span class="step-no">11</span>
+                                                                        <div>
+                                                                            <h6>BILLING-SMS Service</h6>
+                                                                            <p>
+                                                                                Centralized billing service used across the platform.
+                                                                            </p>
+                                                                            <ul>
+                                                                                <li>Client balance deduction</li>
+                                                                                <li>Supplier cost calculation</li>
+                                                                                <li>C-Cost & S-Cost updates</li>
+                                                                            </ul>
+                                                                        </div>
+                                                                    </div>
+
                                                                 </div>
 
-                                                                <!-- ================= SMPP SERVER SERVICE ================= -->
-                                                                <div class="sms-question">
-                                                                    <h6>2️⃣ SMPP_SERVER Service</h6>
-
-                                                                    <p>On receiving a message, the SMPP Server performs:</p>
-
-                                                                    <ul class="ms-3">
-                                                                        <li>Generation of a unique Message ID (OMSGID)</li>
-                                                                        <li>Reuse of client-supplied ID if provided</li>
-                                                                        <li>Revalidation of client credentials</li>
-                                                                        <li>Rate-limit and capacity checks</li>
-                                                                    </ul>
-
+                                                                <!-- SUMMARY -->
+                                                                <div class="arch-summary">
+                                                                    <h6>✅ Final Architecture Summary</h6>
                                                                     <p>
-                                                                        Messages are processed in per-second loops to maintain
-                                                                        throughput and performance.
-                                                                    </p>
-
-                                                                    <p>
-                                                                        After validation, messages are forwarded to the
-                                                                        <strong>DF Service</strong>.
-                                                                    </p>
-                                                                </div>
-
-                                                                <!-- ================= DF SERVICE ================= -->
-                                                                <div class="sms-question">
-                                                                    <h6>3️⃣ DF Service (DragonFly)</h6>
-
-                                                                    <p>
-                                                                        The DF service receives the message payload from the
-                                                                        SMPP Server and stores it securely in
-                                                                        <strong>Redis (DragonFly)</strong>.
-                                                                    </p>
-
-                                                                    <ul class="ms-3">
-                                                                        <li>Ensures persistence and queue safety</li>
-                                                                        <li>Stores metadata for downstream services</li>
-                                                                        <li>Acts as the backbone for message flow</li>
-                                                                    </ul>
-
-                                                                    <p>
-                                                                        After storage, the message is forwarded to the
-                                                                        <strong>Validator Service</strong>.
-                                                                    </p>
-                                                                </div>
-
-                                                                <!-- ================= VALIDATOR SERVICE ================= -->
-                                                                <div class="sms-question">
-                                                                    <h6>4️⃣ Validator Service</h6>
-
-                                                                    <p>
-                                                                        The Validator Service retrieves message data from Redis
-                                                                        and performs critical checks:
-                                                                    </p>
-
-                                                                    <ul class="ms-3">
-                                                                        <li>Billing completion verification</li>
-                                                                        <li>Destination blacklist checks</li>
-                                                                        <li>Source address blacklist checks</li>
-                                                                        <li>Spam and restricted content detection</li>
-                                                                        <li>TLV validation</li>
-                                                                    </ul>
-
-                                                                    <p>
-                                                                        Only messages that pass all validation steps are approved
-                                                                        and forwarded to the Translation Service.
-                                                                    </p>
-                                                                </div>
-
-                                                                <!-- ================= TRANSLATION SERVICE ================= -->
-                                                                <div class="sms-question">
-                                                                    <h6>5️⃣ Translation Service</h6>
-
-                                                                    <p>
-                                                                        The Translation Service applies client-specific or
-                                                                        message-specific transformation rules.
-                                                                    </p>
-
-                                                                    <ul class="ms-3">
-                                                                        <li>Fetch rules from Redis</li>
-                                                                        <li>Match rules against message/client</li>
-                                                                        <li>Modify or translate content if required</li>
-                                                                    </ul>
-
-                                                                    <p>
-                                                                        After translation, messages move to the Buffer Service.
-                                                                    </p>
-                                                                </div>
-
-                                                                <!-- ================= BUFFER SERVICE ================= -->
-                                                                <div class="sms-question">
-                                                                    <h6>6️⃣ Buffer Service</h6>
-
-                                                                    <p>
-                                                                        The Buffer Service controls message timing and delivery
-                                                                        eligibility.
-                                                                    </p>
-
-                                                                    <ul class="ms-3">
-                                                                        <li>Check country & region restrictions</li>
-                                                                        <li>Validate promotional time windows</li>
-                                                                        <li>Hold messages outside allowed time periods</li>
-                                                                        <li>Queue messages with priority and retry rules</li>
-                                                                    </ul>
-
-                                                                    <p>
-                                                                        Eligible messages are forwarded to the
-                                                                        <strong>FDLR Service</strong>.
-                                                                    </p>
-                                                                </div>
-
-                                                                <!-- ================= FDLR SERVICE ================= -->
-                                                                <div class="sms-question">
-                                                                    <h6>7️⃣ FDLR Service</h6>
-
-                                                                    <p>
-                                                                        The FDLR Service applies controlled DLR splitting using
-                                                                        <code>cfdlr_ratio</code>.
-                                                                    </p>
-
-                                                                    <ul class="ms-3">
-                                                                        <li>100:0 → All messages routed normally</li>
-                                                                        <li>Other ratios → Partial real delivery + fake DLRs</li>
-                                                                        <li>Per-second ratio enforcement</li>
-                                                                        <li>Redis logging for reconciliation</li>
-                                                                    </ul>
-
-                                                                    <p>
-                                                                        Routed messages proceed to the Routing Service.
-                                                                    </p>
-                                                                </div>
-
-                                                                <!-- ================= ROUTING SERVICE ================= -->
-                                                                <div class="sms-question">
-                                                                    <h6>8️⃣ Routing Service</h6>
-
-                                                                    <p>
-                                                                        Routing rules are evaluated using
-                                                                        client system_id and MCC/MNC data.
-                                                                    </p>
-
-                                                                    <ul class="ms-3">
-                                                                        <li><strong>LCR</strong> – Least cost supplier</li>
-                                                                        <li><strong>PCR</strong> – Premium supplier</li>
-                                                                        <li><strong>CHOICE_LIST</strong> – Percentage-based split</li>
-                                                                    </ul>
-
-                                                                    <p>
-                                                                        Supplier rates are fetched and messages are forwarded
-                                                                        to the SEND_SMS Service.
+                                                                        This SMPP architecture ensures secure, scalable, and traceable
+                                                                        message delivery through containerized services, Redis-backed
+                                                                        queues, intelligent routing, precise billing, and reliable DLR handling.
                                                                     </p>
                                                                 </div>
 
-                                                                <!-- ================= SEND_SMS SERVICE ================= -->
-                                                                <div class="sms-question">
-                                                                    <h6>9️⃣ SEND_SMS Service</h6>
-
-                                                                    <ul class="ms-3">
-                                                                        <li>Maintains supplier connections</li>
-                                                                        <li>Triggers billing before delivery</li>
-                                                                        <li>Sends provider-specific payloads</li>
-                                                                        <li>Receives and maps supplier DLRs</li>
-                                                                    </ul>
-
-                                                                    <p>
-                                                                        Standardized DLRs are forwarded to the DLR Service.
-                                                                    </p>
-                                                                </div>
-
-                                                                <!-- ================= DLR SERVICE ================= -->
-                                                                <div class="sms-question">
-                                                                    <h6>🔟 DLR Service</h6>
-
-                                                                    <ul class="ms-3">
-                                                                        <li>Maps SMSGID → OMSGID</li>
-                                                                        <li>Applies DLR status/code mapping</li>
-                                                                        <li>Delivers DLRs to active SMPP clients</li>
-                                                                        <li>Stores undelivered DLRs for retry</li>
-                                                                    </ul>
-                                                                </div>
-
-                                                                <!-- ================= BILLING SERVICE ================= -->
-                                                                <div class="sms-question">
-                                                                    <h6>1️⃣1️⃣ BILLING-SMS Service</h6>
-
-                                                                    <ul class="ms-3">
-                                                                        <li>Client billing deduction</li>
-                                                                        <li>Supplier billing calculation</li>
-                                                                        <li>Updates C-Cost and S-Cost</li>
-                                                                        <li>Used across all services</li>
-                                                                    </ul>
-                                                                </div>
-
-                                                                <!-- ================= FINAL SUMMARY ================= -->
-                                                                <div class="sms-question">
-                                                                    <h6>✅ Final Message Flow Summary</h6>
-
-                                                                    <p>
-                                                                        The SMPP platform ensures secure, scalable, and traceable
-                                                                        message delivery using Redis-backed services, controlled
-                                                                        routing, precise billing, and reliable DLR handling.
-                                                                    </p>
-
-                                                                    <p>
-                                                                        This architecture guarantees complete message lifecycle
-                                                                        visibility, reconciliation, and reporting.
-                                                                    </p>
-                                                                </div>
                                                             </div>
+
                                                             <div class="video-info-line">
                                                                 🎥 We also provide a detailed video explanation for this topic.
                                                                 <strong>Click the button below to watch the video and understand it better</strong>.
                                                             </div>
+
                                                             <div class="watch-video-wrap">
-                                                                <a href="https://youtu.be/jSqEWell3q8?si=9xISWvRFptDs5jgh" target="_blank" class="watch-video-btn yt-expand" aria-label="Watch on YouTube">
+                                                                <a href="https://youtu.be/jSqEWell3q8?si=9xISWvRFptDs5jgh"
+                                                                target="_blank"
+                                                                class="watch-video-btn yt-expand"
+                                                                aria-label="Watch on YouTube">
                                                                     <i class="fab fa-youtube"></i>
                                                                     <span class="yt-text">Watch on YouTube</span>
                                                                 </a>
@@ -2351,23 +2330,29 @@ GET  http:&lt;IP&gt;:4001/api/sms?command=submit&username=client1@client.com&pas
                     </div>
                 </div>
                 <!-- Latest-Docs Section -->
-                <div id="latest-docs" class="pt-4">
-                    <h2 class="faq-heading d-flex align-items-center justify-content-center gap-2">
-                        <span class="faq-icon">
+                <div id="latest-docs" class="pt-4 latest-docs-animated">
+                    <h2 class="faq-heading d-flex align-items-center justify-content-center gap-2 animate-title">
+                        <span class="faq-icon pulse-icon icon-black">
                             <i class="fas fa-book-open"></i>
                         </span>
-                        <span class="faq-title">Latest Documentation</span>
+                        <span class="faq-title fire-text">
+                            Latest Documentation
+                        </span>
                     </h2>
 
-                    <div class="card mb-4 version-card">
+                    <div class="card mb-4 version-card animate-card">
                         <div class="card-body text-center">
 
-                            <div class="video-info-line">
+                            <div class="video-info-line animate-text">
                                 Want to read our latest documentation? Click below to explore the most up-to-date guides,
                                 features, and implementation details.
                             </div>
-                            <div class="watch-video-wrap">
-                                <a href="https://oklaboratory.github.io/okmsg" target="_blank" class="watch-video-btn yt-expand doc-expand" aria-label="Go to Documentation">
+
+                            <div class="watch-video-wrap animate-btn">
+                                <a href="https://oklaboratory.github.io/okmsg"
+                                target="_blank"
+                                class="watch-video-btn yt-expand doc-expand doc-btn"
+                                aria-label="Go to Documentation">
                                     <i class="fas fa-book-open"></i>
                                     <span class="yt-text">Go to Documentation</span>
                                 </a>
@@ -2375,19 +2360,6 @@ GET  http:&lt;IP&gt;:4001/api/sms?command=submit&username=client1@client.com&pas
                         </div>
                     </div>
                 </div>
-                <!-- <ul class="nav my-4">
-                    <li>🚀 New feature </li>
-                    <li>🎉 New Feature</li>
-                    <li>🐛 Bug fix</li>
-                    <li>🔥 Hotfix </li>
-                    <li>⚙️ Chore </li>
-                    <li>❤️ Thank You </li>
-                    <li>💅 Enhancement </li>
-                    <li>📚 Documentation Changes </li>
-                    <li>📚 Update and Migration Guides </li>
-                    <li>🚨 Security </li>
-                    <li>💡 Upcoming Features</li>
-                </ul> -->
             </div>
         </section>
     </main>
@@ -2414,7 +2386,7 @@ GET  http:&lt;IP&gt;:4001/api/sms?command=submit&username=client1@client.com&pas
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js" integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" crossorigin="anonymous"></script>
     <script>
         function scrollToSection(id, event) {
-            event.preventDefault();
+            if (event) event.preventDefault();
 
             const headerHeight = 64;
             const element = document.getElementById(id);
@@ -2428,13 +2400,60 @@ GET  http:&lt;IP&gt;:4001/api/sms?command=submit&username=client1@client.com&pas
                 behavior: "smooth"
             });
 
-            // ✅ close offcanvas (mobile)
+            // 🔥 retrigger animations SAFELY
+            setTimeout(() => {
+                retriggerAnimations(element);
+            }, 500);
+
+            // close offcanvas (mobile)
             const offcanvasEl = document.getElementById("mobileSidebar");
             if (offcanvasEl) {
                 const instance = bootstrap.Offcanvas.getInstance(offcanvasEl);
                 if (instance) instance.hide();
             }
         }
+
+        function retriggerAnimations(section) {
+            const animatedElements = section.querySelectorAll(
+                '.animate-title, .fire-text, .pulse-icon, .animate-card'
+            );
+
+            animatedElements.forEach(el => {
+                // reset animation WITHOUT removing layout classes
+                el.classList.add('reanimate');
+
+                // force reflow
+                void el.offsetWidth;
+
+                el.classList.remove('reanimate');
+            });
+        }
+
+document.addEventListener('DOMContentLoaded', function () {
+
+    // Get ONLY top-level collapses (direct children of sidebar nav items)
+    const topLevelCollapses = Array.from(
+        document.querySelectorAll('.sidebar > ul > li > .collapse')
+    );
+
+    topLevelCollapses.forEach(collapse => {
+
+        collapse.addEventListener('show.bs.collapse', function () {
+
+            topLevelCollapses.forEach(otherCollapse => {
+                if (otherCollapse !== collapse && otherCollapse.classList.contains('show')) {
+                    const bs = bootstrap.Collapse.getInstance(otherCollapse);
+                    if (bs) {
+                        bs.hide();
+                    }
+                }
+            });
+
+        });
+
+    });
+
+});
     </script>
     <script>
       function setupMobileSidebarClone() {
