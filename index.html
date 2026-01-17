@@ -564,7 +564,11 @@
                     <div class="card mb-4 version-card">
 
                         <!-- Header -->
-                        <div class="card-header bg-light d-flex justify-content-between align-items-center">
+                        <div
+                            class="card-header bg-light d-flex justify-content-between align-items-center cursor-pointer"
+                            data-bs-toggle="collapse"
+                            data-bs-target="#version-100"
+                            aria-expanded="true">
                             <strong class="h5 mb-0 text-dark">
                                 <i class="fas fa-code-branch"></i> v1.0.0
                             </strong>
@@ -572,209 +576,211 @@
                         </div>
 
                         <!-- Body -->
-                        <div class="card-body">
-                            <div class="accordion" id="accordion100">
+                        <div id="version-100" class="collapse show">
+                            <div class="card-body">
+                                <div class="accordion" id="accordion100">
 
-                                <!-- ================= SMS ================= -->
-                                <div class="accordion-item">
-                                    <h2 class="accordion-header" id="heading100sms">
-                                        <button
-                                            class="accordion-button collapsed"
-                                            type="button"
-                                            data-bs-toggle="collapse"
-                                            data-bs-target="#collapse100sms"
+                                    <!-- ================= SMS ================= -->
+                                    <div class="accordion-item">
+                                        <h2 class="accordion-header" id="heading100sms">
+                                            <button
+                                                class="accordion-button collapsed"
+                                                type="button"
+                                                data-bs-toggle="collapse"
+                                                data-bs-target="#collapse100sms"
+                                            >
+                                                <span class="me-2">💬</span> SMS
+                                            </button>
+                                        </h2>
+
+                                        <div
+                                            id="collapse100sms"
+                                            class="accordion-collapse collapse show"
+                                            data-bs-parent="#accordion100"
                                         >
-                                            <span class="me-2">💬</span> SMS
-                                        </button>
-                                    </h2>
+                                            <div class="accordion-body">
 
-                                    <div
-                                        id="collapse100sms"
-                                        class="accordion-collapse collapse show"
-                                        data-bs-parent="#accordion100"
-                                    >
-                                        <div class="accordion-body">
+                                                <!-- 🚀 EXISTING NEW FEATURES (AS IT IS) -->
+                                                <div class="category-section mb-4">
+                                                    <h6 class="category-title mb-3">🚀 New Features</h6>
+                                                    <ul class="list-unstyled ms-3">
 
-                                            <!-- 🚀 EXISTING NEW FEATURES (AS IT IS) -->
-                                            <div class="category-section mb-4">
-                                                <h6 class="category-title mb-3">🚀 New Features</h6>
-                                                <ul class="list-unstyled ms-3">
+                                                        <li>• Enterprise-grade SMS CPaaS built on microservices with Docker & Kubernetes</li>
+                                                        <li>• Fully compliant SMPP 3.3, 3.4, and 5.0 messaging platform</li>
+                                                        <li>• Centralized system configuration via single <code>.env</code> file</li>
+                                                        <li>• Advanced SMS billing engine based on MCC/MNC, dial-code, and Sender ID</li>
+                                                        <li>• Admin-controlled client disconnect using <code>smpp_server</code> Action API</li>
+                                                        <li>• Flexible SMPP bindings with shared or dedicated ports</li>
+                                                        <li>• Global and per-client IP blacklist / whitelist enforcement</li>
+                                                        <li>• Credit-based and currency-based SMS billing models</li>
+                                                        <li>• Session limit enforcement per client and per IP</li>
+                                                        <li>• Real-time SMS balance updates and alerts</li>
+                                                        <li>• DLT-compliant TLVs for Indian SMS traffic</li>
+                                                        <li>• Dynamic per-session Client & Supplier logging</li>
+                                                        <li>• Spam filtering and sender ID validation</li>
+                                                        <li>• LCR-based SMS routing</li>
+                                                        <li>• Support for short_message and message_payload</li>
+                                                        <li>• querySM support for SMPP & HTTP</li>
+                                                        <li>• Redis ↔ MySQL synchronization</li>
+                                                        <li>• Kubernetes-ready high TPS architecture</li>
+                                                        <li>• Full CPaaS bootstrap in ~7 minutes</li>
 
-                                                    <li>• Enterprise-grade SMS CPaaS built on microservices with Docker & Kubernetes</li>
-                                                    <li>• Fully compliant SMPP 3.3, 3.4, and 5.0 messaging platform</li>
-                                                    <li>• Centralized system configuration via single <code>.env</code> file</li>
-                                                    <li>• Advanced SMS billing engine based on MCC/MNC, dial-code, and Sender ID</li>
-                                                    <li>• Admin-controlled client disconnect using <code>smpp_server</code> Action API</li>
-                                                    <li>• Flexible SMPP bindings with shared or dedicated ports</li>
-                                                    <li>• Global and per-client IP blacklist / whitelist enforcement</li>
-                                                    <li>• Credit-based and currency-based SMS billing models</li>
-                                                    <li>• Session limit enforcement per client and per IP</li>
-                                                    <li>• Real-time SMS balance updates and alerts</li>
-                                                    <li>• DLT-compliant TLVs for Indian SMS traffic</li>
-                                                    <li>• Dynamic per-session Client & Supplier logging</li>
-                                                    <li>• Spam filtering and sender ID validation</li>
-                                                    <li>• LCR-based SMS routing</li>
-                                                    <li>• Support for short_message and message_payload</li>
-                                                    <li>• querySM support for SMPP & HTTP</li>
-                                                    <li>• Redis ↔ MySQL synchronization</li>
-                                                    <li>• Kubernetes-ready high TPS architecture</li>
-                                                    <li>• Full CPaaS bootstrap in ~7 minutes</li>
+                                                    </ul>
+                                                </div>
 
-                                                </ul>
+                                                <hr class="category-divider" />
+
+                                                <!-- 🔐 ADMIN ROLE SECTION -->
+                                                <div class="category-section mb-4">
+                                                    <h6 class="category-title mb-3">🔐 Admin Role (Role-Based Access Control)</h6>
+
+                                                    <ul class="ms-3">
+                                                        <li>View full system dashboard with profit, suppliers, products, channels, and SMS stats</li>
+                                                        <li>Create, update, and remove Users</li>
+                                                        <li>Assign RBAC (Role-Based Access Control) permissions</li>
+
+                                                        <li class="mt-2">
+                                                            Create and manage:
+                                                            <ul>
+                                                                <li>Carriers</li>
+                                                                <li>Carrier Accounts</li>
+                                                                <li>Products</li>
+                                                                <li>Channel Clients</li>
+                                                                <li>Channel Suppliers</li>
+                                                            </ul>
+                                                        </li>
+
+                                                        <li>Create and manage TLV rules for both Channel Clients and Suppliers</li>
+
+                                                        <li class="mt-2">
+                                                            Define pricing:
+                                                            <ul>
+                                                                <li>Client rates</li>
+                                                                <li>Supplier rates</li>
+                                                                <li>Direct rate import using Excel or PDF files</li>
+                                                            </ul>
+                                                        </li>
+
+                                                        <li>Create Routing Rules (client → supplier mapping)</li>
+                                                        <li>Create Buffering Rules (country-wise delivery windows)</li>
+                                                        <li>Create Translation Rules (dynamic SMS modification)</li>
+                                                        <li>Send single SMS for testing or monitoring</li>
+
+                                                        <li class="mt-2">
+                                                            Manage Masters:
+                                                            <ul>
+                                                                <li>TLVs, Tags, Currencies</li>
+                                                                <li>Countries & Regions</li>
+                                                                <li>Units, Product Types</li>
+                                                                <li>Translation Types</li>
+                                                                <li>MCC, MNC</li>
+                                                                <li>Reference Books</li>
+                                                            </ul>
+                                                        </li>
+
+                                                        <li>
+                                                            Apply Security Controls:
+                                                            <ul>
+                                                                <li>Block IP addresses</li>
+                                                                <li>Block destination numbers</li>
+                                                                <li>Block spam keywords</li>
+                                                            </ul>
+                                                        </li>
+
+                                                        <li>View all Client & Supplier SMS reports</li>
+                                                        <li>Access complete system & application logs</li>
+
+                                                        <li class="mt-2">
+                                                            Install and manage Plugins:
+                                                            <ul>
+                                                                <li>Stripe</li>
+                                                                <li>PayPal</li>
+                                                                <li>Kannel</li>
+                                                            </ul>
+                                                        </li>
+
+                                                        <li>
+                                                            Configure Application Settings:
+                                                            <ul>
+                                                                <li>App Name, Code, Description</li>
+                                                                <li>Product Code & License Code</li>
+                                                                <li>App Version</li>
+                                                                <li>Logo & Favicon</li>
+                                                            </ul>
+                                                        </li>
+
+                                                        <li>Enable Two-Factor Authentication (2FA)</li>
+                                                    </ul>
+                                                </div>
+
+                                                <hr class="category-divider" />
+
+                                                <!-- 👤 USER ROLE SECTION -->
+                                                <div class="category-section mb-4">
+                                                    <h6 class="category-title mb-3">👤 User Role</h6>
+
+                                                    <ul class="ms-3">
+                                                        <li>View personal dashboard (wallet balance, SMS stats, delivery status)</li>
+                                                        <li>View assigned Channels, Accounts, Rates, and Routing (read-only)</li>
+                                                        <li>View message delivery reports and campaign status</li>
+                                                        <li>View Channel and Message logs relevant to their account</li>
+
+                                                        <li class="mt-2">
+                                                            Create and manage:
+                                                            <ul>
+                                                                <li>Sender IDs</li>
+                                                                <li>SMS Templates</li>
+                                                            </ul>
+                                                        </li>
+
+                                                        <li>Send single SMS using Quick Send</li>
+                                                        <li>Create and send Bulk SMS Campaigns</li>
+
+                                                        <li class="mt-2">
+                                                            Manage personal security:
+                                                            <ul>
+                                                                <li>Create own blacklist numbers</li>
+                                                                <li>Define spam keywords</li>
+                                                            </ul>
+                                                        </li>
+
+                                                        <li>Perform basic security operations for their own account</li>
+                                                    </ul>
+                                                </div>
+
+                                                <hr class="category-divider" />
+
+                                                <!-- ⏳ UPCOMING FEATURES -->
+                                                <div class="category-section">
+                                                    <h6 class="category-title mb-3">⏳ Upcoming Features (v1.0.1)</h6>
+                                                    <ul class="list-unstyled ms-3">
+                                                        <li>• submit_multi support</li>
+                                                        <li>• Redis & RabbitMQ scheduler improvements</li>
+                                                        <li>• TPS throttling with SMPP error handling</li>
+                                                        <li>• Retry mechanism for failed SMS</li>
+                                                        <li>• Graceful SMPP restart</li>
+                                                        <li>• Supplier-wise log segregation</li>
+                                                        <li>• Kannel & Jasmin support</li>
+                                                        <li>• Full unit testing</li>
+                                                        <li>• Enhanced RBAC & reporting</li>
+                                                    </ul>
+                                                </div>
+
                                             </div>
-
-                                            <hr class="category-divider" />
-
-                                            <!-- 🔐 ADMIN ROLE SECTION -->
-                                            <div class="category-section mb-4">
-                                                <h6 class="category-title mb-3">🔐 Admin Role (Role-Based Access Control)</h6>
-
-                                                <ul class="ms-3">
-                                                    <li>View full system dashboard with profit, suppliers, products, channels, and SMS stats</li>
-                                                    <li>Create, update, and remove Users</li>
-                                                    <li>Assign RBAC (Role-Based Access Control) permissions</li>
-
-                                                    <li class="mt-2">
-                                                        Create and manage:
-                                                        <ul>
-                                                            <li>Carriers</li>
-                                                            <li>Carrier Accounts</li>
-                                                            <li>Products</li>
-                                                            <li>Channel Clients</li>
-                                                            <li>Channel Suppliers</li>
-                                                        </ul>
-                                                    </li>
-
-                                                    <li>Create and manage TLV rules for both Channel Clients and Suppliers</li>
-
-                                                    <li class="mt-2">
-                                                        Define pricing:
-                                                        <ul>
-                                                            <li>Client rates</li>
-                                                            <li>Supplier rates</li>
-                                                            <li>Direct rate import using Excel or PDF files</li>
-                                                        </ul>
-                                                    </li>
-
-                                                    <li>Create Routing Rules (client → supplier mapping)</li>
-                                                    <li>Create Buffering Rules (country-wise delivery windows)</li>
-                                                    <li>Create Translation Rules (dynamic SMS modification)</li>
-                                                    <li>Send single SMS for testing or monitoring</li>
-
-                                                    <li class="mt-2">
-                                                        Manage Masters:
-                                                        <ul>
-                                                            <li>TLVs, Tags, Currencies</li>
-                                                            <li>Countries & Regions</li>
-                                                            <li>Units, Product Types</li>
-                                                            <li>Translation Types</li>
-                                                            <li>MCC, MNC</li>
-                                                            <li>Reference Books</li>
-                                                        </ul>
-                                                    </li>
-
-                                                    <li>
-                                                        Apply Security Controls:
-                                                        <ul>
-                                                            <li>Block IP addresses</li>
-                                                            <li>Block destination numbers</li>
-                                                            <li>Block spam keywords</li>
-                                                        </ul>
-                                                    </li>
-
-                                                    <li>View all Client & Supplier SMS reports</li>
-                                                    <li>Access complete system & application logs</li>
-
-                                                    <li class="mt-2">
-                                                        Install and manage Plugins:
-                                                        <ul>
-                                                            <li>Stripe</li>
-                                                            <li>PayPal</li>
-                                                            <li>Kannel</li>
-                                                        </ul>
-                                                    </li>
-
-                                                    <li>
-                                                        Configure Application Settings:
-                                                        <ul>
-                                                            <li>App Name, Code, Description</li>
-                                                            <li>Product Code & License Code</li>
-                                                            <li>App Version</li>
-                                                            <li>Logo & Favicon</li>
-                                                        </ul>
-                                                    </li>
-
-                                                    <li>Enable Two-Factor Authentication (2FA)</li>
-                                                </ul>
-                                            </div>
-
-                                            <hr class="category-divider" />
-
-                                            <!-- 👤 USER ROLE SECTION -->
-                                            <div class="category-section mb-4">
-                                                <h6 class="category-title mb-3">👤 User Role</h6>
-
-                                                <ul class="ms-3">
-                                                    <li>View personal dashboard (wallet balance, SMS stats, delivery status)</li>
-                                                    <li>View assigned Channels, Accounts, Rates, and Routing (read-only)</li>
-                                                    <li>View message delivery reports and campaign status</li>
-                                                    <li>View Channel and Message logs relevant to their account</li>
-
-                                                    <li class="mt-2">
-                                                        Create and manage:
-                                                        <ul>
-                                                            <li>Sender IDs</li>
-                                                            <li>SMS Templates</li>
-                                                        </ul>
-                                                    </li>
-
-                                                    <li>Send single SMS using Quick Send</li>
-                                                    <li>Create and send Bulk SMS Campaigns</li>
-
-                                                    <li class="mt-2">
-                                                        Manage personal security:
-                                                        <ul>
-                                                            <li>Create own blacklist numbers</li>
-                                                            <li>Define spam keywords</li>
-                                                        </ul>
-                                                    </li>
-
-                                                    <li>Perform basic security operations for their own account</li>
-                                                </ul>
-                                            </div>
-
-                                            <hr class="category-divider" />
-
-                                            <!-- ⏳ UPCOMING FEATURES -->
-                                            <div class="category-section">
-                                                <h6 class="category-title mb-3">⏳ Upcoming Features (v1.0.1)</h6>
-                                                <ul class="list-unstyled ms-3">
-                                                    <li>• submit_multi support</li>
-                                                    <li>• Redis & RabbitMQ scheduler improvements</li>
-                                                    <li>• TPS throttling with SMPP error handling</li>
-                                                    <li>• Retry mechanism for failed SMS</li>
-                                                    <li>• Graceful SMPP restart</li>
-                                                    <li>• Supplier-wise log segregation</li>
-                                                    <li>• Kannel & Jasmin support</li>
-                                                    <li>• Full unit testing</li>
-                                                    <li>• Enhanced RBAC & reporting</li>
-                                                </ul>
-                                            </div>
-
                                         </div>
                                     </div>
-                                </div>
 
-                                <!-- ================= WHATSAPP ================= -->
-                                <div class="accordion-item whatsapp-only">
-                                    <h2 class="accordion-header">
-                                        <button class="accordion-button d-flex align-items-center" type="button">
-                                            <span class="me-2">📱</span> WHATSAPP
-                                            <span class="badge bg-warning text-dark ms-auto">Upcoming</span>
-                                        </button>
-                                    </h2>
-                                </div>
+                                    <!-- ================= WHATSAPP ================= -->
+                                    <div class="accordion-item whatsapp-only">
+                                        <h2 class="accordion-header">
+                                            <button class="accordion-button d-flex align-items-center" type="button">
+                                                <span class="me-2">📱</span> WHATSAPP
+                                                <span class="badge bg-warning text-dark ms-auto">Upcoming</span>
+                                            </button>
+                                        </h2>
+                                    </div>
 
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -2693,6 +2699,21 @@ document.addEventListener('DOMContentLoaded', function () {
 
       window.addEventListener("load", setupMobileSidebarClone);
     </script>
+    <style>
+    .cursor-pointer {
+        cursor: pointer;
+    }
+
+    .rotate-icon {
+        transition: transform 0.3s ease;
+    }
+
+    /* rotate arrow when collapsed */
+    .card-header[aria-expanded="false"] .rotate-icon {
+        transform: rotate(-90deg);
+    }
+
+    </style>
 </body>
 </html>
 
