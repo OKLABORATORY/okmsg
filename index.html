@@ -188,6 +188,39 @@
                         <span>Latest Docs</span>
                     </a>
                 </li>
+
+                <!-- Pricing -->
+                <li class="nav-item">
+                    <a class="nav-link text-white" href="#pricing" onclick="scrollToSection('pricing', event)">
+                        <i class="fas fa-tags me-2"></i>
+                        <span>Pricing</span>
+                    </a>
+                </li>
+
+                <!-- Terms & Conditions -->
+                <li class="nav-item">
+                    <a class="nav-link text-white" href="#terms-n-conditions" onclick="scrollToSection('terms-n-conditions', event)">
+                        <i class="fas fa-file-contract me-2"></i>
+                        <span>Terms & Conditions</span>
+                    </a>
+                </li>
+
+                <!-- Privacy Policy -->
+                <li class="nav-item">
+                    <a class="nav-link text-white" href="#privacy-policy" onclick="scrollToSection('privacy-policy', event)">
+                        <i class="fas fa-user-shield me-2"></i>
+                        <span>Privacy Policy</span>
+                    </a>
+                </li>
+
+                <!-- Refund Policy -->
+                <li class="nav-item">
+                    <a class="nav-link text-white" href="#refund-policy" onclick="scrollToSection('refund-policy', event)">
+                        <i class="fas fa-rotate-left me-2"></i>
+                        <span>Refund Policy</span>
+                    </a>
+                </li>
+
             </ul>
         </aside>
 
@@ -205,33 +238,50 @@
                         </span>
                     </h1>
                     <div class="card mb-4">
-                        <div class="card-body">
+                    <!-- Top Image -->
+                    <img 
+                        src="assets/images/okmessaging-okmsg.png"
+                        alt="OKMessaging Platform Overview"
+                        class="card-img-top img-fluid"
+                        style="max-height: 1500px; object-fit: contain; padding: 20px;"
+                    >
 
-                            <p class="lead mb-3">
-                                <strong>OKMESSAGING</strong> is an enterprise-grade SMS and SMPP communication platform
-                                engineered for high-volume, secure, and controlled message delivery at telecom scale.
-                            </p>
+                    <div class="card-body">
 
-                            <p class="small text-muted mb-3">
-                                The platform covers the complete lifecycle of SMS communication — from infrastructure
-                                planning and deployment to SMPP/HTTP message submission, intelligent routing, buffering,
-                                protocol translation, billing, and delivery reporting. It follows a strict
-                                <strong>role-based access control (RBAC)</strong> model with clearly separated
-                                <strong>Admin</strong> and <strong>User</strong> roles, ensuring secure system management
-                                and controlled operational usage across all components.
-                            </p>
+                        <p class="lead mb-3">
+                            <strong>OKMessaging</strong> is a powerful, AI-powered CPaaS platform built on a modern
+                            microservices architecture using <strong>Docker</strong> and <strong>Kubernetes</strong>,
+                            delivering unmatched scalability, performance, and intelligent omni-channel communication
+                            across SMS, voice, and WhatsApp.
+                        </p>
 
-                            <p class="small text-muted mb-0">
-                                With support for single and bulk SMS, multi-destination messaging, advanced routing logic,
-                                Redis-backed high-performance processing, and detailed logs and reports, OKMESSAGING delivers
-                                a scalable, resilient, and reliable architecture suitable for mission-critical,
-                                telecom-grade messaging operations.
-                            </p>
+                        <p class="small text-muted mb-3">
+                            The platform enables businesses to send bulk voice calls to mobile phones using either
+                            pre-recorded audio messages or advanced text-to-speech (TTS) robotic voices.
+                            With intuitive campaign management, users can easily schedule, launch, and manage
+                            high-volume call campaigns—ideal for alerts, notifications, marketing outreach,
+                            and customer engagement.
+                        </p>
 
-                        </div>
+                        <p class="small text-muted mb-3">
+                            OKMessaging supports a secure multi-tenant model, allowing organizations to create and
+                            manage their own client accounts while enabling service providers to monetize the platform
+                            through subscription-based or usage-based business models.
+                        </p>
+
+                        <p class="small text-muted mb-0">
+                            Users can upload contact lists, personalize messaging content, monitor delivery and
+                            performance metrics, and manage campaigns from a centralized dashboard.
+                            Whether you are automating customer communication or building a large-scale voice
+                            broadcasting solution, OKMessaging delivers a scalable, efficient, and user-friendly
+                            communication platform.
+                        </p>
+
                     </div>
+                </div>
 
                 </div>
+
                 <!-- Installation Guide Section -->
                 <div id="installation-guide">
                     <h2 class="text-center d-flex justify-content-center align-items-center gap-2 animate-title">
@@ -499,6 +549,7 @@
                         </div>
                     </div>
                 </div>
+
                 <!-- Changelog Section -->
                 <div id="changeLog100">
                     <h2 class="text-center d-flex justify-content-center align-items-center gap-2 animate-title">
@@ -728,6 +779,7 @@
                         </div>
                     </div>
                 </div>
+
                 <!-- Startlog Section -->
                 <div id="startlog-smpp" class="pt-3">
                     <!-- ===== Heading (same style as FAQ / Changelog) ===== -->
@@ -883,6 +935,7 @@
                     </div>
 
                 </div>
+
                 <!-- API Section -->
                 <div id="sms-section">
                     <h2 class="mt-4 d-flex justify-content-center align-items-center gap-2 animate-title">
@@ -1052,6 +1105,7 @@ GET  http:&lt;IP&gt;:4001/api/sms?command=submit&username=client1@client.com&pas
                         </div>
                     </div>
                 </div>
+
                 <!-- FAQ Section -->
                 <div id="faq-topic-1" class="pt-3">
                     <h2 class="faq-heading d-flex align-items-center justify-content-center gap-2 animate-title">
@@ -2329,6 +2383,7 @@ GET  http:&lt;IP&gt;:4001/api/sms?command=submit&username=client1@client.com&pas
                         </div>
                     </div>
                 </div>
+
                 <!-- Latest-Docs Section -->
                 <div id="latest-docs" class="pt-4 latest-docs-animated">
                     <h2 class="faq-heading d-flex align-items-center justify-content-center gap-2 animate-title">
@@ -2357,6 +2412,142 @@ GET  http:&lt;IP&gt;:4001/api/sms?command=submit&username=client1@client.com&pas
                                     <span class="yt-text">Go to Documentation</span>
                                 </a>
                             </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Pricing Section -->
+                <div id="pricing" class="pt-4 latest-docs-animated">
+                    <h2 class="faq-heading d-flex align-items-center justify-content-center gap-2 animate-title">
+                        <span class="faq-icon pulse-icon icon-black">
+                            <i class="fas fa-tags"></i>
+                        </span>
+                        <span class="faq-title fire-text">Pricing</span>
+                    </h2>
+
+                    <div class="card mb-4 version-card animate-card">
+                        <div class="card-body text-center">
+
+                            <div class="video-info-line animate-text">
+                                OKMESSAGING offers flexible, transparent, and usage-based pricing tailored
+                                for startups, developers, and enterprises. Pricing depends on message volume,
+                                route quality, delivery reports, and optional features such as APIs,
+                                SMPP connectivity, and priority routing.
+                                <br><br>
+                                No hidden charges. No long-term lock-in. Scale as your business grows.
+                            </div>
+
+                            <div class="watch-video-wrap animate-btn">
+                                <a href="https://oklaboratory.github.io/okmsg/#pricing"
+                                target="_blank"
+                                class="watch-video-btn yt-expand doc-expand doc-btn">
+                                    <i class="fas fa-tags"></i>
+                                    <span class="yt-text">Explore Pricing</span>
+                                </a>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Terms & Conditions Section -->
+                <div id="terms-n-conditions" class="pt-4 latest-docs-animated">
+                    <h2 class="faq-heading d-flex align-items-center justify-content-center gap-2 animate-title">
+                        <span class="faq-icon pulse-icon icon-black">
+                            <i class="fas fa-file-contract"></i>
+                        </span>
+                        <span class="faq-title fire-text">Terms & Conditions</span>
+                    </h2>
+
+                    <div class="card mb-4 version-card animate-card">
+                        <div class="card-body text-center">
+
+                            <div class="video-info-line animate-text">
+                                By accessing or using OKMESSAGING services, you agree to comply with all
+                                applicable laws, telecom regulations, and acceptable usage policies.
+                                <br><br>
+                                Users must not use the platform for spam, phishing, fraud, or any illegal
+                                communication. OKMESSAGING reserves the right to suspend or terminate
+                                accounts that violate these terms without prior notice.
+                            </div>
+
+                            <!-- <div class="watch-video-wrap animate-btn">
+                                <a href="https://oklaboratory.github.io/okmsg/#terms-n-conditions"
+                                target="_blank"
+                                class="watch-video-btn yt-expand doc-expand doc-btn">
+                                    <i class="fas fa-file-contract"></i>
+                                    <span class="yt-text">Read Full Terms</span>
+                                </a>
+                            </div> -->
+
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Privacy Policy Section -->
+                <div id="privacy-policy" class="pt-4 latest-docs-animated">
+                    <h2 class="faq-heading d-flex align-items-center justify-content-center gap-2 animate-title">
+                        <span class="faq-icon pulse-icon icon-black">
+                            <i class="fas fa-user-shield"></i>
+                        </span>
+                        <span class="faq-title fire-text">Privacy Policy</span>
+                    </h2>
+
+                    <div class="card mb-4 version-card animate-card">
+                        <div class="card-body text-center">
+
+                            <div class="video-info-line animate-text">
+                                Your privacy matters to us. OKMESSAGING collects only the information
+                                necessary to provide messaging services, platform security, billing,
+                                and customer support.
+                                <br><br>
+                                We do not sell, trade, or misuse personal data. Information is shared
+                                only when required for service delivery, compliance, or legal obligations.
+                            </div>
+
+                            <!-- <div class="watch-video-wrap animate-btn">
+                                <a href="https://oklaboratory.github.io/okmsg/#privacy-policy"
+                                target="_blank"
+                                class="watch-video-btn yt-expand doc-expand doc-btn">
+                                    <i class="fas fa-user-shield"></i>
+                                    <span class="yt-text">View Privacy Policy</span>
+                                </a>
+                            </div> -->
+
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Refund Policy Section -->
+                <div id="refund-policy" class="pt-4 latest-docs-animated">
+                    <h2 class="faq-heading d-flex align-items-center justify-content-center gap-2 animate-title">
+                        <span class="faq-icon pulse-icon icon-black">
+                            <i class="fas fa-rotate-left"></i>
+                        </span>
+                        <span class="faq-title fire-text">Refund Policy</span>
+                    </h2>
+
+                    <div class="card mb-4 version-card animate-card">
+                        <div class="card-body text-center">
+
+                            <div class="video-info-line animate-text">
+                                Refunds are applicable only for unused messaging credits under valid
+                                circumstances and after verification.
+                                <br><br>
+                                Charges for submitted, processed, or delivered messages are non-refundable.
+                                Any refund request must be raised within the applicable billing period
+                                and is subject to review by OKMESSAGING.
+                            </div>
+
+                            <!-- <div class="watch-video-wrap animate-btn">
+                                <a href="https://oklaboratory.github.io/okmsg/#refund-policy"
+                                target="_blank"
+                                class="watch-video-btn yt-expand doc-expand doc-btn">
+                                    <i class="fas fa-rotate-left"></i>
+                                    <span class="yt-text">Read Refund Policy</span>
+                                </a>
+                            </div> -->
+
                         </div>
                     </div>
                 </div>
