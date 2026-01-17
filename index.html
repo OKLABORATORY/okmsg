@@ -56,8 +56,7 @@
           </div>
         </div>
         <!-- Aside -->
-        <aside id="mainSidebar"
-       class="sidebar border-end px-3">
+        <aside id="mainSidebar" class="sidebar border-end px-3">
 
             <ul class="navbar-nav">
                 <!-- Overview -->
@@ -239,6 +238,28 @@
                         <span>Refund Policy</span>
                     </a>
                 </li>
+
+                <!-- Support Hours -->
+                <li class="nav-item">
+                    <a class="nav-link text-white"
+                    href="#support-hours"
+                    onclick="scrollToSection('support-hours', event)">
+                        <i class="fas fa-clock me-2"></i>
+                        <span>Support Hours</span>
+                    </a>
+                </li>
+
+                <li class="nav-item">
+                    <a class="nav-link text-white"
+                    href="https://mail.google.com/mail/?view=cm&fs=1&to=oklabsin91@gmail.com"
+                    target="_blank"
+                    rel="noopener noreferrer">
+                        <i class="fas fa-envelope-open-text me-2"></i>
+                        <span>Contact Us</span>
+                    </a>
+                </li>
+
+
 
             </ul>
         </aside>
@@ -2714,6 +2735,25 @@ GET  http:&lt;IP&gt;:4001/api/sms?command=submit&username=client1@client.com&pas
                         </div>
                     </div>
                 </div>
+
+                <div id="support-hours" class="pt-4">
+                    <h2 class="text-center d-flex justify-content-center align-items-center gap-2 animate-title">
+                        <span class="pulse-icon icon-black">
+                            <i class="fas fa-clock"></i>
+                        </span>
+                        <span class="fire-text">Support Hours</span>
+                    </h2>
+
+                    <div class="card mb-4">
+                        <div class="card-body text-center">
+                            <p class="lead mb-2"><strong>OKLabs Messaging Support</strong></p>
+                            <p class="mb-1">Monday – Friday: <strong>10:00 AM – 7:00 PM (IST)</strong></p>
+                            <p class="mb-1">Saturday: <strong>Email Support Only</strong></p>
+                            <p class="mb-0 text-muted">Sunday & Public Holidays: Closed</p>
+                        </div>
+                    </div>
+                </div>
+
             </div>
         </section>
     </main>
