@@ -56,7 +56,9 @@
           </div>
         </div>
         <!-- Aside -->
-        <aside id="mainSidebar" class="sidebar border-end fixed-top px-3" style="width: 250px; height: 100vh; padding-top: 20px; background: #001C46; color: #FFF; overflow-y: auto;">
+        <aside id="mainSidebar"
+       class="sidebar border-end px-3">
+
             <ul class="navbar-nav">
                 <!-- Overview -->
                 <li class="nav-item">
@@ -73,6 +75,15 @@
                     </a>
                 </li>
 
+                <li class="nav-item">
+                    <a class="nav-link text-white"
+                    href="https://okmsg.oklabs.in/"
+                    target="_blank"
+                    rel="noopener noreferrer">
+                        <i class="fas fa-play-circle me-2"></i>
+                        <span>Demo</span>
+                    </a>
+                </li>
 
                 <!-- Installation Guide -->
                 <li class="nav-item">
@@ -236,59 +247,180 @@
         <section class="content-area ms-auto overflow-auto">
             <div class="p-4 mt-3 pt-5">
                 <!-- Overview Section -->
+                <!-- ================= OVERVIEW SECTION ================= -->
                 <div id="overview">
                     <h1 class="text-center d-flex justify-content-center align-items-center gap-2 animate-title">
                         <span class="pulse-icon icon-black">
                             <i class="fas fa-chart-pie"></i>
                         </span>
-                        <span class="fire-text">
-                            Overview
-                        </span>
+                        <span class="fire-text">Overview</span>
                     </h1>
+
                     <div class="card mb-4">
-                    <!-- Top Image -->
-                    <img 
-                        src="assets/images/okmessaging-okmsg.png"
-                        alt="OKMessaging Platform Overview"
-                        class="card-img-top img-fluid"
-                        style="max-height: 1500px; object-fit: contain; padding: 20px;"
-                    >
 
-                    <div class="card-body">
+                        <!-- ======= BOOTSTRAP CAROUSEL ======= -->
+                        <div id="overviewCarousel" class="carousel slide" data-bs-interval="false">
 
-                        <p class="lead mb-3">
-                            <strong>OKMessaging</strong> is a powerful, AI-powered CPaaS platform built on a modern
-                            microservices architecture using <strong>Docker</strong> and <strong>Kubernetes</strong>,
-                            delivering unmatched scalability, performance, and intelligent omni-channel communication
-                            across SMS, voice, and WhatsApp.
-                        </p>
+                            <!-- Indicators (0 → 20) -->
+                            <div class="carousel-indicators">
+                                <!-- 21 indicators -->
+                                <button data-bs-target="#overviewCarousel" data-bs-slide-to="0" class="active"></button>
+                                <button data-bs-target="#overviewCarousel" data-bs-slide-to="1"></button>
+                                <button data-bs-target="#overviewCarousel" data-bs-slide-to="2"></button>
+                                <button data-bs-target="#overviewCarousel" data-bs-slide-to="3"></button>
+                                <button data-bs-target="#overviewCarousel" data-bs-slide-to="4"></button>
+                                <button data-bs-target="#overviewCarousel" data-bs-slide-to="5"></button>
+                                <button data-bs-target="#overviewCarousel" data-bs-slide-to="6"></button>
+                                <button data-bs-target="#overviewCarousel" data-bs-slide-to="7"></button>
+                                <button data-bs-target="#overviewCarousel" data-bs-slide-to="8"></button>
+                                <button data-bs-target="#overviewCarousel" data-bs-slide-to="9"></button>
+                                <button data-bs-target="#overviewCarousel" data-bs-slide-to="10"></button>
+                                <button data-bs-target="#overviewCarousel" data-bs-slide-to="11"></button>
+                                <button data-bs-target="#overviewCarousel" data-bs-slide-to="12"></button>
+                                <button data-bs-target="#overviewCarousel" data-bs-slide-to="13"></button>
+                                <button data-bs-target="#overviewCarousel" data-bs-slide-to="14"></button>
+                                <button data-bs-target="#overviewCarousel" data-bs-slide-to="15"></button>
+                                <button data-bs-target="#overviewCarousel" data-bs-slide-to="16"></button>
+                                <button data-bs-target="#overviewCarousel" data-bs-slide-to="17"></button>
+                                <button data-bs-target="#overviewCarousel" data-bs-slide-to="18"></button>
+                                <button data-bs-target="#overviewCarousel" data-bs-slide-to="19"></button>
+                                <button data-bs-target="#overviewCarousel" data-bs-slide-to="20"></button>
+                            </div>
 
-                        <p class="small text-muted mb-3">
-                            The platform enables businesses to send bulk voice calls to mobile phones using either
-                            pre-recorded audio messages or advanced text-to-speech (TTS) robotic voices.
-                            With intuitive campaign management, users can easily schedule, launch, and manage
-                            high-volume call campaigns—ideal for alerts, notifications, marketing outreach,
-                            and customer engagement.
-                        </p>
+                            <!-- Slides -->
+                            <div class="carousel-inner">
 
-                        <p class="small text-muted mb-3">
-                            OKMessaging supports a secure multi-tenant model, allowing organizations to create and
-                            manage their own client accounts while enabling service providers to monetize the platform
-                            through subscription-based or usage-based business models.
-                        </p>
+                                <div class="carousel-item active">
+                                    <img src="assets/images/slider/0-okmessaging-okmsg.png" class="d-block w-100 slider-img" alt="Overview">
+                                </div>
 
-                        <p class="small text-muted mb-0">
-                            Users can upload contact lists, personalize messaging content, monitor delivery and
-                            performance metrics, and manage campaigns from a centralized dashboard.
-                            Whether you are automating customer communication or building a large-scale voice
-                            broadcasting solution, OKMessaging delivers a scalable, efficient, and user-friendly
-                            communication platform.
-                        </p>
+                                <div class="carousel-item">
+                                    <img src="assets/images/slider/1-Sign-in.png" class="d-block w-100 slider-img" alt="Sign In">
+                                </div>
+
+                                <div class="carousel-item">
+                                    <img src="assets/images/slider/2-Admin-Dashboard.png" class="d-block w-100 slider-img" alt="Admin Dashboard">
+                                </div>
+
+                                <div class="carousel-item">
+                                    <img src="assets/images/slider/3-Admin-Routing-Rules.png" class="d-block w-100 slider-img" alt="Routing Rules">
+                                </div>
+
+                                <div class="carousel-item">
+                                    <img src="assets/images/slider/4-Admin-Buffering-Rules.png" class="d-block w-100 slider-img" alt="Buffering Rules">
+                                </div>
+
+                                <div class="carousel-item">
+                                    <img src="assets/images/slider/5-Admin-SMPP-TLV.png" class="d-block w-100 slider-img" alt="SMPP TLV">
+                                </div>
+
+                                <div class="carousel-item">
+                                    <img src="assets/images/slider/6-Admin-Currencies.png" class="d-block w-100 slider-img" alt="Currencies">
+                                </div>
+
+                                <div class="carousel-item">
+                                    <img src="assets/images/slider/7-Admin-Countries.png" class="d-block w-100 slider-img" alt="Countries">
+                                </div>
+
+                                <div class="carousel-item">
+                                    <img src="assets/images/slider/8-Admin-Spam_words.png" class="d-block w-100 slider-img" alt="Spam Words">
+                                </div>
+
+                                <div class="carousel-item">
+                                    <img src="assets/images/slider/9-Admin-Upload-Plugins.png" class="d-block w-100 slider-img" alt="Upload Plugins">
+                                </div>
+
+                                <div class="carousel-item">
+                                    <img src="assets/images/slider/10-Admin-App_setting.png" class="d-block w-100 slider-img" alt="App Settings">
+                                </div>
+
+                                <div class="carousel-item">
+                                    <img src="assets/images/slider/11-Admin-Activity_logs.png" class="d-block w-100 slider-img" alt="Activity Logs">
+                                </div>
+
+                                <div class="carousel-item">
+                                    <img src="assets/images/slider/12-Admin-Users.png" class="d-block w-100 slider-img" alt="Admin Users">
+                                </div>
+
+                                <div class="carousel-item">
+                                    <img src="assets/images/slider/13-Admin-Permissions.png" class="d-block w-100 slider-img" alt="Permissions">
+                                </div>
+
+                                <div class="carousel-item">
+                                    <img src="assets/images/slider/14-EndUser-Dashboard.png" class="d-block w-100 slider-img" alt="End User Dashboard">
+                                </div>
+
+                                <div class="carousel-item">
+                                    <img src="assets/images/slider/15-EndUser-Quick-Send.png" class="d-block w-100 slider-img" alt="Quick Send">
+                                </div>
+
+                                <div class="carousel-item">
+                                    <img src="assets/images/slider/16-EndUser-Campaign-Builder.png" class="d-block w-100 slider-img" alt="Campaign Builder">
+                                </div>
+
+                                <div class="carousel-item">
+                                    <img src="assets/images/slider/17-EndUser-Rates.png" class="d-block w-100 slider-img" alt="Rates">
+                                </div>
+
+                                <div class="carousel-item">
+                                    <img src="assets/images/slider/18-EndUser-General_setting.png" class="d-block w-100 slider-img" alt="General Settings">
+                                </div>
+
+                                <div class="carousel-item">
+                                    <img src="assets/images/slider/19-EndUser-Order-History.png" class="d-block w-100 slider-img" alt="Order History">
+                                </div>
+
+                                <div class="carousel-item">
+                                    <img src="assets/images/slider/20-EndUser-Channel.png" class="d-block w-100 slider-img" alt="Channels">
+                                </div>
+
+                            </div>
+
+                            <!-- Controls -->
+                            <button class="carousel-control-prev" type="button" data-bs-target="#overviewCarousel" data-bs-slide="prev">
+                                <span class="carousel-control-prev-icon"></span>
+                            </button>
+
+                            <button class="carousel-control-next" type="button" data-bs-target="#overviewCarousel" data-bs-slide="next">
+                                <span class="carousel-control-next-icon"></span>
+                            </button>
+
+                        </div>
+                        <!-- ======= /CAROUSEL ======= -->
+
+                        <!-- ======= TEXT CONTENT ======= -->
+                        <div class="card-body">
+
+                            <p class="lead mb-3">
+                                <strong>OKMessaging</strong> is a powerful, AI-powered CPaaS platform built on a modern
+                                microservices architecture using <strong>Docker</strong> and <strong>Kubernetes</strong>,
+                                delivering unmatched scalability, performance, and intelligent omni-channel communication
+                                across SMS, voice, and WhatsApp.
+                            </p>
+
+                            <p class="small text-muted mb-3">
+                                The platform enables businesses to send bulk voice calls using pre-recorded audio
+                                or advanced text-to-speech (TTS) robotic voices. With intuitive campaign management,
+                                users can easily schedule, launch, and manage high-volume communication workflows.
+                            </p>
+
+                            <p class="small text-muted mb-3">
+                                OKMessaging supports a secure multi-tenant architecture, allowing organizations
+                                to create and manage client accounts while enabling service providers to monetize
+                                the platform via subscription or usage-based models.
+                            </p>
+
+                            <p class="small text-muted mb-0">
+                                From contact uploads to analytics and delivery tracking, OKMessaging provides
+                                a centralized, scalable, and enterprise-ready messaging solution.
+                            </p>
+
+                        </div>
+                        <!-- ======= /TEXT ======= -->
 
                     </div>
                 </div>
 
-                </div>
                 <!-- Features Section -->
                 <div id="features" class="pt-4">
                     <h2 class="text-center d-flex justify-content-center align-items-center gap-2 animate-title">
@@ -2459,7 +2591,7 @@ GET  http:&lt;IP&gt;:4001/api/sms?command=submit&username=client1@client.com&pas
                             </div>
 
                             <p class="pricing-product">
-                                Only <strong>OKLabs Messaging</strong>
+                                 <strong>Only One Time</strong>
                             </p>
 
                             <ul class="pricing-features">
@@ -2471,9 +2603,10 @@ GET  http:&lt;IP&gt;:4001/api/sms?command=submit&username=client1@client.com&pas
                                 <li>✔ Real-Time Analytics</li>
                             </ul>
 
-                            <a href="#contact" class="pricing-cta">
+                            <a href="https://www.google.com" target="_blank" class="pricing-cta">
                                 Get Started
                             </a>
+
                         </div>
                     </div>
 
@@ -2754,6 +2887,7 @@ document.addEventListener('DOMContentLoaded', function () {
         );
         filter: blur(40px);
         z-index: 0;
+        pointer-events: none;
     }
 
     /* Card */
@@ -2793,6 +2927,7 @@ document.addEventListener('DOMContentLoaded', function () {
             linear-gradient(#fff 0 0);
         -webkit-mask-composite: xor;
         mask-composite: exclude;
+        pointer-events: none;
     }
 
     @keyframes gradient-border {
@@ -2878,6 +3013,8 @@ document.addEventListener('DOMContentLoaded', function () {
         font-weight: 600;
         text-decoration: none;
         transition: all 0.35s ease;
+        position: relative;
+        z-index: 5;
     }
 
     .pricing-cta:hover {
@@ -2891,8 +3028,49 @@ document.addEventListener('DOMContentLoaded', function () {
         color: #6c757d;
         margin-top: 14px;
     }
+    .slider-img {
+        max-height: 520px;  
+        object-fit: contain;
+        padding: 20px;
+        background: #fff;
+    }
+
+    .carousel-control-prev-icon,
+    .carousel-control-next-icon {
+        filter: invert(1);
+    }
+
+    .carousel-indicators [data-bs-target] {
+        background-color: #0d6efd;
+    }
+
+    /* ===== Fixed & Scrollable Sidebar ===== */
+    #mainSidebar {
+        position: fixed;
+        top: 64px;               /* height of your header */
+        left: 0;
+        width: 250px;
+        height: calc(100vh - 64px);
+        background: #001C46;
+        color: #fff;
+        overflow-y: auto;
+        overflow-x: hidden;
+        z-index: 1020;
+    }
+
+    /* Smooth scrolling */
+    #mainSidebar::-webkit-scrollbar {
+        width: 6px;
+    }
+
+    #mainSidebar::-webkit-scrollbar-thumb {
+        background: rgba(255, 255, 255, 0.25);
+        border-radius: 10px;
+    }
+
 
     </style>
+
 </body>
 </html>
 
