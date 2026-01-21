@@ -1276,3 +1276,77 @@ html {
     transform: rotate(0deg);
 }
 
+
+/* Marketplace */
+/* 1) Smooth modal entry animation */
+.modal-content {
+  animation: modalPop 280ms ease-out;
+  transform-origin: center;
+}
+
+@keyframes modalPop {
+  from {
+    opacity: 0;
+    transform: translateY(10px) scale(0.98);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0px) scale(1);
+  }
+}
+
+/* 2) Cards hover = subtle lift + premium feel */
+.marketplace-item {
+  transition: transform 200ms ease, box-shadow 200ms ease, border-color 200ms ease;
+  will-change: transform;
+}
+
+.marketplace-item:hover {
+  transform: translateY(-3px);
+  border-color: rgba(76, 0, 255, 0.25);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.18);
+}
+
+/* 3) Icon micro animation */
+.marketplace-item i {
+  transition: transform 200ms ease;
+}
+
+.marketplace-item:hover i {
+  transform: scale(1.08);
+}
+
+/* 4) Staggered entry for cards */
+.marketplace-stagger {
+  opacity: 0;
+  animation: cardIn 360ms ease forwards;
+}
+
+@keyframes cardIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Delay steps */
+.delay-1 { animation-delay: 40ms; }
+.delay-2 { animation-delay: 80ms; }
+.delay-3 { animation-delay: 120ms; }
+.delay-4 { animation-delay: 160ms; }
+.delay-5 { animation-delay: 200ms; }
+
+/* Accessibility: reduce motion */
+@media (prefers-reduced-motion: reduce) {
+  .modal-content,
+  .marketplace-stagger,
+  .marketplace-item,
+  .marketplace-item i {
+    animation: none !important;
+    transition: none !important;
+  }
+}
