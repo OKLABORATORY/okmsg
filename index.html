@@ -2676,7 +2676,7 @@ GET  http:&lt;IP&gt;:4001/api/sms?command=submit&username=client1@client.com&pas
 
                                     <span class="btn btn-sm px-3 rounded-pill text-white"
                                             style="background:linear-gradient(90deg,#2f6bff,#6a00ff);border:none;">
-                                        Buy
+                                        Purchase Now
                                     </span>
                                     </a>
                                 </div>
@@ -2697,7 +2697,7 @@ GET  http:&lt;IP&gt;:4001/api/sms?command=submit&username=client1@client.com&pas
 
                                         <span class="btn btn-sm px-3 rounded-pill text-white"
                                                 style="background:linear-gradient(90deg,#2f6bff,#6a00ff);border:none;">
-                                            Buy
+                                            Purchase Now
                                         </span>
                                     </a>
                                 </div> -->
@@ -2718,7 +2718,7 @@ GET  http:&lt;IP&gt;:4001/api/sms?command=submit&username=client1@client.com&pas
 
                                         <span class="btn btn-sm px-3 rounded-pill text-white"
                                                 style="background:linear-gradient(90deg,#2f6bff,#6a00ff);border:none;">
-                                            Buy
+                                            Purchase Now
                                         </span>
                                     </a>
                                 </div>
@@ -2739,7 +2739,7 @@ GET  http:&lt;IP&gt;:4001/api/sms?command=submit&username=client1@client.com&pas
 
                                         <span class="btn btn-sm px-3 rounded-pill text-white"
                                                 style="background:linear-gradient(90deg,#2f6bff,#6a00ff);border:none;">
-                                            Buy
+                                            Purchase Now
                                         </span>
                                     </a>
                                 </div>
@@ -2752,25 +2752,6 @@ GET  http:&lt;IP&gt;:4001/api/sms?command=submit&username=client1@client.com&pas
                                 If one marketplace is down, you can use another to complete your purchase.
                             </small>
                             </div>
-                        </div>
-
-                        <!-- Footer -->
-                        <div class="modal-footer border-0 px-4 pb-4 pt-0 d-flex justify-content-between">
-                            <button type="button" class="btn btn-light border rounded-pill px-4" data-bs-dismiss="modal">
-                            Close
-                            </button>
-
-                            <!-- <a href="mailto:oklabsin91@gmail.com" class="btn rounded-pill px-4 text-white"
-                            style="background:linear-gradient(90deg,#2f6bff,#6a00ff);border:none;">
-                            Need Help?
-                            </a> -->
-                            <a href="mailto:oklabsin91@gmail.com"
-                                class="btn rounded-pill px-4 text-white"
-                                style="background:linear-gradient(90deg,#2f6bff,#6a00ff);border:none;">
-                                Need Help?
-                            </a>
-                        </div>
-
                         </div>
                     </div>
                 </div>
@@ -3273,6 +3254,72 @@ GET  http:&lt;IP&gt;:4001/api/sms?command=submit&username=client1@client.com&pas
             </div>
         </div>
     </footer>
+    <!-- Go To Top Button -->
+    <!-- <button id="goToTopBtn"
+        type="button"
+        class="btn rounded-circle shadow-lg d-flex align-items-center justify-content-center text-white"
+        style="width:48px;height:48px;position:fixed;right:18px;bottom:18px;z-index:9999;display:none;
+                background:linear-gradient(90deg,#2f6bff,#6a00ff);border:none;">
+        <i class="fas fa-arrow-up"></i>
+    </button> -->
+    <button id="goToTopBtn"
+        type="button"
+        class="btn rounded-circle shadow-lg text-white"
+        aria-label="Go to top">
+        <i class="fas fa-arrow-up"></i>
+    </button>
+
+    <!-- goToTop -->
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            const goToTopBtn = document.getElementById("goToTopBtn");
+            const contentArea = document.querySelector(".content-area");
+
+            if (!goToTopBtn) return;
+
+            const SHOW_AFTER = 300; // px
+
+            function currentScrollTop() {
+            // If .content-area is scrollable, use it
+            if (contentArea && contentArea.scrollHeight > contentArea.clientHeight) {
+                return contentArea.scrollTop;
+            }
+            // Otherwise use window scroll
+            return window.pageYOffset || document.documentElement.scrollTop || 0;
+            }
+
+            function toggleGoToTop() {
+            const top = currentScrollTop();
+
+            if (top <= SHOW_AFTER) {
+                goToTopBtn.style.display = "none";
+            } else {
+                goToTopBtn.style.display = "flex";
+            }
+            }
+
+            function goToTop() {
+            if (contentArea && contentArea.scrollHeight > contentArea.clientHeight) {
+                contentArea.scrollTo({ top: 0, behavior: "smooth" });
+            } else {
+                window.scrollTo({ top: 0, behavior: "smooth" });
+            }
+            }
+
+            // Run once on load (so it stays hidden at top)
+            toggleGoToTop();
+
+            // Listen to scroll
+            window.addEventListener("scroll", toggleGoToTop, { passive: true });
+            if (contentArea) {
+            contentArea.addEventListener("scroll", toggleGoToTop, { passive: true });
+            }
+
+            // Click action
+            goToTopBtn.addEventListener("click", goToTop);
+        });
+    </script>
+
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js" integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" crossorigin="anonymous"></script>
     <script>
         function scrollToSection(id, event) {
@@ -3319,31 +3366,31 @@ GET  http:&lt;IP&gt;:4001/api/sms?command=submit&username=client1@client.com&pas
             });
         }
 
-document.addEventListener('DOMContentLoaded', function () {
+        document.addEventListener('DOMContentLoaded', function () {
 
-    // Get ONLY top-level collapses (direct children of sidebar nav items)
-    const topLevelCollapses = Array.from(
-        document.querySelectorAll('.sidebar > ul > li > .collapse')
-    );
+            // Get ONLY top-level collapses (direct children of sidebar nav items)
+            const topLevelCollapses = Array.from(
+                document.querySelectorAll('.sidebar > ul > li > .collapse')
+            );
 
-    topLevelCollapses.forEach(collapse => {
+            topLevelCollapses.forEach(collapse => {
 
-        collapse.addEventListener('show.bs.collapse', function () {
+                collapse.addEventListener('show.bs.collapse', function () {
 
-            topLevelCollapses.forEach(otherCollapse => {
-                if (otherCollapse !== collapse && otherCollapse.classList.contains('show')) {
-                    const bs = bootstrap.Collapse.getInstance(otherCollapse);
-                    if (bs) {
-                        bs.hide();
-                    }
-                }
+                    topLevelCollapses.forEach(otherCollapse => {
+                        if (otherCollapse !== collapse && otherCollapse.classList.contains('show')) {
+                            const bs = bootstrap.Collapse.getInstance(otherCollapse);
+                            if (bs) {
+                                bs.hide();
+                            }
+                        }
+                    });
+
+                });
+
             });
 
         });
-
-    });
-
-});
     </script>
     <script>
       function setupMobileSidebarClone() {
@@ -3393,315 +3440,315 @@ document.addEventListener('DOMContentLoaded', function () {
       window.addEventListener("load", setupMobileSidebarClone);
     </script>
     <style>
-    .cursor-pointer {
-        cursor: pointer;
-    }
-
-    .rotate-icon {
-        transition: transform 0.3s ease;
-    }
-
-    /* rotate arrow when collapsed */
-    .card-header[aria-expanded="false"] .rotate-icon {
-        transform: rotate(-90deg);
-    }
-    /* ===== Ultra Cool Pricing ===== */
-    .pricing-wrapper {
-        position: relative;
-        max-width: 420px;
-        margin: 0 auto;
-    }
-
-    /* Glow effect */
-    .pricing-glow {
-        position: absolute;
-        inset: -20px;
-        background: radial-gradient(
-            circle at top,
-            rgba(13, 110, 253, 0.35),
-            transparent 70%
-        );
-        filter: blur(40px);
-        z-index: 0;
-        pointer-events: none;
-    }
-
-    /* Card */
-    .pricing-card-pro {
-        position: relative;
-        z-index: 1;
-        padding: 36px 32px;
-        border-radius: 20px;
-        background: rgba(255, 255, 255, 0.85);
-        backdrop-filter: blur(16px);
-        -webkit-backdrop-filter: blur(16px);
-
-        box-shadow:
-            0 30px 60px rgba(0, 0, 0, 0.25);
-
-        text-align: center;
-        overflow: hidden;
-    }
-
-    /* Animated gradient border */
-    .pricing-card-pro::before {
-        content: "";
-        position: absolute;
-        inset: 0;
-        border-radius: 20px;
-        padding: 2px;
-        background: linear-gradient(
-            135deg,
-            #0d6efd,
-            #6610f2,
-            #0d6efd
-        );
-        background-size: 300% 300%;
-        animation: gradient-border 6s ease infinite;
-        -webkit-mask:
-            linear-gradient(#fff 0 0) content-box,
-            linear-gradient(#fff 0 0);
-        -webkit-mask-composite: xor;
-        mask-composite: exclude;
-        pointer-events: none;
-    }
-
-    @keyframes gradient-border {
-        0% { background-position: 0% 50%; }
-        50% { background-position: 100% 50%; }
-        100% { background-position: 0% 50%; }
-    }
-
-    /* Badge */
-    .pricing-badge {
-        display: inline-block;
-        background: linear-gradient(135deg, #0d6efd, #6610f2);
-        color: #fff;
-        font-size: 11px;
-        padding: 5px 12px;
-        border-radius: 20px;
-        margin-bottom: 16px;
-        letter-spacing: 0.4px;
-    }
-
-    /* Text styles */
-    .pricing-eyebrow {
-        font-size: 13px;
-        text-transform: uppercase;
-        letter-spacing: 0.6px;
-        color: #6c757d;
-        margin-bottom: 10px;
-    }
-
-    .pricing-amount {
-        display: flex;
-        justify-content: center;
-        align-items: flex-end;
-        gap: 6px;
-        margin-bottom: 10px;
-    }
-
-    .pricing-amount .currency {
-        font-size: 26px;
-        font-weight: 600;
-    }
-
-    .pricing-amount .price {
-        font-size: 68px;
-        font-weight: 800;
-        line-height: 1;
-    }
-
-    .pricing-amount .duration {
-        font-size: 14px;
-        margin-bottom: 12px;
-        color: #6c757d;
-    }
-
-    .pricing-product {
-        font-size: 15px;
-        margin-bottom: 20px;
-    }
-
-    /* Features */
-    .pricing-features {
-        list-style: none;
-        padding: 0;
-        margin: 0 auto 24px;
-        max-width: 280px;
-        text-align: left;
-        font-size: 14px;
-    }
-
-    .pricing-features li {
-        margin-bottom: 10px;
-        color: #333;
-    }
-
-    /* CTA */
-    .pricing-cta {
-        display: inline-block;
-        padding: 12px 30px;
-        border-radius: 30px;
-        background: linear-gradient(135deg, #0d6efd, #6610f2);
-        border: 0;
-        color: #fff;
-        font-size: 14px;
-        font-weight: 600;
-        text-decoration: none;
-        transition: all 0.35s ease;
-        position: relative;
-        z-index: 5;
-    }
-
-    .pricing-cta:hover {
-        transform: translateY(-3px);
-        box-shadow: 0 10px 25px rgba(13, 110, 253, 0.4);
-    }
-
-    /* Note */
-    .pricing-note {
-        font-size: 12px;
-        color: #6c757d;
-        margin-top: 14px;
-    }
-    .slider-img {
-        max-height: 520px;  
-        object-fit: contain;
-        padding: 20px;
-        background: #fff;
-    }
-
-    .carousel-control-prev-icon,
-    .carousel-control-next-icon {
-        filter: invert(1);
-    }
-
-    .carousel-indicators [data-bs-target] {
-        background-color: #0d6efd;
-    }
-
-    /* ===== Fixed & Scrollable Sidebar ===== */
-    #mainSidebar {
-        position: fixed;
-        top: 60px;               /* height of your header */
-        left: 0;
-        width: 250px;
-        height: calc(100vh - 20px);
-        background: #001C46;
-        color: #fff;
-        overflow-y: auto;
-        overflow-x: hidden;
-        z-index: 1020;
-        padding-bottom:200px;
-    }
-
-    /* Smooth scrolling */
-    #mainSidebar::-webkit-scrollbar {
-        width: 6px;
-    }
-
-    #mainSidebar::-webkit-scrollbar-thumb {
-        background: rgba(255, 255, 255, 0.25);
-        border-radius: 10px;
-    }
-
- /* ===== WhatsApp Floating Chat ===== */
-    .whatsapp-wrapper {
-        position: fixed;
-        bottom: 28px;
-        right: 28px;
-        z-index: 9999;
-    }
-
-    .whatsapp-btn {
-        position: relative;
-        width: 58px;
-        height: 58px;
-        border-radius: 50%;
-        background: linear-gradient(135deg, #25D366, #1EBE5D);
-        color: #fff;
-        font-size: 30px;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-
-        box-shadow:
-            0 15px 30px rgba(0, 0, 0, 0.35),
-            inset 0 0 15px rgba(255, 255, 255, 0.2);
-
-        backdrop-filter: blur(10px);
-        -webkit-backdrop-filter: blur(10px);
-
-        transition: all 0.35s ease;
-        animation: whatsapp-pulse 2.5s infinite;
-    }
-
-    /* Hover effects */
-    .whatsapp-btn:hover {
-        transform: translateY(-4px) scale(1.08);
-        box-shadow:
-            0 25px 40px rgba(0, 0, 0, 0.45),
-            inset 0 0 20px rgba(255, 255, 255, 0.3);
-        animation-play-state: paused;
-    }
-
-    /* Tooltip */
-    .whatsapp-tooltip {
-        position: absolute;
-        right: 70px;
-        background: rgba(0, 0, 0, 0.85);
-        color: #fff;
-        padding: 8px 14px;
-        border-radius: 20px;
-        font-size: 14px;
-        font-weight: 500;
-        white-space: nowrap;
-
-        opacity: 0;
-        transform: translateX(10px);
-        pointer-events: none;
-
-        transition: all 0.3s ease;
-    }
-
-    /* Tooltip arrow */
-    .whatsapp-tooltip::after {
-        content: "";
-        position: absolute;
-        top: 50%;
-        right: -6px;
-        transform: translateY(-50%);
-        border-width: 6px;
-        border-style: solid;
-        border-color: transparent transparent transparent rgba(0, 0, 0, 0.85);
-    }
-
-    /* Show tooltip on hover */
-    .whatsapp-btn:hover .whatsapp-tooltip {
-        opacity: 1;
-        transform: translateX(0);
-    }
-
-    /* Pulse animation */
-    @keyframes whatsapp-pulse {
-        0% {
-            box-shadow: 0 0 0 0 rgba(37, 211, 102, 0.45);
+        .cursor-pointer {
+            cursor: pointer;
         }
-        70% {
-            box-shadow: 0 0 0 18px rgba(37, 211, 102, 0);
-        }
-        100% {
-            box-shadow: 0 0 0 0 rgba(37, 211, 102, 0);
-        }
-    }
 
-    /* Mobile optimization */
-    @media (max-width: 576px) {
+        .rotate-icon {
+            transition: transform 0.3s ease;
+        }
+
+        /* rotate arrow when collapsed */
+        .card-header[aria-expanded="false"] .rotate-icon {
+            transform: rotate(-90deg);
+        }
+        /* ===== Ultra Cool Pricing ===== */
+        .pricing-wrapper {
+            position: relative;
+            max-width: 420px;
+            margin: 0 auto;
+        }
+
+        /* Glow effect */
+        .pricing-glow {
+            position: absolute;
+            inset: -20px;
+            background: radial-gradient(
+                circle at top,
+                rgba(13, 110, 253, 0.35),
+                transparent 70%
+            );
+            filter: blur(40px);
+            z-index: 0;
+            pointer-events: none;
+        }
+
+        /* Card */
+        .pricing-card-pro {
+            position: relative;
+            z-index: 1;
+            padding: 36px 32px;
+            border-radius: 20px;
+            background: rgba(255, 255, 255, 0.85);
+            backdrop-filter: blur(16px);
+            -webkit-backdrop-filter: blur(16px);
+
+            box-shadow:
+                0 30px 60px rgba(0, 0, 0, 0.25);
+
+            text-align: center;
+            overflow: hidden;
+        }
+
+        /* Animated gradient border */
+        .pricing-card-pro::before {
+            content: "";
+            position: absolute;
+            inset: 0;
+            border-radius: 20px;
+            padding: 2px;
+            background: linear-gradient(
+                135deg,
+                #0d6efd,
+                #6610f2,
+                #0d6efd
+            );
+            background-size: 300% 300%;
+            animation: gradient-border 6s ease infinite;
+            -webkit-mask:
+                linear-gradient(#fff 0 0) content-box,
+                linear-gradient(#fff 0 0);
+            -webkit-mask-composite: xor;
+            mask-composite: exclude;
+            pointer-events: none;
+        }
+
+        @keyframes gradient-border {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+
+        /* Badge */
+        .pricing-badge {
+            display: inline-block;
+            background: linear-gradient(135deg, #0d6efd, #6610f2);
+            color: #fff;
+            font-size: 11px;
+            padding: 5px 12px;
+            border-radius: 20px;
+            margin-bottom: 16px;
+            letter-spacing: 0.4px;
+        }
+
+        /* Text styles */
+        .pricing-eyebrow {
+            font-size: 13px;
+            text-transform: uppercase;
+            letter-spacing: 0.6px;
+            color: #6c757d;
+            margin-bottom: 10px;
+        }
+
+        .pricing-amount {
+            display: flex;
+            justify-content: center;
+            align-items: flex-end;
+            gap: 6px;
+            margin-bottom: 10px;
+        }
+
+        .pricing-amount .currency {
+            font-size: 26px;
+            font-weight: 600;
+        }
+
+        .pricing-amount .price {
+            font-size: 68px;
+            font-weight: 800;
+            line-height: 1;
+        }
+
+        .pricing-amount .duration {
+            font-size: 14px;
+            margin-bottom: 12px;
+            color: #6c757d;
+        }
+
+        .pricing-product {
+            font-size: 15px;
+            margin-bottom: 20px;
+        }
+
+        /* Features */
+        .pricing-features {
+            list-style: none;
+            padding: 0;
+            margin: 0 auto 24px;
+            max-width: 280px;
+            text-align: left;
+            font-size: 14px;
+        }
+
+        .pricing-features li {
+            margin-bottom: 10px;
+            color: #333;
+        }
+
+        /* CTA */
+        .pricing-cta {
+            display: inline-block;
+            padding: 12px 30px;
+            border-radius: 30px;
+            background: linear-gradient(135deg, #0d6efd, #6610f2);
+            border: 0;
+            color: #fff;
+            font-size: 14px;
+            font-weight: 600;
+            text-decoration: none;
+            transition: all 0.35s ease;
+            position: relative;
+            z-index: 5;
+        }
+
+        .pricing-cta:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 25px rgba(13, 110, 253, 0.4);
+        }
+
+        /* Note */
+        .pricing-note {
+            font-size: 12px;
+            color: #6c757d;
+            margin-top: 14px;
+        }
+        .slider-img {
+            max-height: 520px;  
+            object-fit: contain;
+            padding: 20px;
+            background: #fff;
+        }
+
+        .carousel-control-prev-icon,
+        .carousel-control-next-icon {
+            filter: invert(1);
+        }
+
+        .carousel-indicators [data-bs-target] {
+            background-color: #0d6efd;
+        }
+
+        /* ===== Fixed & Scrollable Sidebar ===== */
+        #mainSidebar {
+            position: fixed;
+            top: 60px;               /* height of your header */
+            left: 0;
+            width: 250px;
+            height: calc(100vh - 20px);
+            background: #001C46;
+            color: #fff;
+            overflow-y: auto;
+            overflow-x: hidden;
+            z-index: 1020;
+            padding-bottom:200px;
+        }
+
+        /* Smooth scrolling */
+        #mainSidebar::-webkit-scrollbar {
+            width: 6px;
+        }
+
+        #mainSidebar::-webkit-scrollbar-thumb {
+            background: rgba(255, 255, 255, 0.25);
+            border-radius: 10px;
+        }
+
+    /* ===== WhatsApp Floating Chat ===== */
+        .whatsapp-wrapper {
+            position: fixed;
+            bottom: 28px;
+            right: 28px;
+            z-index: 9999;
+        }
+
+        .whatsapp-btn {
+            position: relative;
+            width: 58px;
+            height: 58px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, #25D366, #1EBE5D);
+            color: #fff;
+            font-size: 30px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            box-shadow:
+                0 15px 30px rgba(0, 0, 0, 0.35),
+                inset 0 0 15px rgba(255, 255, 255, 0.2);
+
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+
+            transition: all 0.35s ease;
+            animation: whatsapp-pulse 2.5s infinite;
+        }
+
+        /* Hover effects */
+        .whatsapp-btn:hover {
+            transform: translateY(-4px) scale(1.08);
+            box-shadow:
+                0 25px 40px rgba(0, 0, 0, 0.45),
+                inset 0 0 20px rgba(255, 255, 255, 0.3);
+            animation-play-state: paused;
+        }
+
+        /* Tooltip */
         .whatsapp-tooltip {
-            display: none;
+            position: absolute;
+            right: 70px;
+            background: rgba(0, 0, 0, 0.85);
+            color: #fff;
+            padding: 8px 14px;
+            border-radius: 20px;
+            font-size: 14px;
+            font-weight: 500;
+            white-space: nowrap;
+
+            opacity: 0;
+            transform: translateX(10px);
+            pointer-events: none;
+
+            transition: all 0.3s ease;
         }
-    }
+
+        /* Tooltip arrow */
+        .whatsapp-tooltip::after {
+            content: "";
+            position: absolute;
+            top: 50%;
+            right: -6px;
+            transform: translateY(-50%);
+            border-width: 6px;
+            border-style: solid;
+            border-color: transparent transparent transparent rgba(0, 0, 0, 0.85);
+        }
+
+        /* Show tooltip on hover */
+        .whatsapp-btn:hover .whatsapp-tooltip {
+            opacity: 1;
+            transform: translateX(0);
+        }
+
+        /* Pulse animation */
+        @keyframes whatsapp-pulse {
+            0% {
+                box-shadow: 0 0 0 0 rgba(37, 211, 102, 0.45);
+            }
+            70% {
+                box-shadow: 0 0 0 18px rgba(37, 211, 102, 0);
+            }
+            100% {
+                box-shadow: 0 0 0 0 rgba(37, 211, 102, 0);
+            }
+        }
+
+        /* Mobile optimization */
+        @media (max-width: 576px) {
+            .whatsapp-tooltip {
+                display: none;
+            }
+        }
 
     </style>
 

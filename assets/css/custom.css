@@ -1350,3 +1350,32 @@ html {
     transition: none !important;
   }
 }
+
+/* goToTop */
+#goToTopBtn {
+    display: none;                  /* hidden by default */
+    width: 48px;
+    height: 48px;
+
+    position: fixed;
+    left: 50%;
+    bottom: 18px;
+    transform: translateX(-50%);
+    z-index: 9999;
+
+    background: linear-gradient(90deg,#2f6bff,#6a00ff);
+    border: none;
+
+    align-items: center;            /* center vertically */
+    justify-content: center;        /* center horizontally */
+    padding: 0;                     /* remove default button padding */
+}
+
+#goToTopBtn.show {
+    display: flex;                  /* show button */
+}
+
+/* icon fix */
+#goToTopBtn i {
+    line-height: 1;
+}
